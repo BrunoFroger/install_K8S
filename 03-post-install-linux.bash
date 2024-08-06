@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "*************************************************"
+echo "*"
+echo "*       post installation linux"
+echo "*"
+echo "*************************************************"
 if [[ "X-$K8S_SCRIPT_POST_INSTALL_LINUX" == "X-OK" ]]; then
     echo "post installation linux déjà réalisée"
 else 

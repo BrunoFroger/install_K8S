@@ -1,9 +1,15 @@
 #!/bin/bash
 
+
+echo "*************************************************"
+echo "*"
+echo "*       initialisations"
+echo "*"
+echo "*************************************************"
+
 if [[ "X-$K8S_SCRIPT_INITIALISATION" == "X-OK" ]]; then
     echo "Initialisations déjà réalisées"
 else 
-    echo "initialisations"
     export K8S_MASTER_KUBERNETES="$(hostname).local"
     while :
     do
