@@ -16,6 +16,8 @@ echo "kubernetes => post-install linux"
 . ./03-post-install-linux.bash
 #-------------------------------------------------
 
+exit
+
 #-------------------------------------------------
 echo "kubernetes => installation de docker"
 . ./10-install-docker.bash
