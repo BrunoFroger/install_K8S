@@ -42,8 +42,9 @@ else
 
   echo "-------------------------------------------------"
   echo "docker => installation de cri-dockerd"
-  sudo wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.14/cri-dockerd_0.3.14.3-0.ubuntu-jammy_amd64.deb
-  sudo dpkg -i cri-dockerd_0.3.14.3-0.ubuntu-jammy_amd64.deb
+  version_cri_dockerd="0.3.14.3-0"
+  sudo wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.14/cri-dockerd_$version_cri_dockerd.ubuntu-jammy_amd64.deb
+  sudo dpkg -i cri-dockerd_$version_cri_dockerd.ubuntu-jammy_amd64.deb
 
   echo "-------------------------------------------------"
   export K8S_SCRIPT_INSTALL_DOCKER="OK"
