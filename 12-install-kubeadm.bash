@@ -12,8 +12,8 @@ if [[ "X-$K8S_SCRIPT_INSTALL_KUBEADM" == "X-OK" ]]; then
   echo "installation kubeadm déjà réalisée"
 else 
     echo "-------------------------------------------------"
-    echo "kubeadm => suppression du swap"
-    sudo swapoff -v /swapfile
+    echo "kubeadm => desactivation du swap"
+    sudo swapoff -a && sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
     echo "-------------------------------------------------"
     echo "kubeadm => installation de kubeadm"
