@@ -12,28 +12,26 @@ echo "kubernetes => initialisations debut"
 echo "kubernetes => initialisations fin"
 #-------------------------------------------------
 
-pause
+read
 
 #-------------------------------------------------
 #echo "kubernetes => post-install linux"
 . ./03-post-install-linux.bash
 #-------------------------------------------------
 
-pause
+read
 
 #-------------------------------------------------
 #echo "kubernetes => installation de docker"
 . ./10-install-docker.bash
 #-------------------------------------------------
 
-pause
+read
 
 #-------------------------------------------------
 #echo "kubernetes => installation de kubeadm"
 . ./12-install-kubadm.bash
 #-------------------------------------------------
-
-pause
 
 
 #=================================================
