@@ -14,6 +14,7 @@ else
     sudo apt install -y net-tools
     sudo apt install -y inetutils-ping
     sudo apt install -y openssh-server
+    sudo apt install -y wget
 
     if [ ! -f "~/.ssh/id.rsa.pub"]; then
         echo "génération de la clé ssh"

@@ -42,7 +42,7 @@ else
 
   echo "-------------------------------------------------"
   echo "docker => installation de cri-dockerd"
-  sudo "wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.14/cri-dockerd_0.3.14.3-0.ubuntu-jammy_amd64.deb"
+  sudo wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.14/cri-dockerd_0.3.14.3-0.ubuntu-jammy_amd64.deb
   sudo dpkg -i cri-dockerd_0.3.14.3-0.ubuntu-jammy_amd64.deb
 
   echo "-------------------------------------------------"
