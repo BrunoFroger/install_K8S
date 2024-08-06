@@ -11,11 +11,11 @@ echo "*************************************************"
 if [[ "X-$K8S_SCRIPT_INSTALL_KUBEADM" == "X-OK" ]]; then
   echo "installation kubeadm déjà réalisée"
 else 
-    #-------------------------------------------------
+    echo "-------------------------------------------------"
     echo "kubeadm => suppression du swap"
     sudo swapoff -v /swapfile
 
-    #-------------------------------------------------
+    echo "-------------------------------------------------"
     echo "kubeadm => installation de kubeadm"
     sudo apt-get update
     sudo apt-get install -y apt-transport-https ca-certificates curl gpg
@@ -30,23 +30,23 @@ else
     sudo apt-get update
     sudo apt-get upgrade
 
-    #-------------------------------------------------
+    echo "-------------------------------------------------"
     echo "kubeadm => initialisation/joindre un cluster"
     . ./14-install-master-slave.bash
 
-    #-------------------------------------------------
+    echo "-------------------------------------------------"
     echo "kubeadm => utilisation kubeadm/kubectl par utilisateur non root"
     mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-    #-------------------------------------------------
+    echo "-------------------------------------------------"
     echo "kubeadm => ajout d'un add-on reseau (calico)"
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml 
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml 
     kubectl create -f custom-resources.yaml
-    #-------------------------------------------------
 
+    echo "-------------------------------------------------"
     export K8S_SCRIPT_INSTALL_KUBEADM="OK"
     echo "installation de kubeadm => fin"
 
