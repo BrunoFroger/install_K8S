@@ -12,21 +12,21 @@ echo "kubernetes => initialisations debut"
 echo "kubernetes => initialisations fin"
 #-------------------------------------------------
 
-read
+read "appuyer sur une touche pour continuer"
 
 #-------------------------------------------------
 #echo "kubernetes => post-install linux"
 . ./03-post-install-linux.bash
 #-------------------------------------------------
 
-read
+read "appuyer sur une touche pour continuer"
 
 #-------------------------------------------------
 #echo "kubernetes => installation de docker"
 . ./10-install-docker.bash
 #-------------------------------------------------
 
-read
+read "appuyer sur une touche pour continuer"
 
 #-------------------------------------------------
 #echo "kubernetes => installation de kubeadm"
