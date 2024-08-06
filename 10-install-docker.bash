@@ -22,7 +22,7 @@ else
   echo "docker => ajout des cles GPG"
   # Add Docker's official GPG key:
   sudo apt-get update
-  sudo apt-get install ca-certificates curl
+  sudo apt-get install -y ca-certificates curl
   sudo install -m 0755 -d /etc/apt/keyrings
   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
   sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -38,11 +38,12 @@ else
 
   #-------------------------------------------------
   echo "docker => installation de docker"
-  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
   #-------------------------------------------------
   echo "docker => installation de cri-dockerd"
-  sudo dpkg -i cri-dockerd_0.3.13.3-0.ubuntu-jammy_amd64.deb
+  sudo "wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.14/cri-dockerd_0.3.14.3-0.ubuntu-jammy_amd64.deb"
+  sudo dpkg -i cri-dockerd_0.3.14.3-0.ubuntu-jammy_amd64.deb
 
   export K8S_SCRIPT_INSTALL_DOCKER="OK"
   echo "installation de docker => fin"

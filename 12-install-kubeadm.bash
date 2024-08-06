@@ -32,7 +32,7 @@ else
 
     #-------------------------------------------------
     echo "kubeadm => initialisation/joindre un cluster"
-    ./14-install-master-slave.bash
+    . ./14-install-master-slave.bash
 
     #-------------------------------------------------
     echo "kubeadm => utilisation kubeadm/kubectl par utilisateur non root"
