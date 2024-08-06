@@ -7,26 +7,26 @@ echo "(c) B.FROGER 2024"
 
 
 #-------------------------------------------------
-echo "kubernetes => initialisations"
+#echo "kubernetes => initialisations"
 . ./01-initialisations.bash
 #-------------------------------------------------
 
 exit
 
 #-------------------------------------------------
-echo "kubernetes => post-install linux"
+#echo "kubernetes => post-install linux"
 . ./03-post-install-linux.bash
 #-------------------------------------------------
 
 exit
 
 #-------------------------------------------------
-echo "kubernetes => installation de docker"
+#echo "kubernetes => installation de docker"
 . ./10-install-docker.bash
 #-------------------------------------------------
 
 #-------------------------------------------------
-echo "kubernetes => installation de kubeadm"
+#echo "kubernetes => installation de kubeadm"
 . ./12-install-kubadm.bash
 #-------------------------------------------------
 
