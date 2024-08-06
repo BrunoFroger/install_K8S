@@ -57,7 +57,7 @@ sudo apt-get -y upgrade
 
 ```
 sudo apt-get install -y git
-cd ~~
+cd ~
 mkdir -p projets
 cd projets
 git clone git@github.com:BrunoFroger/install_K8S.git
