@@ -11,7 +11,11 @@ elif [[ "X-$K8S_TYPE_NOEUD" == "X-slave" ]]; then
         #token=$(kubeadm token create)
         token=ewl9xe.aack7rb9qsoq4tal
         echo "token = $token"
-        cde="sudo kubeadm join $K8S_MASTER_KUBERNETES:6443 --token ewl9xe.aack7rb9qsoq4tal --discovery-token-unsafe-skip-ca-verification --cri-socket=unix:///var/run/cri-dockerd.sock"
+        cde="sudo kubeadm join $K8S_MASTER_KUBERNETES:6443 \
+            --token ewl9xe.aack7rb9qsoq4tal \
+            --ignore-preflight-errors=all \
+            --discovery-token-unsafe-skip-ca-verification \
+            --cri-socket=unix:///var/run/cri-dockerd.sock"
         echo "commande executéé : $cde"
         $($cde)
 else
