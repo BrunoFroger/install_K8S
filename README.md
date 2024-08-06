@@ -47,12 +47,13 @@ Ne pas oublier de faire une mise a jour globale après l'installation :
 
 ```
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 ```
 # Chargement des scripts d'installation
 
 
 ```
+sudo apt-get install -y git
 cd ~~
 mkdir -p projets
 cd projets
