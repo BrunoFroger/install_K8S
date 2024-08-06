@@ -4,26 +4,27 @@ if [[ "X-$K8S_SCRIPT_INITIALISATION" == "X-OK" ]]; then
     echo "Initialisations déjà réalisées"
 else 
     echo "initialisations"
-    export BFR_MASTER_KUBERNETES="$(hostname).local"
+    export K8S_MASTER_KUBERNETES="$(hostname).local"
     while :
     do
         echo -n "quel tye de noeud voulez vous installer (master/slave) ? : "
         read type_install
         if [[ "$type_install" == "master" ]]; then
-            export BFR_TYPE_NOEUD="master"
+            export K8S_TYPE_NOEUD="master"
             break
         elif [[ "$type_install" == "slave" ]]; then
-            export BFR_TYPE_NOEUD="slave"
+            export K8S_TYPE_NOEUD="slave"
             echo -n "nom de la machine master (ex:machinexx.local) : "
             read master
-            export BFR_MASTER_KUBERNETES=$master
+            export K8S_MASTER_KUBERNETES=$master
             break
         else
             echo "saisie incorrecte !"
         fi
     done
 
-    echo "type install : $BFR_TYPE_NOEUD"
-    echo "master Kubernetes : $BFR_MASTER_KUBERNETES"
     export K8S_SCRIPT_INITIALISATION="OK"
 fi
+
+echo "type install : $K8S_TYPE_NOEUD"
+echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
