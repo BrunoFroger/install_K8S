@@ -28,7 +28,7 @@ else
     sudo apt-get install -y kubelet kubeadm kubectl
     sudo apt-mark hold kubelet kubeadm kubectl
     sudo apt-get update
-    sudo apt-get upgrade
+    sudo apt-get -y upgrade
 
     echo "-------------------------------------------------"
     echo "kubeadm => initialisation/joindre un cluster"
