@@ -52,7 +52,22 @@ sudo apt-get update
 sudo apt-get -y upgrade
 ```
 
+
+
+
 # Chargement des scripts d'installation
+
+creation de la cle ssh pour pouvoir recuperer les scripts
+
+```
+ssh-keygen -N "" -f id_rsa
+```
+
+Aller ensuite sur github pour copier la cle ssh dans les settings du compte
+http://github.com/BrunoFroger/install_K8S
+
+Demandez au proprietaire du compte de opier pour vos votre cle publique ou si vous avez lzs droits suivez les instructions github pour copier cette cle
+
 
 
 ```
