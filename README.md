@@ -52,4 +52,12 @@ sudo apt-get upgrade
 # Chargement des scripts d'installation
 
 
+```
+cd ~~
+mkdir -p projets
+cd projets
+git clone git@github.com:BrunoFroger/install_K8S.git
+```
+
+
 
