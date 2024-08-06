@@ -45,7 +45,7 @@ paramètres à renseigner pour l'installation de linux :
 
 Si lors de votre première connexion, la machine ne vous demande pas de mettre a jour le système ; 
 il faudra forcer cette mise a jour globale après l'installation.
-Pour cela ouvrez un terminal sur la machine et tapez lzq commandes suivantes :
+Pour cela ouvrez un terminal sur la machine et tapez les commandes suivantes :
 
 ```
 sudo apt-get update
