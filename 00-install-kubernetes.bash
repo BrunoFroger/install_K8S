@@ -16,17 +16,17 @@ echo "script principal : addresse master = $BFR_MASTER_KUBERNETES"
 
 #-------------------------------------------------
 echo "kubernetes => post-install linux"
-./03-post-install-linux.bash
+. ./03-post-install-linux.bash
 #-------------------------------------------------
 
 #-------------------------------------------------
 echo "kubernetes => installation de docker"
-./10-install-docker.bash
+. ./10-install-docker.bash
 #-------------------------------------------------
 
 #-------------------------------------------------
 echo "kubernetes => installation de kubeadm"
-./12-install-kubadm.bash
+. ./12-install-kubadm.bash
 #-------------------------------------------------
 
 

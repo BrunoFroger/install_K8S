@@ -1,12 +1,18 @@
 #!/bin/bash
 
-sudo apt-get update 
-sudo apt-get upgrade
+if [[ "X-$K8S_SCRIPT_POST_INSTALL_LINUX" == "X-OK" ]]; then
+    echo "post installation linux déjà réalisée"
+else 
+    sudo apt-get update 
+    sudo apt-get upgrade
 
-sudo apt install net-tools
-sudo apt install inetutils-ping
-sudo apt install openssh-server
+    sudo apt install -y net-tools
+    sudo apt install -y inetutils-ping
+    sudo apt install -y openssh-server
 
-# if [ ! -f "~/.ssh/id.rsa.pub"]; then
-#     echo "génération de la clé ssh"
-#     ssh-keygen
+    if [ ! -f "~/.ssh/id.rsa.pub"]; then
+        echo "génération de la clé ssh"
+        ssh-keygen
+    fi
+    export K8S_SCRIPT_POST_INSTALL_LINUX="OK"
+fi
