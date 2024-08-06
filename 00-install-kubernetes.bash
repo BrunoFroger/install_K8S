@@ -7,8 +7,9 @@ echo "(c) B.FROGER 2024"
 
 
 #-------------------------------------------------
-#echo "kubernetes => initialisations"
+echo "kubernetes => initialisations debut"
 . ./01-initialisations.bash
+echo "kubernetes => initialisations fin"
 #-------------------------------------------------
 
 pause
