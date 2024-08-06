@@ -19,7 +19,7 @@ else
     sudo apt install -y wget
 
     echo "gestion cle ssh"
-    if [ ! -f "~/.ssh/id.rsa.pub"]; then
+    if [ ! -f "~/.ssh/id.rsa.pub" ]; then
         echo "génération de la clé ssh"
         ssh-keygen -N ""
         echo "prevoir copie cle ssh"
