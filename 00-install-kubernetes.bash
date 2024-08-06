@@ -11,6 +11,8 @@ echo "kubernetes => initialisations"
 . ./01-initialisations.bash
 #-------------------------------------------------
 
+exit
+
 #-------------------------------------------------
 echo "kubernetes => post-install linux"
 . ./03-post-install-linux.bash
