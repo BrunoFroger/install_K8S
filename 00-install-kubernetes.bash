@@ -30,7 +30,7 @@ read -p "appuyer sur une touche pour continuer"
 
 #-------------------------------------------------
 #echo "kubernetes => installation de kubeadm"
-. ./12-install-kubadm.bash
+. ./12-install-kubeadm.bash
 #-------------------------------------------------
 
 

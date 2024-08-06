@@ -6,10 +6,10 @@ echo "*"
 echo "*       installation de docker ...."
 echo "*"
 echo "*************************************************"
-if [[ "X-$K8S_INSTALL_DOCKER" == "X-OK" ]]; then
+
+if [[ "X-$K8S_SCRIPT_INSTALL_DOCKER" == "X-OK" ]]; then
   echo "installation docker déjà réalisées"
 else 
-
 
   #-------------------------------------------------
   echo "docker => suppression ancienne version de docker"
@@ -44,5 +44,6 @@ else
   echo "docker => installation de cri-dockerd"
   sudo dpkg -i cri-dockerd_0.3.13.3-0.ubuntu-jammy_amd64.deb
 
-  export K8S_INSTALL_DOCKER="OK"
+  export K8S_SCRIPT_INSTALL_DOCKER="OK"
+  echo "installation de docker => fin"
 fi

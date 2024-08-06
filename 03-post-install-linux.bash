@@ -20,4 +20,5 @@ else
         ssh-keygen
     fi
     export K8S_SCRIPT_POST_INSTALL_LINUX="OK"
+    echo "post installation de linux => fin"
 fi

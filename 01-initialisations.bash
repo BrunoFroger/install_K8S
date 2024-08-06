@@ -37,3 +37,4 @@ fi
 
 echo "type install      : $K8S_TYPE_NOEUD"
 echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
+echo "initialisations => fin"
