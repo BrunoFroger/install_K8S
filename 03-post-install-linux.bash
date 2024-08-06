@@ -17,7 +17,8 @@ else
 
     if [ ! -f "~/.ssh/id.rsa.pub"]; then
         echo "génération de la clé ssh"
-        ssh-keygen
+        ssh-keygen -N ""
+        echo "prevoir copie cle ssh"
     fi
     export K8S_SCRIPT_POST_INSTALL_LINUX="OK"
     echo "post installation de linux => fin"
