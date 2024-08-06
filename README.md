@@ -38,9 +38,9 @@ paramètres à renseigner pour l'installation de linux :
 - valider fuseau horaire sur Paris  
 - renseignement "qui êtes-vous"
 	- nom : exemple Bruno  
-    - nom ordinateur : exemple machineXX (XX numéro de la machine)  
+    - nom ordinateur : exemple master ou machineXX (XX numéro de la machine)  
     - nom utilisateur : exemple bruno  
-    - password : exemple K8S&machineXX  (XX numéro de la machine)
+    - password : exemple K8Smaster ou K8S&machineXX  (XX numéro de la machine)
 - Lors du message installation terminée, retirer la clé USB et lancer le redémarrage.
 
 Ne pas oublier de faire une mise a jour globale après l'installation :
