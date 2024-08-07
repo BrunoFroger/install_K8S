@@ -33,7 +33,7 @@ Sur chacunes des machines :
 paramètres à renseigner pour l'installation de linux :  
 
 - sélectionner la langue (français)  
-- sélectionner installer Ubuntu  
+- sélectionner installer Ubuntu (écraser toute autre installation)
 - valider clavier français (continuer)  
 - pas de connexion réseau sans fil  
 - mise à jour et autres logiciels : sélectionner installation minimale, avec téléchargement des mise à jour en cours d'installation  
