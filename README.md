@@ -44,7 +44,7 @@ paramètres à renseigner pour l'installation de linux :
 	- nom : exemple Bruno  
     - nom ordinateur : exemple **master** ou **slaveXX** (XX numéro de la machine)  
     - nom utilisateur : exemple **K8Suser**  
-    - password : exemple **K8Smaster** ou **K8S&slaveXX**  (XX numéro de la machine)
+    - password : exemple **K8S&master** ou **K8S&slaveXX**  (XX numéro de la machine)
 - Lors du message installation terminée, retirer la clé USB et lancer le redémarrage.
 
 Si lors de votre première connexion, la machine ne vous demande pas de mettre a jour le système ; 
@@ -62,18 +62,23 @@ creation de la cle ssh pour pouvoir se connecter a distance sur votre machine
 A executer sur la machine cible
 
 ```
+mkdir .ssh
+cd .ssh
 ssh-keygen -N "" -f id_rsa
+service sshd restart
 ```
 
-Executer ensuite sur la machine distante la commande suivante
+Executer ensuite sur la machine distante la commande suivante : ``ssh-copy-id <username>@<nomMachine.local>``
 
-```
-ssh-copy-id <username>@<nomMachine.local>
-# Chargement des scripts d'installation
+vous pouvez verifier que l'échange st opération si lorsque vous essayer de vous connecter en ssh depuis la machine distante sur votre noeud on ne vous demande plus de mot de passe (commande de connexion ``ssh <user>@<machine>``
 
+# post-install
 
-```
+Pensez a verifier que la mise en veille de votre machine n'est pas activée (sinon, elle ne serait plus joignable) 
 
+# Installation Kubernetes
+
+Ces étapes peuvent etres faites en local sur la machine ou via une machine distante connectée en ssh
 Vous pouvez alors récupérer les scripts d'installation en téléchargant la derniere release du projet :
 
 ```
