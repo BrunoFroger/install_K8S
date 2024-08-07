@@ -1,13 +1,17 @@
 # install_K8S
 
 # Présentation
-Ce dépot est un exemple simpliste de ce qui peut etre fait pour créer un cluster Kubernetes (K8S)
+Ce dépot est un exemple simpliste de ce qui peut etre fait pour créer un cluster Kubernetes (K8S).
 
 # Pré-requis
 
 Avant de vous lancer dans l'installation de votre cluster, voici quelques pré-requis :
 
-- Disposer de 1 ou plusieurs machines qui serviront à l'expérimentation (noeuds).
+- Avoir un minimum de connaissance dans les domaines suivants :
+  - Réseau ()
+  - Cloud (containerisation, virtualisation)
+  - Développement logiciel (bash, ansible, ....)
+- Disposer de 1 ou plusieurs machines qui serviront à l'expérimentation (noeuds), il est préférable d'avoir un minimum de 2 ùachines pour comprendre les notions de noued et de répartition d'éxecution de process.
 - disposer d'une connexion internet via un routeur (ex : Livebox)
 - avoir un réseau local derriere ce routeur (prevoir un switch pour connecter les machines entre elles)
 - le contenu de ces machines sera effacé définitivement (pensez a vos sauvegardes)
