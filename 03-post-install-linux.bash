@@ -10,7 +10,7 @@ if [[ "X-$K8S_SCRIPT_POST_INSTALL_LINUX" == "X-OK" ]]; then
 else 
     echo "update/upgrade"
     sudo apt-get update 
-    sudo apt-get-y upgrade
+    sudo apt-get -y upgrade
 
     echo "install tools"
     sudo apt install -y net-tools

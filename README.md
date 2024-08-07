@@ -41,7 +41,7 @@ paramètres à renseigner pour l'installation de linux :
 - si demande changement sur les disques, valider  
 - valider fuseau horaire sur Paris  
 - renseignement "qui êtes-vous"
-	- nom : exemple Bruno  
+	- nom : exemple master ou slave suivant role de la machine  
     - nom ordinateur : exemple **master** ou **slaveXX** (XX numéro de la machine)  
     - nom utilisateur : exemple **K8Suser**  
     - password : exemple **K8S&master** ou **K8S&slaveXX**  (XX numéro de la machine)
