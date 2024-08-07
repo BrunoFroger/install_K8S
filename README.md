@@ -49,17 +49,17 @@ paramètres à renseigner pour l'installation de linux :
 
 Si lors de votre première connexion, la machine ne vous demande pas de mettre a jour le système ; 
 il faudra forcer cette mise a jour globale après l'installation.
-Pour cela ouvrez un terminal sur la machine (ou connecter vous a distance depuis une autre machine avec la commande ``ssh <user>@<machine>``) et tapez les commandes suivantes :
+Pour cela ouvrez un terminal sur la machine et tapez les commandes suivantes :
 
 ```
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt install -y openssh-server
+sudo apt-get install -y openssh-server
 ```
 
-# Chargement des scripts d'installation
-
 creation de la cle ssh pour pouvoir se connecter a distance sur votre machine
+
+A executer sur la machine cible
 
 ```
 ssh-keygen -N "" -f id_rsa
@@ -69,6 +69,9 @@ Executer ensuite sur la machine distante la commande suivante
 
 ```
 ssh-copy-id <username>@<nomMachine.local>
+# Chargement des scripts d'installation
+
+
 ```
 
 Vous pouvez alors récupérer les scripts d'installation en téléchargant la derniere release du projet :
