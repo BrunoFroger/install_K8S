@@ -95,4 +95,7 @@ ce script vous demandera quelques informations :
 - si installation d'un esclave il demandera le nom (ou adresse IP du master) si vous etes dans un reseau local derriere une livebox ou autre routeur du même genre, le nom devra peut etre complété par '.local' (ex master.local)
 - entre chaque module, le script s'arrete pour vous demander de valider la suite
 
+A la fin de l'execution de ces scripts, vus pouvez retrouver le resultat de l'excution dans les fichiers suivants :
 
+- install_K8S.out.log => resultats des commandes executées
+- install_K8S.err.log => erreurs rencontrées durant l'installation
