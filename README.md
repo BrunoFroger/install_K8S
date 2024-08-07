@@ -1,4 +1,4 @@
-# install_K8S
+# install_K8S (en construction)
 
 # Présentation
 Ce dépot est un exemple simpliste de ce qui peut etre fait pour créer un cluster Kubernetes (K8S).
