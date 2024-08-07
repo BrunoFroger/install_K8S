@@ -50,17 +50,22 @@ Pour cela ouvrez un terminal sur la machine et tapez les commandes suivantes :
 ```
 sudo apt-get update
 sudo apt-get -y upgrade
+sudo apt-get install -y 
+sudo apt install -y openssh-server
 ```
-
-
-
 
 # Chargement des scripts d'installation
 
-creation de la cle ssh pour pouvoir recuperer les scripts
+creation de la cle ssh pour pouvoir se connecter a distance sur votre machine
 
 ```
 ssh-keygen -N "" -f id_rsa
+```
+
+Executer ensuite sur la machine distante la commande suivante
+
+```
+ssh-copy-id <username>@<nomMachine.local>
 ```
 
 Aller ensuite sur github pour copier la cle ssh dans les settings du compte
