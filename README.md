@@ -50,7 +50,6 @@ Pour cela ouvrez un terminal sur la machine et tapez les commandes suivantes :
 ```
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get install -y 
 sudo apt install -y openssh-server
 ```
 
