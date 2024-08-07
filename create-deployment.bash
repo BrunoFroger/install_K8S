@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/bash -e
 
 kubectl apply -f deployment-monopod.yaml 

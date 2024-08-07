@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 #Vérification argument
 if [ $# -ne 1 ]; then

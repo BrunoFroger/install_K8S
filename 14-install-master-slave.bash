@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 
 if [[ "X-$K8S_TYPE_NOEUD" == "X-master" ]]; then

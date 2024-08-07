@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 
 sudo kubeadm reset --cri-socket=unix:///var/run/cri-dockerd.sock

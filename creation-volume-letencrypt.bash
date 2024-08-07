@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 kubectl apply -f volume-letencrypt.yaml
 kubectl apply -f volume-letencrypt-claim.yaml
