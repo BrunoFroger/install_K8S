@@ -73,12 +73,12 @@ Demandez au proprietaire du compte de opier pour vos votre cle publique ou si vo
 ```
 sudo apt-get install -y git
 cd ~
-mkdir -p projets
-cd projets
-git clone git@github.com:BrunoFroger/install_K8S.git
+mkdir -p projets/install_K8S
+cd projets/install_K8S
+wget https://github.com/BrunoFroger/install_K8S/archive/tags/1.0.zip
+unzip 1.0.zip
+cd install_K8S-tags-1.0
 ```
-
-Il vous faudra peut etre demander l'autorisation pour acceder a ce repo git (cle ssh publique a renseigner dans github)
 
 # execution de l'installation 
 
@@ -93,7 +93,7 @@ cd ~/projets/install_K8S
 ce script vous demandera quelques informations :
 
 - installation du master ou d'un esclave
-- si installation d'un esclave il demandera le nom (ou adresse IP du master) si vous etes dans un reseau local derriere une livebox ou autre routeur du même genre, le nom devra etre complété par '.local' (ex master.local)
+- si installation d'un esclave il demandera le nom (ou adresse IP du master) si vous etes dans un reseau local derriere une livebox ou autre routeur du même genre, le nom devra peut etre complété par '.local' (ex master.local)
 - entre chaque module, le script s'arrete pour vous demander de valider la suite
 
 
