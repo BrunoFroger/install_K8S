@@ -42,14 +42,14 @@ paramètres à renseigner pour l'installation de linux :
 - valider fuseau horaire sur Paris  
 - renseignement "qui êtes-vous"
 	- nom : exemple Bruno  
-    - nom ordinateur : exemple master ou machineXX (XX numéro de la machine)  
-    - nom utilisateur : exemple bruno  
-    - password : exemple K8Smaster ou K8S&machineXX  (XX numéro de la machine)
+    - nom ordinateur : exemple **master** ou **slaveXX** (XX numéro de la machine)  
+    - nom utilisateur : exemple **K8Suser**  
+    - password : exemple **K8Smaster** ou **K8S&slaveXX**  (XX numéro de la machine)
 - Lors du message installation terminée, retirer la clé USB et lancer le redémarrage.
 
 Si lors de votre première connexion, la machine ne vous demande pas de mettre a jour le système ; 
 il faudra forcer cette mise a jour globale après l'installation.
-Pour cela ouvrez un terminal sur la machine et tapez les commandes suivantes :
+Pour cela ouvrez un terminal sur la machine (ou connecter vous a distance depuis une autre machine avec la commande ``ssh <user>@<machine>``) et tapez les commandes suivantes :
 
 ```
 sudo apt-get update
