@@ -18,12 +18,6 @@ else
     sudo apt install -y openssh-server
     sudo apt install -y wget
 
-    echo "gestion cle ssh"
-    if [ ! -f "~/.ssh/id.rsa.pub" ]; then
-        echo "génération de la clé ssh"
-        ssh-keygen -N ""
-        echo "prevoir copie cle ssh"
-    fi
     export K8S_SCRIPT_POST_INSTALL_LINUX="OK"
     echo "post installation de linux => fin"
 fi
