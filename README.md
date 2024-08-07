@@ -85,9 +85,9 @@ Vous pouvez alors récupérer les scripts d'installation en téléchargant la de
 cd ~
 mkdir -p projets/install_K8S
 cd projets/install_K8S
-wget https://github.com/BrunoFroger/install_K8S/archive/tags/<version>>.zip
-unzip install_K8S-<version>>.zip
-cd install_K8S-tags-<version>
+wget https://github.com/BrunoFroger/install_K8S/archive/tags/<version>.zip
+unzip <version>>.zip
+cd install_K8S-<version>.zip
 ```
 ci dessus remplacer version par la version que vous voulez télécharger
 
