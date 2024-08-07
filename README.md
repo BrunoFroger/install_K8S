@@ -75,7 +75,7 @@ mkdir -p projets/install_K8S
 cd projets/install_K8S
 wget https://github.com/BrunoFroger/install_K8S/archive/tags/<version>>.zip
 unzip install_K8S-<version>>.zip
-cd install_K8S-tags-1.0
+cd install_K8S-tags-<version>
 ```
 ci dessus remplacer version par la version que vous voulez télécharger
 
