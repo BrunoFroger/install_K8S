@@ -67,22 +67,17 @@ Executer ensuite sur la machine distante la commande suivante
 ssh-copy-id <username>@<nomMachine.local>
 ```
 
-Aller ensuite sur github pour copier la cle ssh dans les settings du compte
-http://github.com/BrunoFroger/install_K8S
-
-Demandez au proprietaire du compte de opier pour vos votre cle publique ou si vous avez lzs droits suivez les instructions github pour copier cette cle
-
-
+Vous pouvez alors récupérer les scripts d'installation en téléchargant la derniere release du projet :
 
 ```
-sudo apt-get install -y git
 cd ~
 mkdir -p projets/install_K8S
 cd projets/install_K8S
-wget https://github.com/BrunoFroger/install_K8S/archive/tags/1.0.zip
-unzip 1.0.zip
+wget https://github.com/BrunoFroger/install_K8S/archive/tags/<version>>.zip
+unzip install_K8S-<version>>.zip
 cd install_K8S-tags-1.0
 ```
+ci dessus remplacer version par la version que vous voulez télécharger
 
 # execution de l'installation 
 
