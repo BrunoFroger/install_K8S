@@ -29,12 +29,23 @@ else
         else
             echo "saisie incorrecte !"
         fi
+        echo -n "nom du namespace a utiliser : "
+        read namespace
+        export K8S_NAMESPACE=$namespace
+
+        echo "type install      : $K8S_TYPE_NOEUD"
+        echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
+        echo "master namespace  : $K8S_NAMESPACE"
+        
+        echo -n "est-ce que ces donnees sont exactes : (o/N) : "
+        read valid
+        if [[  "X-$valid" == "X-o" || "X-$valid" == "X-O" ]]; then
+            break
+        fi
     done
 
     echo "export K8S_SCRIPT_INITIALISATION"
     export K8S_SCRIPT_INITIALISATION="OK"
+    echo "initialisations => fin"
 fi
 
-echo "type install      : $K8S_TYPE_NOEUD"
-echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
-echo "initialisations => fin"
