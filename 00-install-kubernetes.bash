@@ -1,5 +1,5 @@
 #!/bin/bash -e
-exec > >(tee ./install_K8S.out.log) 2>./install_K8S.err.log
+#exec > >(tee ./install_K8S.out.log) 2>./install_K8S.err.log
 
 #=================================================
 echo "script d'installation de kubernetes => debut"
