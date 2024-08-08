@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
-kubectl apply -f volume-letencrypt.yaml
-kubectl apply -f volume-letencrypt-claim.yaml
+kubectl apply -f volume-letsencrypt.yaml
+kubectl apply -f volume-letsencrypt-claim.yaml

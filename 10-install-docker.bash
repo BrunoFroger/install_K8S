@@ -41,6 +41,14 @@ else
   sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
   echo "-------------------------------------------------"
+  echo "docker => autoriser execution de docker par user non root"
+  sudo groupadd -f docker
+  sudo chown root:docker /var/run/docker.sock
+  sudo usermod -a -G docker "$(whoami)"
+  newgrp docker
+  sudo systemctl restart docker
+
+  echo "-------------------------------------------------"
   echo "docker => installation de cri-dockerd"
   version_cri_dockerd="0.3.14.3-0"
   sudo wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.14/cri-dockerd_$version_cri_dockerd.ubuntu-jammy_amd64.deb

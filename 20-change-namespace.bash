@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-if [[ "X-$K8S_NAMESPACE" == "X-"]]; then
+if [[ "X-$K8S_NAMESPACE" == "X-" ]]; then
 
     #Vérification argument
     if [ $# -ne 1 ]; then
