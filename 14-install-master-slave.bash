@@ -24,5 +24,5 @@ if [[ "$result" == "0" ]]; then
     echo "commande init/join executée avec succès .... on continue"
 else
     echo "commande init/join en erreur .... que faire ?"
-    read -p "Appuyer sur une touche pour continuer ou ^C pour arreter : "
+    echo -n "Appuyer sur une touche pour continuer ou ^C pour arreter : "; read
 fi
