@@ -17,7 +17,6 @@ else
         if [[ "$type_install" == "master" ]]; then
             echo "export K8S_TYPE_NOEUD"
             export K8S_TYPE_NOEUD="master"
-            break
         elif [[ "$type_install" == "slave" ]]; then
             echo "export K8S_TYPE_NOEUD"
             export K8S_TYPE_NOEUD="slave"
@@ -25,7 +24,6 @@ else
             read master
             echo "export K8S_MASTER_KUBERNETES"
             export K8S_MASTER_KUBERNETES=$master
-            break
         else
             echo "saisie incorrecte !"
         fi
@@ -36,7 +34,7 @@ else
         echo "type install      : $K8S_TYPE_NOEUD"
         echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
         echo "master namespace  : $K8S_NAMESPACE"
-        
+
         echo -n "est-ce que ces donnees sont exactes : (o/N) : "
         read valid
         if [[  "X-$valid" == "X-o" || "X-$valid" == "X-O" ]]; then
