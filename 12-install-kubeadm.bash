@@ -41,6 +41,10 @@ else
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
     echo "-------------------------------------------------"
+    echo "kubeadm => declaration --cri-socket cri-dockerd"
+    sudo kubeadm config images pull --cri-socket /run/cri-dockerd.sock 
+
+    echo "-------------------------------------------------"
     echo "kubeadm => ajout d'un add-on reseau (calico)"
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml 
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml 

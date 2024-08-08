@@ -53,8 +53,6 @@ else
   sudo systemctl enable cri-docker.service
   sudo systemctl enable --now cri-docker.socket
 
-  sudo kubeadm config images pull --cri-socket /run/cri-dockerd.sock 
-
   echo "-------------------------------------------------"
   export K8S_SCRIPT_INSTALL_DOCKER="OK"
   echo "installation de docker => fin"
