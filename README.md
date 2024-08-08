@@ -41,10 +41,10 @@ paramètres à renseigner pour l'installation de linux :
 - si demande changement sur les disques, valider  
 - valider fuseau horaire sur Paris  
 - renseignement "qui êtes-vous"
-	- nom : exemple master ou slave suivant role de la machine  
-    - nom ordinateur : exemple **master** ou **slaveXX** (XX numéro de la machine)  
-    - nom utilisateur : exemple **K8Suser**  
-    - password : exemple **K8S&master** ou **K8S&slaveXX**  (XX numéro de la machine)
+	- nom : exemple **master** ou **slave** suivant role de la machine  
+  - nom ordinateur : exemple **K8Smaster** ou **K8SslaveXX** (XX numéro de la machine)  
+  - nom utilisateur : exemple **master** ou **slave** 
+  - password : exemple **K8S&master** ou **K8S&slave** 
 - Lors du message installation terminée, retirer la clé USB et lancer le redémarrage.
 
 Si lors de votre première connexion, la machine ne vous demande pas de mettre a jour le système ; 
