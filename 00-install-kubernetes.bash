@@ -13,21 +13,21 @@ echo "kubernetes => initialisations debut"
 echo "kubernetes => initialisations fin"
 #-------------------------------------------------
 
-read -p "appuyer sur une touche pour continuer"
+echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => post-install linux"
 . ./03-post-install-linux.bash -e
 #-------------------------------------------------
 
-read -p "appuyer sur une touche pour continuer"
+echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => installation de docker"
 . ./10-install-docker.bash
 #-------------------------------------------------
 
-read -p "appuyer sur une touche pour continuer"
+echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => installation de kubeadm"
@@ -38,3 +38,5 @@ read -p "appuyer sur une touche pour continuer"
 #=================================================
 echo "script d'installation de kubernetes => fin"
 #=================================================
+
+exit 0
