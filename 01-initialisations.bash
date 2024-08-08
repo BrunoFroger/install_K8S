@@ -15,14 +15,14 @@ else
         echo -n "quel tye de noeud voulez vous installer (master/slave) ? : "
         read type_install
         if [[ "$type_install" == "master" ]]; then
-            echo "export K8S_TYPE_NOEUD"
+            #echo "export K8S_TYPE_NOEUD"
             export K8S_TYPE_NOEUD="master"
         elif [[ "$type_install" == "slave" ]]; then
-            echo "export K8S_TYPE_NOEUD"
+            #echo "export K8S_TYPE_NOEUD"
             export K8S_TYPE_NOEUD="slave"
             echo -n "nom de la machine master (ex:machinexx.local) : "
             read master
-            echo "export K8S_MASTER_KUBERNETES"
+            #echo "export K8S_MASTER_KUBERNETES"
             export K8S_MASTER_KUBERNETES=$master
         else
             echo "saisie incorrecte !"

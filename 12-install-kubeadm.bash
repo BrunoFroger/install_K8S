@@ -51,6 +51,10 @@ else
     kubectl create -f custom-resources.yaml
 
     echo "-------------------------------------------------"
+    echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"
+    . ./20-change-namespace.bash $K8S_NAMESPACE
+
+    echo "-------------------------------------------------"
     export K8S_SCRIPT_INSTALL_KUBEADM="OK"
     echo "installation de kubeadm => fin"
 
