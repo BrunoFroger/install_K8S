@@ -50,9 +50,9 @@ else
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml 
     kubectl create -f custom-resources.yaml
 
-    echo "-------------------------------------------------"
-    echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"
-    . ./20-change-namespace.bash $K8S_NAMESPACE
+    # echo "-------------------------------------------------"
+    # echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"
+    # . ./20-change-namespace.bash $K8S_NAMESPACE
 
     echo "-------------------------------------------------"
     export K8S_SCRIPT_INSTALL_KUBEADM="OK"

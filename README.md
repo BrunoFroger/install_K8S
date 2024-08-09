@@ -98,7 +98,7 @@ Pour lancer l'installatipn de kubernetes sur votre/vos machine(s) vous devez exe
 
 
 ```
-cd ~/projets/install_K8S
+cd ~/projets/install_K8S-tags-<version>
 . ./00install-kubernetes.bash
 ```
 
