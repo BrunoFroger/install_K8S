@@ -48,7 +48,7 @@ else
         fi
     done
 
-    echo "export K8S_SCRIPT_INITIALISATION"
+    #echo "export K8S_SCRIPT_INITIALISATION"
     export K8S_SCRIPT_INITIALISATION="OK"
     echo "initialisations => fin"
 fi

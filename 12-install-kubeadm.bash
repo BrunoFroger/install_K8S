@@ -48,7 +48,6 @@ else
     echo "kubeadm => ajout d'un add-on reseau (calico)"
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml 
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml 
-    kubectl create -f custom-resources.yaml
 
     # echo "-------------------------------------------------"
     # echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"

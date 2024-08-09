@@ -45,7 +45,8 @@ else
   sudo groupadd -f docker
   sudo chown root:docker /var/run/docker.sock
   sudo usermod -a -G docker "$(whoami)"
-  newgrp docker
+  echo "WARNING : cde newgrp docker executee en arriere plan pour le moment ; car lance un nouveau shel, prevoir process pour supprimer ce shel parasite"
+  newgrp docker &
   sudo systemctl restart docker
 
   echo "-------------------------------------------------"
