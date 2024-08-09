@@ -13,7 +13,7 @@ else
     do
         echo -n "quel tye de noeud voulez vous installer (master/slave) <$K8S_TYPE_NOEUD> ? : "
         read type_install
-        if [[ "X-$namespace" != "X-" ]]; then
+        if [[ "X-$type_install" != "X-" ]]; then
             if [[ "$type_install" == "master" ]]; then
                 #echo "export K8S_TYPE_NOEUD"
                 export K8S_TYPE_NOEUD="master"
