@@ -53,6 +53,16 @@ else
     # echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"
     # . ./20-change-namespace.bash $K8S_NAMESPACE
 
+    # echo "-------------------------------------------------"
+    # echo "installation de helm"
+    # sudo snap install helm --classic
+
+    # echo "-------------------------------------------------"
+    # echo "installation du dashboard"
+    # helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+    # helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+    # kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
+
     echo "-------------------------------------------------"
     export K8S_SCRIPT_INSTALL_KUBEADM="OK"
     echo "installation de kubeadm => fin"
