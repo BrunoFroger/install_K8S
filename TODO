@@ -1,6 +1,10 @@
 
 
 - dashbord
+  - d'apres les logs d'install, pod en pending ! manque de ressources ?
+  
+- installer 2eme noeud sur slave01
+  - 
 
 
 - pod nginx 

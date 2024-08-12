@@ -75,7 +75,7 @@ vous pouvez verifier que l'échange st opération si lorsque vous essayer de vou
 
 # post-install
 
-Pensez a verifier que la mise en veille de votre machine n'est pas activée (sinon, elle ne serait plus joignable) 
+Pensez a verifier que la mise en veille de votre machine n'est pas activée (sinon, le mode veille bloquerait a celle ci) 
 
 # Installation Kubernetes
 
