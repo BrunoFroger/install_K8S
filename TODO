@@ -1,0 +1,10 @@
+
+
+- dashbord
+
+
+- pod nginx 
+  - servir de proxy vers les autres services
+  - assurer la gestion https
+    - installer certbod dans ce pod
+  - relayer en http vers les autres services
