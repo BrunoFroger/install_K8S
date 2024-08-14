@@ -102,13 +102,22 @@ cd ~/projets/install_K8S-tags-<version>
 . ./00install-kubernetes.bash
 ```
 
+ATTENTION : ne pas oublier le point '.' avant le nom du script './00install-kubernetes.bash'
+
 ce script vous demandera quelques informations :
 
 - installation du master ou d'un esclave
 - si installation d'un esclave il demandera le nom (ou adresse IP du master) si vous etes dans un reseau local derriere une livebox ou autre routeur du même genre, le nom devra peut etre complété par '.local' (ex master.local)
+- il demande aussi le nom d'un namespace a creer pour installer ensuite vos applications
 - entre chaque module, le script s'arrete pour vous demander de valider la suite
 
-A la fin de l'execution de ces scripts, vus pouvez retrouver le resultat de l'excution dans les fichiers suivants :
+A la fin de l'execution de ces scripts, vus pouvez retrouver le resultat de l'excution dans les fichiers suivants (supprimé pour l'instant, a réactiver) :
 
 - install_K8S.out.log => resultats des commandes executées
 - install_K8S.err.log => erreurs rencontrées durant l'installation
+
+
+l'installation du master génère automatiquement les fichiers suivants :
+
+- kubeadm-init.out.log => log de la commande d'initialisation du master (sortie standard)
+- kubeadm-init.err.log => log de la commande d'initialisation du master (sortie d'erreur)

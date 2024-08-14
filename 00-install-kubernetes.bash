@@ -38,5 +38,3 @@ echo -n "appuyer sur une touche pour continuer "; read
 #=================================================
 echo "script d'installation de kubernetes => fin"
 #=================================================
-
-exit 0
