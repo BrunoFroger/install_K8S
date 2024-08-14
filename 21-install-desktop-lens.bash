@@ -4,6 +4,7 @@
 echo "*************************************************"
 echo "*"
 echo "*       installation de Lens Desktop ...."
+echo "*       version d'essai gratuite 14 jours"
 echo "*"
 echo "*************************************************"
 
