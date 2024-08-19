@@ -136,9 +136,13 @@ l'installation du master génère automatiquement les fichiers suivants :
   </theader>
   <tbody>
     <tr>
-      <td>noeuds<td>
-      <td>``kubectl get nodes``<td>
-      <td>liste des noeuds<td>
+      <td rowspan="2">noeuds</td>
+      <td>``kubectl get nodes``</td>
+      <td>liste des noeuds</td>
+    </tr>
+    <tr>
+      <td>```kubectl describe node nom-du-noeud``</td>
+      <td>desciption d'un noeud</td>
     </tr>
   </tbody>
 </table>
