@@ -126,6 +126,22 @@ l'installation du master génère automatiquement les fichiers suivants :
 
 
 ## gestion pods
+<table>
+  <theader>
+    <tr>
+      <th>objet</th>
+      <th>commande</th>
+      <th>description</th>
+    </tr>
+  </theader>
+  <tbody>
+    <tr>
+      <td>noeuds<td>
+      <td>``kubectl get nodes``<td>
+      <td>liste des noeuds<td>
+    </tr>
+  </tbody>
+</table>
 | objet | Commande | description |
 |-- |-- |-- |
 | Noeuds | ``kubectl get nodes`` | liste des noeuds |
