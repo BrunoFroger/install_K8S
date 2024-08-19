@@ -135,41 +135,41 @@ l'installation du master génère automatiquement les fichiers suivants :
   <tbody>
     <tr>
       <td rowspan="2">noeuds</td>
-      <td>``kubectl get nodes``</td>
+      <td>kubectl get nodes</td>
       <td>liste des noeuds</td>
     </tr>
     <tr>
-      <td>```kubectl describe node nom-du-noeud``</td>
+      <td>kubectl describe node nom-du-noeud</td>
       <td>desciption d'un noeud</td>
     </tr>
     <tr>
       <td rowspan="3">namespaces</td>
-      <td>``kubectl get namespaces``</td>
+      <td>kubectl get namespaces</td>
       <td>liste des namespaces</td>
     </tr>
     <tr>
-      <td>```kubectl create namespace nom-du-namespace``</td>
+      <td>kubectl create namespace nom-du-namespace</td>
       <td>creation d'un namespace</td>
     </tr>
     <tr>
-      <td>```kubectl describe namespace nom-du-namespace``</td>
+      <td>kubectl describe namespace nom-du-namespace</td>
       <td>desciption d'un namespace</td>
     </tr>
     <tr>
       <td rowspan="4">pods</td>
-      <td>``kubectl get pods``</td>
+      <td>kubectl get pods``</td>
       <td>liste des pods du namespace courant</td>
     </tr>
     <tr>
-      <td>``kubectl get pods -A``</td>
-      <td>liste des pods du namespace de tous les namespaces</td>
+      <td>kubectl get pods -A``</td>
+      <td>liste des pods de tous les namespaces</td>
     </tr>
     <tr>
-      <td>``kubectl get pods -n namespace``</td>
-      <td>liste des pods du namespace d'un namespace particulier</td>
+      <td>kubectl get pods -n namespace</td>
+      <td>liste des pods d'un namespace particulier</td>
     </tr>
     <tr>
-      <td>```kubectl describe pod nom-du-namespace``</td>
+      <td>kubectl describe pod nom-du-namespace</td>
       <td>desciption d'un pod</td>
     </tr>
   </tbody>
