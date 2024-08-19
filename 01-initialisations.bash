@@ -11,8 +11,9 @@ if [[ "X-$K8S_SCRIPT_INITIALISATION" == "X-OK" ]]; then
 else 
     while :
     do
-        echo -n "quel tye de noeud voulez vous installer (master/slave) <$K8S_TYPE_NOEUD> ? : "
+        echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
         read type_install
+        
         if [[ "X-$type_install" != "X-" ]]; then
             if [[ "$type_install" == "master" ]]; then
                 #echo "export K8S_TYPE_NOEUD"
