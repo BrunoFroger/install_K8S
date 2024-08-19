@@ -18,7 +18,7 @@ elif [[ "X-$K8S_TYPE_NOEUD" == "X-slave" ]]; then
         echo "installation d'un noeud esclave ... "
         echo "saisissez la commande kubeadm join donnée lors de la création du master (fichier kubeadm-init.out.log sur master) : "
         read cdeJoin
-        sudo ${cdeJoin}
+        sudo sudo ${cdeJoin} --cri-socket=unix:///var/run/cri-dockerd.sock
 else
     echo "type de noeud ($K8S_TYPE_NOEUD) inconnu"
 fi
