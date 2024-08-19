@@ -122,10 +122,8 @@ l'installation du master génère automatiquement les fichiers suivants :
 - kubeadm-init.out.log => log de la commande d'initialisation du master (sortie standard)
 - kubeadm-init.err.log => log de la commande d'initialisation du master (sortie d'erreur)
 
-# commande utiles 
+# commandes utiles 
 
-
-## gestion pods
 <table>
   <theader>
     <tr>
@@ -176,4 +174,3 @@ l'installation du master génère automatiquement les fichiers suivants :
     </tr>
   </tbody>
 </table>
-| Pods | ``kubectl get pods`` | liste des pods du namespace courant |
