@@ -21,13 +21,13 @@ elif [[ "X-$K8S_TYPE_NOEUD" == "X-slave" ]]; then
     optioncerthash=""
     while :
     do
-        echo "saisie de l'adresse et port du master (format xxx.xxx.xxx.xxx:nnnn) (voir avant derniere ligne du fichier kubeadm-init.out.log sur master) : <${addr-master>} "
+        echo "saisie de l'adresse et port du master (format xxx.xxx.xxx.xxx:nnnn) (voir avant derniere ligne du fichier kubeadm-init.out.log sur master) : <${addrMaster}> "
         read saisie
         if [[ "X-$saisie" != "X-" ]]; then addrMaster=$saisie; fi
-        echo "executer la cde 'kubeadm token create' sur le master et copier le token ici (exemple : n8o17f.h4r3qlkfuibkl2gd ): <${option-token}> "
+        echo "executer la cde 'kubeadm token create' sur le master et copier le token ici (exemple : n8o17f.h4r3qlkfuibkl2gd ): <${optionToken}> "
         read saisie
         if [[ "X-$saisie" != "X-" ]]; then optionToken=$saisie; fi
-        echo "saisissez l'option '--discovery-token-ca-cert-hash=sha256:......' de kubeadm join donnée lors de la création du master (derniere ligne du fichier kubeadm-init.out.log sur master) : <${option-cert-hash} "
+        echo "saisissez l'option '--discovery-token-ca-cert-hash=sha256:......' de kubeadm join donnée lors de la création du master (derniere ligne du fichier kubeadm-init.out.log sur master) : <${optioncerthash}> "
         read saisie
         if [[ "X-$saisie" != "X-" ]]; then optioncerthash=$saisie; fi
         cdeJoin="sudo kubeadm "${addrMaster}" --token "${optionToken}" --discovery-token-ca-cert-hash "${optioncerthash}" --cri-socket=unix:///var/run/cri-dockerd.sock"
