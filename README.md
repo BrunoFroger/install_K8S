@@ -144,11 +144,28 @@ l'installation du master génère automatiquement les fichiers suivants :
       <td>```kubectl describe node nom-du-noeud``</td>
       <td>desciption d'un noeud</td>
     </tr>
+    <tr>
+      <td rowspan="3">namespaces</td>
+      <td>``kubectl get namespaces``</td>
+      <td>liste des namespaces</td>
+    </tr>
+    <tr>
+      <td>```kubectl create namespace nom-du-namespace``</td>
+      <td>creation d'un namespace</td>
+    </tr>
+    <tr>
+      <td>```kubectl describe namespace nom-du-namespace``</td>
+      <td>desciption d'un namespace</td>
+    </tr>
+    <tr>
+      <td rowspan="2">pods</td>
+      <td>``kubectl get pods``</td>
+      <td>liste des pods</td>
+    </tr>
+    <tr>
+      <td>```kubectl describe pod nom-du-namespace``</td>
+      <td>desciption d'un pod</td>
+    </tr>
   </tbody>
 </table>
-| objet | Commande | description |
-|-- |-- |-- |
-| Noeuds | ``kubectl get nodes`` | liste des noeuds |
-|  | ``kubectl describe node <nom-du-noeud>`` | desciption d'un noeuds |
-| Namespaces | ``kubectl get namespace`` | liste des namespaces |
 | Pods | ``kubectl get pods`` | liste des pods du namespace courant |
