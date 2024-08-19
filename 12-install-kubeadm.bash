@@ -37,8 +37,8 @@ else
     echo "-------------------------------------------------"
     echo "kubeadm => utilisation kubeadm/kubectl par utilisateur non root"
     mkdir -p $HOME/.kube
-    sudo cp -i /etc/kubernetes/admin.conf ${HOME}/.kube/config
-    sudo chown $(id -u):$(id -g) ${HOME}/.kube/config
+    sudo cp -i /etc/kubernetes/admin.conf "${HOME}"/.kube/config
+    sudo chown $(id -u):$(id -g) "${HOME}"/.kube/config
 
     echo "-------------------------------------------------"
     echo "kubeadm => declaration --cri-socket cri-dockerd"
