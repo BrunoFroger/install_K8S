@@ -32,7 +32,7 @@ else
 
     echo "-------------------------------------------------"
     echo "kubeadm => initialisation/joindre un cluster"
-    . ./14-install-master-slave.bash
+    source ./14-install-master-slave.bash
 
     echo "-------------------------------------------------"
     echo "kubeadm => utilisation kubeadm/kubectl par utilisateur non root"
@@ -51,7 +51,7 @@ else
 
     # echo "-------------------------------------------------"
     # echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"
-    # . ./20-change-namespace.bash $K8S_NAMESPACE
+    # source ./20-change-namespace.bash $K8S_NAMESPACE
 
 
 

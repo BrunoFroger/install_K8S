@@ -9,7 +9,7 @@ echo "(c) B.FROGER 2024"
 
 #-------------------------------------------------
 echo "kubernetes => initialisations debut"
-. ./01-initialisations.bash -e
+source ./01-initialisations.bash -e
 echo "kubernetes => initialisations fin"
 #-------------------------------------------------
 
@@ -17,21 +17,21 @@ echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => post-install linux"
-. ./03-post-install-linux.bash -e
+source ./03-post-install-linux.bash -e
 #-------------------------------------------------
 
 echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => installation de docker"
-. ./10-install-docker.bash
+source ./10-install-docker.bash
 #-------------------------------------------------
 
 echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => installation de kubeadm"
-. ./12-install-kubeadm.bash
+source ./12-install-kubeadm.bash
 #-------------------------------------------------
 
 
