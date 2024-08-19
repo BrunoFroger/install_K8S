@@ -158,9 +158,17 @@ l'installation du master génère automatiquement les fichiers suivants :
       <td>desciption d'un namespace</td>
     </tr>
     <tr>
-      <td rowspan="2">pods</td>
+      <td rowspan="4">pods</td>
       <td>``kubectl get pods``</td>
-      <td>liste des pods</td>
+      <td>liste des pods du namespace courant</td>
+    </tr>
+    <tr>
+      <td>``kubectl get pods -A``</td>
+      <td>liste des pods du namespace de tous les namespaces</td>
+    </tr>
+    <tr>
+      <td>``kubectl get pods -n namespace``</td>
+      <td>liste des pods du namespace d'un namespace particulier</td>
     </tr>
     <tr>
       <td>```kubectl describe pod nom-du-namespace``</td>
