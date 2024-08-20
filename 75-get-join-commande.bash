@@ -11,7 +11,7 @@ echo "cette commande génère la ligne de commande a utiliser pour joindre une m
 if [[ "x-$1" == "x-" ]]; then
     echo "erreur : manque parametre"
     aide()
-    return -1
+    exit -1
 fi
 
 
