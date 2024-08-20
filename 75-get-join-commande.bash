@@ -34,5 +34,5 @@ echo "fin   = $fin"
 
 cde="$debut $token $fin $option"
 
-echo voici la commande a saisir pour joindre le cluster : "
+echo "voici la commande a saisir pour joindre le cluster : "
 echo $cde
