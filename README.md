@@ -93,7 +93,7 @@ Connectez vous sur votre [livebox](http://livebox.local) depuis un navigateur
 
 Passer en mode administrateur (saisir mot de masse en haut a droite et cliquer sur s'identifier)
 
-*parametrage DHCP* : 
+**parametrage DHCP** : 
   - cliquer sur configuration avancée
   - aller sur onglet DHCP
   - dans le tableau selectionner chacune des machines de votre reseau et ajoutez les a ce tableau
@@ -106,7 +106,7 @@ au final, vous devriez avoir un tableau qui ressemble a :
 | machine01 | 192.168.1.yy | xx:xx:xx:xx:xx:xx |
 | machine02 | 192.168.1.zz | xx:xx:xx:xx:xx:xx |
 
-*parametrage NAT/PAT* : ce tableau permet de définir vers quelle machine le flux entrant sera envoyé en fonction du port 
+**parametrage NAT/PAT** : ce tableau permet de définir vers quelle machine le flux entrant sera envoyé en fonction du port 
 
 au final vous devriez avoir un tableau qui ressemble a : 
 
