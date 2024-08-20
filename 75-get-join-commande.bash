@@ -24,4 +24,9 @@ echo "le nouveau token est : $token"
 echo "vous etes sur la machine : $master"
 echo "le répertoire sur master contenant le fichier spécifiant la commande est : $filedir" 
 cd $filedir
-tail -2 $filename
+commande=$(tail -2 $filename) 
+debut=$(cut -d ' ' -f 4)
+fin=$(cut -d ' ' -f 7-)
+
+echo "debut = $debut"
+echo "fin   = $fin"
