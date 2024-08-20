@@ -16,7 +16,12 @@ if [[ "X-$K8S_TYPE_NOEUD" == "X-master" ]]; then
     echo "*******************************************************"
 elif [[ "X-$K8S_TYPE_NOEUD" == "X-slave" ]]; then
     # echo "installation d'un noeud esclave ... "
-    cdeJoin=$(rsh $K8S_MASTER_KUBERNETES)
+    echo "Connectez vous sur le master et executer les commandes suivantes :"
+    echo "   - cd <repertoire contenant le fichier install_K8S.out.log (repertoire depuis lequel vous avez réalisé l'installation du master) "
+    echo "   - ./75-get-join-commande.bash"
+    echo "copier le resultat de la commande ci-dessous :"
+    read cdeJoin
+    $($cdeJoin)
     # addrMaster=""
     # optionToken=""
     # optioncerthash=""
