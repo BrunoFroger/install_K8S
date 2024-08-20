@@ -14,7 +14,8 @@ if [[ "x-$1" == "x-" ]]; then
     exit -1
 fi
 
+master= $(hostname)
 
-echo "vous etes sur la machine : " $(hosname)
+echo "vous etes sur la machine : $master"
 echo "le répertoire sur master contenant le fichier spécifiant la commande est : " 
 cd $1
