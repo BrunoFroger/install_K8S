@@ -18,6 +18,7 @@ fi
 
 master=$(hostname)
 filename="kubeadm-init.out.log"
+token=$("kubeadm token create")
 
 echo "vous etes sur la machine : $master"
 echo "le répertoire sur master contenant le fichier spécifiant la commande est : $filedir" 
