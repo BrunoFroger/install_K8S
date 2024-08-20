@@ -5,8 +5,8 @@ function aide() {
     echo "$0 <repertoire du fichier d'init kubeadm>"
 }
 
-
 echo "cette commande génère la ligne de commande a utiliser pour joindre une machine au cluser de ce master"
+echo "cette commande doit s'executer sur le master"
 
 if [[ "x-$1" == "x-" ]]; then
     echo "erreur : manque parametre"
