@@ -1,0 +1,28 @@
+;;;;;;options;;;;description
+;;;;;;;;;;
+kubectl;get ;pods;;;;-A (all namespaces);-n namespace;;;liste des pods
+;;pod;<nomPod>;;;-o yaml;;;;
+;;nodes;;;;;;;;
+;;services;;;;;;;;liste les services d'un namespace
+;;namespaces;;;;;;;;liste les namespace du cluster
+;;pv;;;;;;;;volumes persistants
+;;secrets;;;;;;;;
+;;;;;;;;;;
+;describe;nodes;<nodeName>;;;;;;;
+;;;;;;;;;;
+;;;;;;;;;;
+;apply;;;;;-f fichier.yaml;;;;applique la description faite dans le fichier yaml
+;;;;;;;;;;
+;;;;;;;;;;
+;rollout;??;;;;;;;;
+;;;;;;;;;;
+;;;;;;;;;;
+;;;;;;;;;;
+;cordon;<nœud>;;;;;;;;rends le nœud non assignable
+;uncordon;<nœud>;;;;;;;;rends le nœud assignable
+;;;;;;;;;;
+;;;;;;;;;;
+;cluster-info;;;;;;;;;
+;;;;;;;;;;
+;;;;;;;;;;
+;create;;;;;;;;;
