@@ -77,7 +77,7 @@ vous pouvez verifier que l'échange st opération si lorsque vous essayer de vou
 
 Pensez a verifier que la mise en veille de votre machine n'est pas activée (sinon, le mode veille bloquerait a celle ci) 
 
-# Utilistaion a distance a travers votre livebox
+# Utilisation a distance a travers votre livebox
 
 ## parametrage du DNS dynamique
 
@@ -87,7 +87,9 @@ Si vous n'en avez pas encore, créer vous un compte .....
 
 Vous pouvez alors définir une adresse IP correspondant a votre livebox (vous devez le faire depuis une machine connectée a votre livebox)
 
-Cette procédure va permettre d'accéder a votre livebox depuis internet, il fat maintenant définir les accès a vos machines en configurant la livebox :
+Vous definisez ainsi un domaine de la forme **monapplication.zapto.org** qui definira le point d'entrée vers votre livebox
+
+Il faut maintenant définir les accès a vos machines en configurant la livebox :
 
 Connectez vous sur votre [livebox](http://livebox.local) depuis un navigateur
 
@@ -119,7 +121,7 @@ au final vous devriez avoir un tableau qui ressemble a :
 | sshxx | 22 | xxxx | TCP | machinexx |
 | sshxx | 22 | xxxx | TCP | machinexx |
 
-Chacune des lignes sshxx doit pointer sur des ports externes différents
+Chacune des lignes sshxx doit pointer sur des ports externes différents elles permettent de vous connecter depuis internet en ssh sur vos machine (ces lignes doivent etre supprimée en situation de production) ; vous pouvez alors vous connecter avec la commande ``ssh -p xxxx login@monapplication.zapto.org`` mondomaine ayant été défini plus haut sur le site de dns dynamique. 
 
 # Installation Kubernetes
 
