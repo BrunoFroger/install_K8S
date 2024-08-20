@@ -25,8 +25,8 @@ echo "vous etes sur la machine : $master"
 echo "le répertoire sur master contenant le fichier spécifiant la commande est : $filedir" 
 cd $filedir
 commande=$(tail -2 $filename) 
-debut=$(cut -d ' ' -f 4)
-fin=$(cut -d ' ' -f 7-)
+debut=$(cut -d' ' -f 4 $commande)
+fin=$(cut -d' ' -f 7- $commande)
 
 echo "debut = $debut"
 echo "fin   = $fin"
