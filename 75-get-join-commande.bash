@@ -25,8 +25,14 @@ echo "vous etes sur la machine : $master"
 echo "le répertoire sur master contenant le fichier spécifiant la commande est : $filedir" 
 cd $filedir
 commande=$(tail -2 $filename) 
-debut=$(echo $commande | cut -d' ' -f 4 )
+debut=$(echo $commande | cut -d' ' -f -4 )
 fin=$(echo $commande | cut -d' ' -f 7- )
+option="--cri-socket=unix:///var/run/cri-dockerd.sock"
 
 echo "debut = $debut"
 echo "fin   = $fin"
+
+cde="$debut $token $fin $option"
+
+echo voici la commande a saisir pour joindre le cluster : "
+echo $cde
