@@ -12,10 +12,13 @@ if [[ "x-$1" == "x-" ]]; then
     echo "erreur : manque parametre"
     aide
     exit -1
+else
+    filedir=$1
 fi
 
 master=$(hostname)
 
 echo "vous etes sur la machine : $master"
-echo "le répertoire sur master contenant le fichier spécifiant la commande est : " 
-cd $1
+echo "le répertoire sur master contenant le fichier spécifiant la commande est : $filedir" 
+cd $filedir
+ls kubeadm-init*
