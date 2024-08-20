@@ -77,6 +77,50 @@ vous pouvez verifier que l'échange st opération si lorsque vous essayer de vou
 
 Pensez a verifier que la mise en veille de votre machine n'est pas activée (sinon, le mode veille bloquerait a celle ci) 
 
+# Utilistaion a distance a travers votre livebox
+
+## parametrage du DNS dynamique
+
+Pour acceder a des machines derriere votre livebox, vous devez définir une asresse DNS qui sera accessible depuis internet, pour cela il existe plussieurs site qui offre  ce genre de service (pour l'exemple j'ai utilise [no-ip](https://www.noip.com/))
+
+Si vous n'en avez pas encore, créer vous un compte .....
+
+Vous pouvez alors définir une adresse IP correspondant a votre livebox (vous devez le faire depuis une machine connectée a votre livebox)
+
+Cette procédure va permettre d'accéder a votre livebox depuis internet, il fat maintenant définir les accès a vos machines en configurant la livebox :
+
+Connectez vous sur votre [livebox](http://livebox.local) depuis un navigateur
+
+Passer en mode administrateur (saisir mot de masse en haut a droite et cliquer sur s'identifier)
+
+*parametrage DHCP* : 
+  - cliquer sur configuration avancée
+  - aller sur onglet DHCP
+  - dans le tableau selectionner chacune des machines de votre reseau et ajoutez les a ce tableau
+
+au final, vous devriez avoir un tableau qui ressemble a :
+
+| nom | adresse IP | adresse MAC | 
+| ---| ---| --- |
+| machine00 | 192.168.1.xx | xx:xx:xx:xx:xx:xx |
+| machine01 | 192.168.1.yy | xx:xx:xx:xx:xx:xx |
+| machine02 | 192.168.1.zz | xx:xx:xx:xx:xx:xx |
+
+*parametrage NAT/PAT* : ce tableau permet de définir vers quelle machine le flux entrant sera envoyé en fonction du port 
+
+au final vous devriez avoir un tableau qui ressemble a : 
+
+
+| Application/service | port interne | port externe | protocole | appareil |
+| ---| ---| --- | ---| --- |
+| http | 80 | 80 | TCP | machinexx |
+| https | 443 | 443 | TCP | machinexx |
+| sshxx | 22 | xxxx | TCP | machinexx |
+| sshxx | 22 | xxxx | TCP | machinexx |
+| sshxx | 22 | xxxx | TCP | machinexx |
+
+Chacune des lignes sshxx doit pointer sur des ports externes différents
+
 # Installation Kubernetes
 
 Ces étapes peuvent etres faites en local sur la machine ou via une machine distante connectée en ssh
