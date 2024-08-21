@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-kubectl apply -f deployment-monopod.yaml 
+kubectl apply -f deployment-monopod.yaml -n popote
