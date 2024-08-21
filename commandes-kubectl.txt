@@ -15,16 +15,16 @@ kubectl	get 		pods								-A (all namespaces)				liste des pods
 					pv																	volumes persistants
 
 					secrets								-A (all namespaces)	
-													-n namespace		
+														-n namespace		
 
 					serviceaccounts						-A (all namespaces)	
-													-n namespace			
+														-n namespace			
 										
 										
 										
 		describe	nodes				<nodeName>							
 					serviceaccounts		<account>		-A (all namespaces)	
-													-n namespace				
+														-n namespace				
 										
 		apply							-f fichier.yaml									applique la description faite dans le fichier yaml
 										

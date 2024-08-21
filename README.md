@@ -123,6 +123,10 @@ au final vous devriez avoir un tableau qui ressemble a :
 
 Chacune des lignes sshxx doit pointer sur des ports externes différents elles permettent de vous connecter depuis internet en ssh sur vos machine (ces lignes doivent etre supprimée en situation de production) ; vous pouvez alors vous connecter avec la commande ``ssh -p xxxx login@monapplication.zapto.org`` mondomaine ayant été défini plus haut sur le site de dns dynamique. 
 
+**DNS local**
+
+Dans l'onglet DNS vous pouvez ajouter au DNS local de la livebox les machines que vous avez crées, cela vous permettra de ne pas avoir a ajouter '.local' lorsque vous voudrez joindre ces machines.
+
 # Installation Kubernetes
 
 Ces étapes peuvent etres faites en local sur la machine ou via une machine distante connectée en ssh

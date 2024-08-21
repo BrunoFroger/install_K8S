@@ -8,8 +8,8 @@ function aide() {
 master=$(hostname)
 filename="kubeadm-init.out.log"
 
-echo "cette commande génère la ligne de commande a utiliser pour joindre une machine au cluser de ce master"
-echo "cette commande doit s'executer sur le master"
+echo "cette commande (executée sur le master) génère la ligne de commande a utiliser sur un noeud pour joindre une machine au cluser de ce master"
+echo "la commande générée doit etre executée sur le noeud a inclure dans le cluster"
 
 if [[ "x-$1" == "x-" ]]; then
     echo "erreur : manque parametre indiquant le repertoire sur le master vers le fichier $filename"
