@@ -1,0 +1,51 @@
+
+Commande			sous commande		parametre		options possibles				description
+
+kubectl	get 		pods								-A (all namespaces)				liste des pods
+														-n namespace			
+
+					pod	<nomPod>						-o yaml
+
+					nodes								
+
+					services															liste les services d'un namespace
+
+					namespaces															liste les namespace du cluster
+
+					pv																	volumes persistants
+
+					secrets								-A (all namespaces)	
+													-n namespace		
+
+					serviceaccounts						-A (all namespaces)	
+													-n namespace			
+										
+										
+										
+		describe	nodes				<nodeName>							
+					serviceaccounts		<account>		-A (all namespaces)	
+													-n namespace				
+										
+		apply							-f fichier.yaml									applique la description faite dans le fichier yaml
+										
+										
+		rollout	??								
+										
+										
+											
+		cordon							<noeud>											rends le noeud non assignable
+		uncordon						<noeud>											rends le noeud assignable
+										
+										
+	cluster-info									
+										
+										
+	create									
+										
+										
+										
+										
+kubeadm	init									
+		join									
+		reset									
+		token		create								
