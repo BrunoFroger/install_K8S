@@ -28,5 +28,5 @@ else
 fi
 
 # deployment du pod multicontaineur de popote
-kubectl create deployment deployment-monopod.yaml -n popote
+kubectl create deployment -f deployment-monopod.yaml -n popote
 
