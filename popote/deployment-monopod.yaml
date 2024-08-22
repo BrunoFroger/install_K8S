@@ -1,6 +1,6 @@
 
 apiVersion: apps/v1
-kind: Deployment
+kind: deployments
 metadata:
   namespace: popote
   name: deployment-popote-monopod
