@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: deployment-popote-monopod
+      app: deployment-popote-monopod-selector
   template:
     metadata:
       labels:
-        app: deployment-popote-monopod
+        app: deployment-popote-monopod-label
     spec:
       containers:
       - name: popote-mariadb
