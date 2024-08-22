@@ -49,6 +49,17 @@ else
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml 
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml 
 
+
+    echo "-------------------------------------------------"
+    echo "kubeadm => mise en place de l'auto-completion dans kubectl"
+    source <(kubectl completion bash)
+    echo "source <(kubectl completion bash)" >> ~/.bashrc
+
+    echo "-------------------------------------------------"
+    echo "kubeadm => création d'un alias k pour kubectl"
+    alias k=kubectl
+    complete -o default -F __start_kubectl k
+
     # echo "-------------------------------------------------"
     # echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"
     # source ./20-change-namespace.bash $K8S_NAMESPACE

@@ -1,5 +1,5 @@
 
-apiVersion: apps/v2
+#apiVersion: apps/v2
 kind: deployment
 metadata:
   namespace: popote
