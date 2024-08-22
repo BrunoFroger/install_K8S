@@ -13,7 +13,7 @@
 
 #creation du namespace popote si necessaire
 testPopote=$(kubectl get namespaces | grep popote | wc -l)
-if [[ "X-$testpopote" == "X-0" ]]; then 
+if [[ $testPopote == 0 ]]; then 
     echo "création du namespace popote"
     kubectl create namespace popote
 else
