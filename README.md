@@ -15,7 +15,7 @@ Avant de vous lancer dans l'installation de votre cluster, voici quelques pré-r
 - disposer d'une connexion internet via un routeur (ex : Livebox)
 - avoir un réseau local derriere ce routeur (prevoir un switch pour connecter les machines entre elles)
 - le contenu de ces machines sera effacé définitivement (pensez a vos sauvegardes)
-- une des machine sera considérée comme le maitre du cluster (master) et les autres comme esclaves (slaves)
+- une des machine sera considérée comme le maitre du cluster (master) et les autres comme esclaves (slaves) ; le maitre du cluster (master ou control plane) n'executera pas de pods, il n'est donc pas nécessaire que ce soit la machine la plus puissante ; il est préférable de reserver les machines puissantes pour les noeuds d'execution (slavexx)
 
 # Etapes a réaliser avant de commencer a executer les scripts d'installation
 
