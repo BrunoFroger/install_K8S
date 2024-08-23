@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: deployment-popote-monopod-label
+        app: deployment-popote-monopod
     spec:
       containers:
       - name: popote-mariadb
@@ -35,5 +35,5 @@ spec:
         ports:
           - containerPort: 80
           - containerPort: 443
-          
+
       
