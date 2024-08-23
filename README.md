@@ -138,7 +138,6 @@ mkdir -p projets/install_K8S
 cd projets/install_K8S
 wget https://github.com/BrunoFroger/install_K8S/archive/tags/<version>.zip
 unzip <version>>.zip
-cd install_K8S-<version>.zip
 ```
 ci dessus remplacer version par la version que vous voulez télécharger
 
@@ -149,10 +148,8 @@ Pour lancer l'installatipn de kubernetes sur votre/vos machine(s) vous devez exe
 
 ```
 cd ~/projets/install_K8S-tags-<version>
-. ./00install-kubernetes.bash
+source ./00-install-kubernetes.bash
 ```
-
-ATTENTION : ne pas oublier le point '.' avant le nom du script './00install-kubernetes.bash'
 
 ce script vous demandera quelques informations :
 

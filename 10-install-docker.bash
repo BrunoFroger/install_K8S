@@ -66,5 +66,6 @@ else
 
   echo "-------------------------------------------------"
   export K8S_SCRIPT_INSTALL_DOCKER="OK"
+  echo "export K8S_SCRIPT_INSTALL_DOCKER=${K8S_SCRIPT_INSTALL_DOCKER}" >> ~/.bashrc
   echo "installation de docker => fin"
 fi

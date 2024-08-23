@@ -11,4 +11,4 @@ if [[ "X-$K8S_NAMESPACE" == "X-" ]]; then
         export K8S_NAMESPACE=$1
     fi
 fi
-kubectl config set-context --current --namespace=$1
+kubectl config set-context --current --namespace=$K8S_NAMESPACE

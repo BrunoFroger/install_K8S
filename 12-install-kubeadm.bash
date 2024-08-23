@@ -68,6 +68,7 @@ else
 
     echo "-------------------------------------------------"
     export K8S_SCRIPT_INSTALL_KUBEADM="OK"
+    echo "export K8S_SCRIPT_INSTALL_KUBEADM=${K8S_SCRIPT_INSTALL_KUBEADM}" >> ~/.bashrc
     echo "installation de kubeadm => fin"
 
 fi

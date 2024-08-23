@@ -22,5 +22,6 @@ else
 
     echo "-------------------------------------------------"
     export K8S_SCRIPT_POST_INSTALL_LINUX="OK"
+    echo "export K8S_SCRIPT_POST_INSTALL_LINUX=${K8S_SCRIPT_POST_INSTALL_LINUX}" >> ~/.bashrc
     echo "post installation de linux => fin"
 fi

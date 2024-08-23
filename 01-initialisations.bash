@@ -13,7 +13,7 @@ else
     do
         echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
         read type_install
-        
+
         if [[ "X-$type_install" != "X-" ]]; then
             if [[ "$type_install" == "master" ]]; then
                 #echo "export K8S_TYPE_NOEUD"
@@ -51,6 +51,10 @@ else
 
     #echo "export K8S_SCRIPT_INITIALISATION"
     export K8S_SCRIPT_INITIALISATION="OK"
+    echo "export K8S_TYPE_NOEUD=${K8S_TYPE_NOEUD}" >> ~/.bashrc
+    echo "export K8S_MASTER_KUBERNETES=${K8S_MASTER_KUBERNETES}" >> ~/.bashrc
+    echo "export K8S_NAMESPACE=${K8S_NAMESPACE}" >> ~/.bashrc
+    echo "export K8S_SCRIPT_INITIALISATION=${K8S_SCRIPT_INITIALISATION}" >> ~/.bashrc
     echo "initialisations => fin"
 fi
 
