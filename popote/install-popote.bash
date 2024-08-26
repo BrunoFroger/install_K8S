@@ -21,7 +21,7 @@
 while :
 do
     images-popote=$(docker images | grep popote | wc -l)
-    if [[ images-popote == 0 ]]; then
+    if [[ $images-popote == 0 ]]; then
         echo "Les images popote n'existent pas, il faut les creer !"
         mkdir popote
         cd popote
@@ -39,9 +39,12 @@ do
         unzip $fichier
         rm $fichier
         cd popote_vueJS_K8S
+        echo "construction des images docker popote en cours ....."
         docker compose build
+        cd ..
+        rm -rf popote
     else    
-        echo "les images docker de popote existent déjà"
+        echo "les images docker de popote existent"
         break;
     fi
 done
