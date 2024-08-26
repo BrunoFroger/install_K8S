@@ -41,6 +41,10 @@ do
         cd popote_vueJS_K8S
         echo "construction des images docker popote en cours ....."
         docker compose build
+
+        # push images in local repository
+#TODO
+
         cd ..
         rm -rf popote
     else    
