@@ -20,8 +20,8 @@
 # test si les images docker popote existent
 while :
 do
-    images-popote=$(docker images | grep popote | wc -l)
-    if [[ $images-popote == 0 ]]; then
+    imagesPopote=$(docker images | grep popote | wc -l)
+    if [[ $imagesPopote == 0 ]]; then
         echo "Les images popote n'existent pas, il faut les creer !"
         mkdir popote
         cd popote
