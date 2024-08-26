@@ -52,7 +52,7 @@ spec:
           - containerPort: 8080
       
       - name: popote-nginx
-        image: localhost:5000/popote_vuejs_k8s-nginx
+        image: registry.k8s.io/popote/popote_vuejs_k8s-nginx
         resources:
           requests:
             memory: "64Mi"
