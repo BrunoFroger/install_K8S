@@ -2,11 +2,16 @@
 
 function aide(){
     echo "syntaxe :"
-    echo "$0 <variable=valeur>"
+    echo "$(basename $0) <variable=valeur>"
     exit -1
 }
 
-if [[ ${#} ne 1 ]]; then
+fichierConf="~/.profile"
+
+echo "touch $fichierConf"
+touch ~/.profile
+
+if [[ ${#} -ne 1 ]]; then
     echo "ERREUR : mauvais nombre de parametres"
     aide
 fi
@@ -21,3 +26,16 @@ valeur=$(echo $1 | cut -d'=' -f 2)
 
 echo "variable = $variable"
 echo "valeur   = $valeur"
+
+testExist=$(env | grep $variable)
+
+if [[ "X-$testExist" == "X-" ]]; then
+    echo "la variable n'existe pas on la crée"
+    export $variable=$valeur
+    echo "on ajoute la creation de la variable dans $fichierConf"
+    echo "export $1" >> ~/.profile
+else
+    echo "la variable $variable existe deja"
+    testValeur=$(env | grep $variable | cut -d'=' -f2)
+    echo "testValeur = $testValeur"
+fi
