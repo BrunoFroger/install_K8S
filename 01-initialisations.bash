@@ -14,6 +14,10 @@ else
         echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
         read type_install
 
+        if [[ "X-$K8S_TYPE_NOEUD" != "X-"]]; then
+            type_install=$K8S_TYPE_NOEUD
+        fi
+
         if [[ "X-$type_install" != "X-" ]]; then
             if [[ "$type_install" == "master" ]]; then
                 source ./95-set-bash-variable.bash K8S_TYPE_NOEUD="master"
