@@ -158,16 +158,12 @@ ce script vous demandera quelques informations :
 - il demande aussi le nom d'un namespace a creer pour installer ensuite vos applications
 - entre chaque module, le script s'arrete pour vous demander de valider la suite
 
-A la fin de l'execution de ces scripts, vus pouvez retrouver le resultat de l'excution dans les fichiers suivants (supprimé pour l'instant, a réactiver) :
-
-- install_K8S.out.log => resultats des commandes executées
-- install_K8S.err.log => erreurs rencontrées durant l'installation
-
-
 l'installation du master génère automatiquement les fichiers suivants :
 
 - kubeadm-init.out.log => log de la commande d'initialisation du master (sortie standard)
 - kubeadm-init.err.log => log de la commande d'initialisation du master (sortie d'erreur)
+
+Ne pas effecer ces fichiers ils vous seront utile pour générer la commande de join d'un esclave sur le cluster avec la commande 75-get-join-commande.bash
 
 # commandes utiles 
 
