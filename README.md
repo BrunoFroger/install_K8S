@@ -71,11 +71,11 @@ service sshd restart
 Executer ensuite sur la machine distante la commande suivante : ``ssh-copy-id <username>@<nomMachine.local>``
 Si une clé existe déjà pour cette machine vous devez la supprimer dans le fichier **~/.ssh/known_hosts**
 
-vous pouvez verifier que l'échange st opération si lorsque vous essayer de vous connecter en ssh depuis la machine distante sur votre noeud on ne vous demande plus de mot de passe (commande de connexion ``ssh <user>@<machine>``
+vous pouvez verifier que l'échange est opérationnel, si lorsque vous essayer de vous connecter en ssh depuis la machine distante sur votre noeud on ne vous demande plus de mot de passe (commande de connexion ``ssh <user>@<machine>``)
 
 # post-install
 
-Pensez a verifier que la mise en veille de votre machine n'est pas activée (sinon, le mode veille bloquerait a celle ci) 
+Pensez a verifier que la mise en veille de votre machine n'est pas activée (sinon, le mode veille bloquerait celle ci) 
 
 # Utilisation a distance a travers votre livebox
 
