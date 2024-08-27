@@ -21,21 +21,21 @@ fi
 variable=$(echo $1 | cut -d'=' -f 1)
 valeur=$(echo $1 | cut -d'=' -f 2)
 
-echo "variable = $variable"
-echo "valeur   = $valeur"
+#echo "variable = $variable"
+#echo "valeur   = $valeur"
 
 testExist=$(env | grep $variable)
 
 if [[ "X-$testExist" == "X-" ]]; then
-    echo "la variable n'existe pas on la crée"
+    #echo "la variable n'existe pas on la crée"
     export $variable=$valeur
-    echo "on ajoute la creation de la variable dans $fichierConf"
+    #echo "on ajoute la creation de la variable dans $fichierConf"
     exportBashExist=$(cat ~/.bashrc | grep $1 | wc -l)
     if [[ $exportBashExist == 0 ]]; then 
         echo "export $1" >> ~/.bashrc
     fi
 else
-    echo "la variable $variable existe deja"
+    #echo "la variable $variable existe deja"
     testValeur=$(env | grep $variable | cut -d'=' -f2)
-    echo "testValeur = $testValeur"
+    #echo "testValeur = $testValeur"
 fi
