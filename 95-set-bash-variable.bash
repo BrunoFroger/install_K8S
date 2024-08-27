@@ -6,10 +6,7 @@ function aide(){
     exit -1
 }
 
-fichierConf="~/.profile"
-
-echo "touch $fichierConf"
-touch ~/.profile
+touch ~/.bashrc
 
 if [[ ${#} -ne 1 ]]; then
     echo "ERREUR : mauvais nombre de parametres"
@@ -33,7 +30,7 @@ if [[ "X-$testExist" == "X-" ]]; then
     echo "la variable n'existe pas on la crée"
     export $variable=$valeur
     echo "on ajoute la creation de la variable dans $fichierConf"
-    echo "export $1" >> ~/.profile
+    echo "export $1" >> ~/.bashrc
 else
     echo "la variable $variable existe deja"
     testValeur=$(env | grep $variable | cut -d'=' -f2)
