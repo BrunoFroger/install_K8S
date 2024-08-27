@@ -21,7 +21,6 @@ else
     sudo apt install -y wget
 
     echo "-------------------------------------------------"
-    export K8S_SCRIPT_POST_INSTALL_LINUX="OK"
-    echo "export K8S_SCRIPT_POST_INSTALL_LINUX=${K8S_SCRIPT_POST_INSTALL_LINUX}" >> ~/.bashrc
+    source ./95-set-bash-variable.bash K8S_SCRIPT_POST_INSTALL_LINUX="OK"
     echo "post installation de linux => fin"
 fi

@@ -16,17 +16,14 @@ else
 
         if [[ "X-$type_install" != "X-" ]]; then
             if [[ "$type_install" == "master" ]]; then
-                #echo "export K8S_TYPE_NOEUD"
-                export K8S_TYPE_NOEUD="master"
-                export K8S_MASTER_KUBERNETES="$(hostname).local"
+                source ./95-set-bash-variable.bash K8S_TYPE_NOEUD="master"
+                source ./95-set-bash-variable.bash K8S_MASTER_KUBERNETES="$(hostname).local"
             elif [[ "$type_install" == "slave" ]]; then
-                #echo "export K8S_TYPE_NOEUD"
-                export K8S_TYPE_NOEUD="slave"
+                source ./95-set-bash-variable.bash K8S_TYPE_NOEUD="slave"
                 echo -n "nom de la machine master (ex:machinexx.local) <$K8S> : "
                 read master
                 if [[ "X-$master" != "X-" ]]; then
-                    #echo "export K8S_MASTER_KUBERNETES"
-                    export K8S_MASTER_KUBERNETES=$master
+                    source ./95-set-bash-variable.bash K8S_MASTER_KUBERNETES=$master
                 fi
             else
                 echo "saisie incorrecte !"
@@ -35,7 +32,7 @@ else
         echo -n "nom du namespace a utiliser <$K8S_NAMESPACE> : "
         read namespace
         if [[ "X-$namespace" != "X-" ]]; then
-            export K8S_NAMESPACE=$namespace
+            source ./95-set-bash-variable.bash K8S_NAMESPACE=$namespace
         fi
 
         echo "type install      : $K8S_TYPE_NOEUD"
@@ -49,12 +46,7 @@ else
         fi
     done
 
-    #echo "export K8S_SCRIPT_INITIALISATION"
-    export K8S_SCRIPT_INITIALISATION="OK"
-    echo "export K8S_TYPE_NOEUD=${K8S_TYPE_NOEUD}" >> ~/.bashrc
-    echo "export K8S_MASTER_KUBERNETES=${K8S_MASTER_KUBERNETES}" >> ~/.bashrc
-    echo "export K8S_NAMESPACE=${K8S_NAMESPACE}" >> ~/.bashrc
-    echo "export K8S_SCRIPT_INITIALISATION=${K8S_SCRIPT_INITIALISATION}" >> ~/.bashrc
+    source ./95-set-bash-variable.bash K8S_SCRIPT_INITIALISATION="OK"
     echo "initialisations => fin"
 fi
 
