@@ -12,7 +12,7 @@ do
         #rm latest
         archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
         echo "archive = $archive"
-        version=$(cat $archive | awk -F'/' '{print $NF}')
+        version=$(echo $archive | awk -F'/' '{print $NF}')
         echo "version = $version"
         zipFile=$(echo "$archive.zip" | sed 's/releases/archive/g' | sed 's/tag/tags/g')
         echo "zipFile = $zipFile"
