@@ -24,7 +24,7 @@ option="--cri-socket=unix:///var/run/cri-dockerd.sock"
 #echo "debut = $debut"
 #echo "fin   = $fin"
 
-cde="$debut $token $fin $option"
+cde="sudo $debut $token $fin $option"
 
 echo "voici la commande a saisir pour joindre le cluster : "
 echo $cde
