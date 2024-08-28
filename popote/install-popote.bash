@@ -24,7 +24,7 @@ do
         rm $fichier
         cd popote_vueJS_K8S-tags-$version
         echo "construction des images docker popote en cours ....."
-        echo "apuyer sur une touche pour continuer
+        echo "apuyer sur une touche pour continuer"
         read 
         docker compose build
 
