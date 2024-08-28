@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 while :
 do
@@ -15,6 +15,7 @@ do
         echo "* cluster sont dans le fichier kubeadm-init.out.log   *" 
         echo " ne pas effacer ce fichier .....                      *" 
         echo "*******************************************************"
+        result=0
     elif [[ "X-$K8S_TYPE_NOEUD" == "X-slave" ]]; then
         # echo "installation d'un noeud esclave ... "
         echo "Connectez vous sur le master et executer les commandes suivantes :"
@@ -23,11 +24,12 @@ do
         echo "copier le resultat de cette commande ci-dessous :"
         read cdeJoin
         $($cdeJoin)
+        result=$?
     else
         echo "type de noeud ($K8S_TYPE_NOEUD) inconnu"
     fi
 
-    result=$?
+    echo "resultat de la commande = $result"
     #echo "le resultat de la commande est $result"
     if [[ "$result" == "0" ]]; then
         echo "commande init/join executée avec succès .... on continue"
@@ -35,5 +37,5 @@ do
         echo "commande init/join en erreur .... que faire ?"
         echo -n "Appuyer sur une touche pour continuer ou R pour recommencer ou ^C pour arreter : (return/R/^C) "; read saisie
     fi
-    if [[ "X-$saisie" != "X-R" &&  "X-$saisie" == "X-r" ]]; then break;fi
+    if [[ "X-$saisie" != "X-R" &&  "X-$saisie" != "X-r" ]]; then break;fi
 done
