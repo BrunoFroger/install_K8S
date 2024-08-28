@@ -5,7 +5,7 @@ metadata:
   namespace: popote
   name: deployment-popote-monopod
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: deployment-popote-monopod
