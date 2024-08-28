@@ -11,6 +11,7 @@ do
         wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
         rm latest
         archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
+        version=$(cat $archive | awk -F'/' '{print $NF}')
         echo "version = $version"
         zipFile=$(echo "$archive.zip" | sed 's/releases/archive/g' | sed 's/tag/tags/g')
         echo "zipFile = $zipFile"
@@ -21,9 +22,10 @@ do
         echo "fichier = $fichier"
         unzip $fichier
         rm $fichier
-        cd popote_vueJS_K8S$version
+        cd popote_vueJS_K8S-tags-$version
         echo "construction des images docker popote en cours ....."
-        read "appuyer sur une touche"
+        echo "apuyer sur une touche pour continuer
+        read 
         docker compose build
 
         # push images in local repository
