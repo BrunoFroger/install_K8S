@@ -18,10 +18,10 @@ do
         echo "zipFile = $zipFile"
         #rm wget.log
         fichier="$(echo $zipFile | awk -F'/' '{print $NF}')"
+        echo "fichier = $fichier"
         echo "apuyer sur une touche pour continuer"
         read 
         wget $zipFile
-        echo "fichier = $fichier"
         unzip $fichier
         rm $fichier
         cd popote_vueJS_K8S-tags-$version
