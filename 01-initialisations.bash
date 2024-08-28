@@ -14,7 +14,7 @@ else
         echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
         read type_install
 
-        if [[ "X-$K8S_TYPE_NOEUD" != "X-"]]; then
+        if [[ "X-$K8S_TYPE_NOEUD" != "X-" ]]; then
             type_install=$K8S_TYPE_NOEUD
         fi
 
