@@ -9,15 +9,17 @@ do
         mkdir popote_files
         cd popote_files
         wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
-        rm latest
+        #rm latest
         archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
+        echo "archive = $archive"
         version=$(cat $archive | awk -F'/' '{print $NF}')
         echo "version = $version"
         zipFile=$(echo "$archive.zip" | sed 's/releases/archive/g' | sed 's/tag/tags/g')
         echo "zipFile = $zipFile"
-        rm wget.log
+        #rm wget.log
         fichier="$(echo $zipFile | awk -F'/' '{print $NF}')"
-        rm $fichier
+        echo "apuyer sur une touche pour continuer"
+        read 
         wget $zipFile
         echo "fichier = $fichier"
         unzip $fichier
