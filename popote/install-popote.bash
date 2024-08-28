@@ -49,5 +49,6 @@ fi
 
 # deployment du pod multicontaineur de popote
 #TODO tester si deployment deja operation, si oui, le supprimer avant de le relancer
+pwd
 kubectl apply -f deployment-monopod.yaml
 
