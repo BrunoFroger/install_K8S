@@ -26,6 +26,8 @@ do
         echo "construction des images docker popote en cours ....."
         docker compose build
 
+        # create docker manifest
+        
         # push images in local repository
 #TODO
 
