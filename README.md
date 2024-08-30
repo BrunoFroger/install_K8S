@@ -165,6 +165,14 @@ l'installation du master génère automatiquement les fichiers suivants :
 
 Ne pas effecer ces fichiers ils vous seront utile pour générer la commande de join d'un esclave sur le cluster avec la commande 75-get-join-commande.bash
 
+# création d'un registry local
+
+Un registry local est utilisé pour stocker les images générées localement et ainsi pouvoir les deployer dans le cluster, cela necessite un certain nombre d'intervention décrite le tuto suivant : 
+
+- https://www.mytinydc.com/kubernetes-private-docker-registry/
+- https://kb.leaseweb.com/kb/kubernetes/kubernetes-deploying-a-docker-registry-on-kubernetes/
+- https://www.paulsblog.dev/how-to-install-a-private-docker-container-registry-in-kubernetes/
+
 # commandes utiles 
 
 <table>
