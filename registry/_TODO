@@ -1,0 +1,3 @@
+tuto de cette installation : https://www.paulsblog.dev/how-to-install-a-private-docker-container-registry-in-kubernetes/
+
+manque installation de csi-cinder-classic pour pouvoir installer le pvs

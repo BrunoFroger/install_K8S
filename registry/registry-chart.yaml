@@ -1,0 +1,10 @@
+---
+replicaCount: 1
+persistence:
+  enabled: true
+  size: 60Gi
+  deleteEnabled: true
+  storageClass: csi-cinder-classic
+  existingClaim: docker-registry-pv-claim
+secrets:
+  htpasswd: K8Sregistry:cat {{REGISTRY_HTPASSWD}}

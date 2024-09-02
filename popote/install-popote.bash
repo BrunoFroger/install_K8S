@@ -3,7 +3,7 @@
 # test si les images docker popote existent
 while :
 do
-    imagesPopote=$(docker images | grep popote | wc -l)
+    imagesPopote=$(docker images | grep "fbruno/popote" | wc -l)
     if [[ $imagesPopote == 0 ]]; then
         echo "Les images popote n'existent pas, il faut les creer !"
         mkdir popote_files
@@ -26,9 +26,15 @@ do
         echo "construction des images docker popote en cours ....."
         docker compose build
 
-        # create docker manifest
+        # create docker images
+        echo "conexion au docker hub "
+        echo "saisissez le mot de passe : "
+        docker login -u fbruno
         
         # push images in local repository
+        docker image tag popote_vuejs_k8s-tags-10-nginx:latest fbruno/popote_vuejs_k8s-tags-10-nginx:latest
+        docker image push fbruno/popote_vuejs_k8s-tags-10-nginx:latest
+
 #TODO
 
         cd ..
