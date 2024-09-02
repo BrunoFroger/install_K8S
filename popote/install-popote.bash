@@ -26,14 +26,6 @@ do
         echo "construction des images docker popote en cours ....."
         docker compose build
 
-        # create docker images
-        echo "conexion au docker hub "
-        echo "saisissez le mot de passe : "
-        docker login -u fbruno
-        
-        # push images in local repository
-        docker image tag popote_vuejs_k8s-tags-10-nginx:latest fbruno/popote_vuejs_k8s-tags-10-nginx:latest
-        docker image push fbruno/popote_vuejs_k8s-tags-10-nginx:latest
 
 #TODO
 
@@ -45,6 +37,23 @@ do
     fi
 done
 
+# push images sur DockerHub
+echo "conexion au docker hub "
+echo "saisissez le mot de passe : "
+docker login -u fbruno
+
+for image in "mariadb" "nginx" "backend" "frontend"
+do
+    # test si l'image existe sur DockerHub
+    if [[ $(docker search popote | grep ${image} | wc -l) == 0 ]]; then
+        echo "push de l'image ${image} sur DockerHub"
+        # push images in DockerHub repository
+        #docker image tag popote_vuejs_k8s-tags-10-${image}:latest fbruno/popote_vuejs_k8s-tags-10-${image}:latest
+        #docker image push fbruno/popote_vuejs_k8s-tags-10-${image}:latest
+    else 
+        echo "l'image ${image} existe deja sur DokerHub"
+    fi
+done
 
 #creation du namespace popote si necessaire
 testPopote=$(kubectl get namespaces | grep popote | wc -l)
