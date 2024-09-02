@@ -73,7 +73,7 @@ fi
 
 # deployment du pod multicontaineur de popote
 #TODO tester si deployment deja operation, si oui, le supprimer avant de le relancer
-if [[ $(kubectl get deployments.apps deployment-popote-monopod | wc -l) >= 1 ]]; then
+if [[ $(kubectl get deployments.apps deployment-popote-monopod | wc -l) != 0 ]]; then
     echo "le deployment exste deja on le supprime"
     kubectl kubectl delete deployments.apps deployment-popote-monopod 
 fi
