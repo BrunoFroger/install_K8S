@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: popote-mariadb
-        image: popote_vuejs_k8s-mariadb:latest
+        image: fbruno/popote_vuejs_k8s-mariadb:latest
         resources:
           requests:
             memory: "64Mi"
@@ -28,7 +28,7 @@ spec:
           - containerPort: 3306
           
       - name: popote-backend
-        image: popote_vuejs_k8s-backend:latest
+        image: fbruno/popote_vuejs_k8s-backend:latest
         resources:
           requests:
             memory: "64Mi"
@@ -40,7 +40,7 @@ spec:
           - containerPort: 3000
       
       - name: popote-frontend
-        image: localhost/popote_vuejs_k8s-frontend:latest
+        image: fbruno/popote_vuejs_k8s-frontend:latest
         resources:
           requests:
             memory: "64Mi"
