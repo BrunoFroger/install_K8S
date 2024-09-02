@@ -48,8 +48,8 @@ do
     if [[ $(docker search popote | grep ${image} | wc -l) == 0 ]]; then
         echo "push de l'image ${image} sur DockerHub"
         # push images in DockerHub repository
-        #docker image tag popote_vuejs_k8s-tags-10-${image}:latest fbruno/popote_vuejs_k8s-tags-10-${image}:latest
-        #docker image push fbruno/popote_vuejs_k8s-tags-10-${image}:latest
+        docker image tag popote_vuejs_k8s-tags-10-${image}:latest fbruno/popote_vuejs_k8s-tags-10-${image}:latest
+        docker image push fbruno/popote_vuejs_k8s-tags-10-${image}:latest
     else 
         echo "l'image ${image} existe deja sur DokerHub"
     fi
