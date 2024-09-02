@@ -46,6 +46,7 @@ if [[ $(docker info | grep Username | wc -l) == 0 ]]; then
     docker login -u ${loginDocker}
 else
     loginDocker=$(docker info | grep Username | cut -d':' -f 2)
+    echo "vous etes connecter sur dockerHub avec le login ${loginDocker}
 fi
 
 for image in "mariadb" "nginx" "backend" "frontend"
