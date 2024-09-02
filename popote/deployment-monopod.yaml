@@ -15,44 +15,8 @@ spec:
         app: deployment-popote-monopod
     spec:
       containers:
-      # - name: popote-mariadb
-      #   image: popote_vuejs_k8s-mariadb:latest
-      #   resources:
-      #     requests:
-      #       memory: "64Mi"
-      #       cpu: "250m"
-      #     limits:
-      #       memory: "128Mi"
-      #       cpu: "500m"
-      #   ports:
-      #     - containerPort: 3306
-          
-      # - name: popote-backend
-      #   image: popote_vuejs_k8s-backend:latest
-      #   resources:
-      #     requests:
-      #       memory: "64Mi"
-      #       cpu: "250m"
-      #     limits:
-      #       memory: "128Mi"
-      #       cpu: "500m"
-      #   ports:
-      #     - containerPort: 3000
-      
-      # - name: popote-frontend
-      #   image: localhost/popote_vuejs_k8s-frontend:latest
-      #   resources:
-      #     requests:
-      #       memory: "64Mi"
-      #       cpu: "250m"
-      #     limits:
-      #       memory: "128Mi"
-      #       cpu: "500m"
-      #   ports:
-      #     - containerPort: 8080
-      
-      - name: popote-nginx
-        image: fbruno/popote_vuejs_k8s-tags-10-nginx 
+      - name: popote-mariadb
+        image: popote_vuejs_k8s-mariadb:latest
         resources:
           requests:
             memory: "64Mi"
@@ -61,7 +25,43 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-          - containerPort: 80
-          - containerPort: 443
+          - containerPort: 3306
+          
+      - name: popote-backend
+        image: popote_vuejs_k8s-backend:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 3000
+      
+      - name: popote-frontend
+        image: localhost/popote_vuejs_k8s-frontend:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 8080
+      
+      # - name: popote-nginx
+      #   image: fbruno/popote_vuejs_k8s-tags-10-nginx 
+      #   resources:
+      #     requests:
+      #       memory: "64Mi"
+      #       cpu: "250m"
+      #     limits:
+      #       memory: "128Mi"
+      #       cpu: "500m"
+      #   ports:
+      #     - containerPort: 80
+      #     - containerPort: 443
 
       

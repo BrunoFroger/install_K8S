@@ -38,18 +38,24 @@ do
 done
 
 # push images sur DockerHub
-echo "conexion au docker hub "
-echo "saisissez le mot de passe : "
-docker login -u fbruno
+if [[ $(docker info | grep Username | wc -l) == 0 ]]; then
+    echo "login sur DockerHub : "
+    read loginDocker
+    echo "conexion au docker hub "
+    echo "saisissez le mot de passe : "
+    docker login -u ${loginDocker}
+else
+    loginDocker = $(docker info | grep Username | cut -d':' -f 2)
+fi
 
 for image in "mariadb" "nginx" "backend" "frontend"
 do
     # test si l'image existe sur DockerHub
     if [[ $(docker search popote | grep ${image} | wc -l) == 0 ]]; then
-        echo "push de l'image ${image} sur DockerHub"
+        echo "push de l'image ${image} sur DockerHub/${loginDocker}"
         # push images in DockerHub repository
-        docker image tag popote_vuejs_k8s-tags-10-${image}:latest fbruno/popote_vuejs_k8s-tags-10-${image}:latest
-        docker image push fbruno/popote_vuejs_k8s-tags-10-${image}:latest
+        docker image tag popote_vuejs_k8s-tags-10-${image}:latest ${loginDocker}/popote_vuejs_k8s-tags-10-${image}:latest
+        docker image push ${loginDocker}/popote_vuejs_k8s-tags-10-${image}:latest
     else 
         echo "l'image ${image} existe deja sur DokerHub"
     fi
