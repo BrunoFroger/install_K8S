@@ -45,7 +45,7 @@ if [[ $(docker info | grep Username | wc -l) == 0 ]]; then
     echo "saisissez le mot de passe : "
     docker login -u ${loginDocker}
 else
-    loginDocker = $(docker info | grep Username | cut -d':' -f 2)
+    loginDocker=$(docker info | grep Username | cut -d':' -f 2)
 fi
 
 for image in "mariadb" "nginx" "backend" "frontend"
