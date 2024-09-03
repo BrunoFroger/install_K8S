@@ -26,6 +26,8 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 3306
+        env:
+          - 
           
       - name: popote-backend
         image: fbruno/popote_vuejs_k8s-tags-10-backend:latest
