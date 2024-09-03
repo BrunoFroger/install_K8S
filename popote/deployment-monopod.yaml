@@ -27,7 +27,14 @@ spec:
         ports:
           - containerPort: 3306
         env:
-          - 
+          - name: MYSQL_ROOT_PASSWORD
+            value: root123
+          - name: MYSQL_DATABASE
+            value: popote
+          - name: MYSQL_USER
+            value: popote
+          - name: MYSQL_PASSWORD
+            value: popote123
           
       - name: popote-backend
         image: fbruno/popote_vuejs_k8s-tags-10-backend:latest
