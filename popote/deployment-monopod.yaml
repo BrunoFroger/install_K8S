@@ -51,17 +51,17 @@ spec:
         ports:
           - containerPort: 8080
       
-      # - name: popote-nginx
-      #   image: fbruno/popote_vuejs_k8s-tags-10-nginx 
-      #   resources:
-      #     requests:
-      #       memory: "64Mi"
-      #       cpu: "250m"
-      #     limits:
-      #       memory: "128Mi"
-      #       cpu: "500m"
-      #   ports:
-      #     - containerPort: 80
-      #     - containerPort: 443
+      - name: popote-nginx
+        image: fbruno/popote_vuejs_k8s-tags-10-nginx 
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
+          - containerPort: 443
 
       restartPolicy: Always
