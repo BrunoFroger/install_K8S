@@ -2,9 +2,6 @@
 
 - dashbord
   - d'apres les logs d'install, pod en pending ! manque de ressources ?
-  
-- installer 2eme noeud sur slave01
-  - 
 
 
 - pod nginx 
@@ -12,3 +9,13 @@
   - assurer la gestion https
     - installer certbod dans ce pod
   - relayer en http vers les autres services
+
+- popote
+  - cde pour liste des containeurs ; 
+      kubectl get pods deployment-popote-monopod-7d86c57f99-4fr2s \
+      -o='custom-columns=NAME:.metadata.name,CONTAINERS:.spec.containers[*].name'
+  - cde pour se connexion ssh sur un containeur d'un pod ; 
+      kubectl exec -it deployment-popote-monopod-7d86c57f99-4fr2s \
+      --container popote-frontend -- /bin/bash
+  - container mariadb en erreur
+  - voir pour installation des certificats dans containeur nginx
