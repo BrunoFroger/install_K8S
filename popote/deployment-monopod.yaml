@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: popote-mariadb
-        image: fbruno/popote_vuejs_k8s-tags-10-mariadb:latest
+        #image: fbruno/popote_vuejs_k8s-tags-10-mariadb:latest
+        image: {{IMAGE-mariadb}}
         resources:
           requests:
             memory: "64Mi"
@@ -37,7 +38,8 @@ spec:
             value: popote123
           
       - name: popote-backend
-        image: fbruno/popote_vuejs_k8s-tags-10-backend:latest
+        #image: fbruno/popote_vuejs_k8s-tags-10-backend:latest
+        image: {{IMAGE-backend}}
         resources:
           requests:
             memory: "64Mi"
@@ -49,7 +51,8 @@ spec:
           - containerPort: 3000
       
       - name: popote-frontend
-        image: fbruno/popote_vuejs_k8s-tags-10-frontend:latest
+        #image: fbruno/popote_vuejs_k8s-tags-10-frontend:latest
+        image: {{IMAGE-frontend}}
         resources:
           requests:
             memory: "64Mi"
@@ -61,7 +64,8 @@ spec:
           - containerPort: 8080
       
       - name: popote-nginx
-        image: fbruno/popote_vuejs_k8s-tags-10-nginx 
+        #image: fbruno/popote_vuejs_k8s-tags-10-nginx 
+        image: {{IMAGE-nginx}}
         resources:
           requests:
             memory: "64Mi"
