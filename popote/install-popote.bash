@@ -98,11 +98,13 @@ kubectl apply -f mariadb-pv.yaml
 kubectl apply -f mariadb-pvc.yaml
 kubectl apply -f mariadb-config.yaml
 
+# modification du fichier deployment.yaml avec bon nom d'image
 for image in "mariadb" "nginx" "backend" "frontend"
 do
     # test si l'image existe sur DockerHub
     pullImage=$(docker search popote | grep ${image} | awk -F' ' '{print $1}')
     sed 's/{{IMAGE-$image}}/$pullImage/g' deployement-monopod.yaml
 done
+
 kubectl apply -f deployment-monopod.yaml
 
