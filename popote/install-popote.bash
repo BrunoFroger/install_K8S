@@ -27,11 +27,24 @@ if [[ $imagesPopote == 0 ]]; then
     wget $zipFile
     unzip $fichier
     rm $fichier
+    echo on efface les anciennes images popote locale
+    while :
+    do
+        if [[ $(docker images | grep popote_vuejs_k8s-tags- | wc -l) > 0 ]]; then
+            image=$(docker images | grep popote_vuejs_k8s-tags- | awk -F' ' '{print $1}')
+            echo "on efface l'image $image"
+            docker rmi $image
+        else
+            break;
+        fi
+    done
     cd popote_vueJS_K8S-tags-$version
     echo "construction des images docker popote en cours ....."
     docker compose build --no-cache
 
-    cd ..
+    cd ..   # on sort du repertoire popte_vueJS_K8S-tags-version
+    echo "on efface le repertoire popote_files"
+    cd ..   # on sort du repertoire popote_files
     rm -rf popote_files
 else    
     echo "les images docker de popote existent"
