@@ -98,6 +98,7 @@ kubectl apply -f mariadb-pv.yaml
 kubectl apply -f mariadb-pvc.yaml
 kubectl apply -f mariadb-config.yaml
 
+cp deployment-monopod-copy.yaml deployment-monopod.yaml
 # modification du fichier deployment.yaml avec bon nom d'image
 for image in "mariadb" "nginx" "backend" "frontend"
 do
