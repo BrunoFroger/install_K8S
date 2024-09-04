@@ -104,7 +104,7 @@ for image in "mariadb" "nginx" "backend" "frontend"
 do
     # test si l'image existe sur DockerHub
     pullImage=$(docker search popote | grep ${image} | awk -F' ' '{print $1}')
-    sed 's/{{IMAGE-$image}}/$pullImage/g' deployement-monopod.yaml
+    sed 's/{{IMAGE-$image}}/$pullImage/g' deployment-monopod.yaml
 done
 
 kubectl apply -f deployment-monopod.yaml
