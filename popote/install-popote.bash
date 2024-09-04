@@ -1,44 +1,41 @@
 #!/bin/bash
 
 # test si les images docker popote existent
-while :
-do
-    if [[ "X-$1" == "X---build" ]]; then
-        imagesPopote=0
-        $1=""
-        echo "On force la reconstruction des images popote"
-    else
-        imagesPopote=$(docker images | grep "fbruno/popote" | wc -l)
-    fi
-    if [[ $imagesPopote == 0 ]]; then
-        echo "Les images popote n'existent pas, il faut les creer !"
-        mkdir popote_files
-        cd popote_files
-        wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
-        rm latest
-        archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
-        #echo "archive = $archive"
-        version=$(echo $archive | awk -F'/' '{print $NF}')
-        #echo "version = $version"
-        zipFile=$(echo "$archive.zip" | sed 's/releases/archive/g' | sed 's/tag/tags/g')
-        #echo "zipFile = $zipFile"
-        rm wget.log
-        fichier="$(echo $zipFile | awk -F'/' '{print $NF}')"
-        #echo "fichier = $fichier"
-        wget $zipFile
-        unzip $fichier
-        rm $fichier
-        cd popote_vueJS_K8S-tags-$version
-        echo "construction des images docker popote en cours ....."
-        docker compose build --no-cache
+if [[ "X-$1" == "X---build" ]]; then
+    imagesPopote=0
+    $1=""
+    echo "On force la reconstruction des images popote"
+else
+    imagesPopote=$(docker images | grep "fbruno/popote" | wc -l)
+fi
+if [[ $imagesPopote == 0 ]]; then
+    echo "Les images popote n'existent pas, il faut les creer !"
+    mkdir popote_files
+    cd popote_files
+    wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
+    rm latest
+    archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
+    #echo "archive = $archive"
+    version=$(echo $archive | awk -F'/' '{print $NF}')
+    #echo "version = $version"
+    zipFile=$(echo "$archive.zip" | sed 's/releases/archive/g' | sed 's/tag/tags/g')
+    #echo "zipFile = $zipFile"
+    rm wget.log
+    fichier="$(echo $zipFile | awk -F'/' '{print $NF}')"
+    #echo "fichier = $fichier"
+    wget $zipFile
+    unzip $fichier
+    rm $fichier
+    cd popote_vueJS_K8S-tags-$version
+    echo "construction des images docker popote en cours ....."
+    docker compose build --no-cache
 
-        cd ..
-        rm -rf popote_files
-    else    
-        echo "les images docker de popote existent"
-        break;
-    fi
-done
+    cd ..
+    rm -rf popote_files
+else    
+    echo "les images docker de popote existent"
+    break;
+fi
 
 # push images sur DockerHub
 if [[ $(docker info | grep Username | wc -l) == 0 ]]; then
