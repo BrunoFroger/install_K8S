@@ -9,7 +9,7 @@ do
         mkdir popote_files
         cd popote_files
         wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
-        #rm latest
+        rm latest
         archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
         #echo "archive = $archive"
         version=$(echo $archive | awk -F'/' '{print $NF}')
@@ -24,10 +24,7 @@ do
         rm $fichier
         cd popote_vueJS_K8S-tags-$version
         echo "construction des images docker popote en cours ....."
-        docker compose build
-
-
-#TODO
+        docker compose build --no-cache
 
         cd ..
         rm -rf popote_files
@@ -79,6 +76,8 @@ if [[ $(kubectl get deployments.apps deployment-popote-monopod | wc -l) != 0 ]];
 fi
 #creation du persistant volume pour mariadb
 kubectl apply -f mariadb-pv.yaml
+kubectl apply -f mariadb-pvc.yaml
+kubectl apply -f mariadb-config.yaml
 
 kubectl apply -f deployment-monopod.yaml
 
