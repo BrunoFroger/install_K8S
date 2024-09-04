@@ -67,12 +67,13 @@ for image in "mariadb" "nginx" "backend" "frontend"
 do
     # test si l'image existe sur DockerHub
     if [[ $(docker search popote | grep ${image} | wc -l) == 0 ]]; then
-        echo "push de l'image ${image} sur DockerHub/${loginDocker}"
+        pushImage=$(docker images | grep $image | awk -F' ' '{print $1}')
+        echo "push de l'image ${pushImage} sur DockerHub/${loginDocker}"
         # push images in DockerHub repository
-        docker image tag popote_vuejs_k8s-tags-10-${image}:latest ${loginDocker}/popote_vuejs_k8s-tags-10-${image}:latest
-        docker image push ${loginDocker}/popote_vuejs_k8s-tags-10-${image}:latest
+        docker image tag ${pushImage}:latest ${loginDocker}/${pushImage}:latest
+        docker image push ${loginDocker}/${pushImage}:latest
     else 
-        echo "l'image ${image} existe deja sur DokerHub"
+        echo "l'image ${pushImage} existe deja sur DokerHub"
     fi
 done
 
