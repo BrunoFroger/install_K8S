@@ -5,6 +5,7 @@ while :
 do
     if [[ "X-$1" == "X---build" ]]; then
         imagesPopote=0
+        $1=""
         echo "On force la reconstruction des images popote"
     else
         imagesPopote=$(docker images | grep "fbruno/popote" | wc -l)
