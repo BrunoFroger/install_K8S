@@ -103,10 +103,11 @@ cp deployment-monopod-copy.yaml deployment-monopod.yaml
 for image in "mariadb" "backend" "frontend" "nginx"
 do
     # test si l'image existe sur DockerHub
-    pullImage=$(docker search popote | grep ${image} | awk -F' ' '{print $1}')
+    dockerImage=$(docker search popote | grep ${image} | awk -F' ' '{print $1}' | cut -d'/' -f 2)
+    pullImage="${loginDocker}\/${dockerImage}"
     cible="IMAGE-$image"
     echo "remplacemnt de <$cible> par <$pullImage>"
-    sed -i 's/"${cible}"/"${pullImage}"/' deployment-monopod.yaml
+    sed -i "s/${cible}/${pullImage}/" deployment-monopod.yaml
 done
 
 kubectl apply -f deployment-monopod.yaml
