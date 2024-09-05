@@ -100,13 +100,13 @@ kubectl apply -f mariadb-config.yaml
 
 cp deployment-monopod-copy.yaml deployment-monopod.yaml
 # modification du fichier deployment.yaml avec bon nom d'image
-for image in "mariadb" "nginx" "backend" "frontend"
+for image in "mariadb" "backend" "frontend" "nginx"
 do
     # test si l'image existe sur DockerHub
     pullImage=$(docker search popote | grep ${image} | awk -F' ' '{print $1}')
     cible="IMAGE-$image"
     echo "remplacemnt de <$cible> par <$pullImage>"
-    sed -i 's/${cible}/${pullImage}/g' deployment-monopod.yaml
+    sed -i 's/"${cible}"/"${pullImage}"/' deployment-monopod.yaml
 done
 
 kubectl apply -f deployment-monopod.yaml
