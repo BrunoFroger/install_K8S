@@ -106,7 +106,7 @@ do
     pullImage=$(docker search popote | grep ${image} | awk -F' ' '{print $1}')
     cible="{{IMAGE-$image}}"
     echo "remplacemnt de $cible par $pullImage"
-    sed 's/${cible}/${pullImage}/g' deployment-monopod.yaml > /dev/null
+    sed -e 's/${cible}/${pullImage}/g' deployment-monopod.yaml > /dev/null
 done
 
 kubectl apply -f deployment-monopod.yaml
