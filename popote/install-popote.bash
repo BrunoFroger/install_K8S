@@ -42,13 +42,14 @@ if [[ $imagesPopote == 0 ]]; then
     echo "construction des images docker popote en cours ....."
     docker compose build --no-cache
 
+    echo "on quitte le repertoire $(pwd)" 
     cd ..   # on sort du repertoire popte_vueJS_K8S-tags-version
-    echo "on efface le repertoire popote_files"
+    echo "on quitte le repertoire $(pwd)" 
     cd ..   # on sort du repertoire popote_files
+    echo "on efface le repertoire popote_files"
     rm -rf popote_files
 else    
     echo "les images docker de popote existent"
-    break;
 fi
 
 # push images sur DockerHub
@@ -67,7 +68,7 @@ for image in "mariadb" "nginx" "backend" "frontend"
 do
     # test si l'image existe sur DockerHub
     if [[ $(docker search popote | grep ${image} | wc -l) == 0 ]]; then
-        pushImage=$(docker images | grep $image | awk -F' ' '{print $1}')
+        pushImage=$(docker images | grep ${image} | awk -F' ' '{print $1}')
         echo "push de l'image ${pushImage} sur DockerHub/${loginDocker}"
         # push images in DockerHub repository
         docker image tag ${pushImage}:latest ${loginDocker}/${pushImage}:latest
