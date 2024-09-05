@@ -10,8 +10,8 @@ else
 fi
 if [[ $imagesPopote == 0 ]]; then
     echo "Les images popote n'existent pas, il faut les creer !"
-    mkdir popote_files
     rm -rf popote_files
+    mkdir popote_files
     cd popote_files
     wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
     rm latest
@@ -48,6 +48,7 @@ if [[ $imagesPopote == 0 ]]; then
     cd ..   # on sort du repertoire popote_files
     echo "on efface le repertoire popote_files"
     rm -rf popote_files
+    echo "pwd = $(pwd)"
 else    
     echo "les images docker de popote existent"
 fi
