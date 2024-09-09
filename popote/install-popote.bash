@@ -65,7 +65,8 @@ else
     echo "vous etes connecté sur dockerHub avec le login ${loginDocker}"
 fi
 
-for image in "mariadb" "nginx" "backend" "frontend"
+IMAGES=$(docker images | grep popote | awk -F ' ' '{print $1}')
+for image in $IMAGES
 do
     # test si l'image existe sur DockerHub
     if [[ $(docker search popote | grep ${image} | wc -l) == 0 ]]; then
