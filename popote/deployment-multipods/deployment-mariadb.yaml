@@ -1,0 +1,39 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: popote
+  name: deployment-mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-mariadb
+  template:
+    metadata:
+      labels:
+        app: deployment-mariadb
+    spec:
+      - name: popote-mariadb
+        #image: fbruno/popote_vuejs_k8s-tags-10-mariadb:latest
+        image: fbruno/popote_vuejs_k8s-tags-11-mariadb:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: root123
+          - name: MYSQL_DATABASE
+            value: popote
+          - name: MYSQL_USER
+            value: popote
+          - name: MYSQL_PASSWORD
+            value: popote123
+
+    restartPolicy: Always

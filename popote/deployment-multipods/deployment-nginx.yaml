@@ -1,0 +1,31 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: popote
+  name: deployment-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-nginx
+  template:
+    metadata:
+      labels:
+        app: deployment-nginx
+    spec:
+      - name: popote-nginx
+        #image: fbruno/popote_vuejs_k8s-tags-10-nginx 
+        image: fbruno/popote_vuejs_k8s-tags-11-nginx 
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
+          - containerPort: 443
+
+    restartPolicy: Always
