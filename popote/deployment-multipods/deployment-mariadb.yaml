@@ -1,5 +1,5 @@
 
-apiVersion: apps/v2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: popote
@@ -14,6 +14,7 @@ spec:
       labels:
         app: deployment-mariadb
     spec:
+      containers:
       - name: popote-mariadb
         #image: fbruno/popote_vuejs_k8s-tags-10-mariadb:latest
         image: fbruno/popote_vuejs_k8s-tags-11-mariadb:latest
@@ -36,4 +37,4 @@ spec:
           - name: MYSQL_PASSWORD
             value: popote123
 
-    restartPolicy: Always
+      restartPolicy: Always

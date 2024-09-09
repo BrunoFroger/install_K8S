@@ -14,6 +14,7 @@ spec:
       labels:
         app: deployment-frontend
     spec:
+      containers:
       - name: popote-frontend
         #image: fbruno/popote_vuejs_k8s-tags-10-frontend:latest
         image: fbruno/popote_vuejs_k8s-tags-11-frontend:latest
@@ -26,4 +27,4 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 8080
-    restartPolicy: Always
+      restartPolicy: Always

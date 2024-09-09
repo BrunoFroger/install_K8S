@@ -14,6 +14,7 @@ spec:
       labels:
         app: deployment-backend
     spec:
+      containers:
       - name: popote-backend
         #image: fbruno/popote_vuejs_k8s-tags-10-backend:latest
         image: fbruno/popote_vuejs_k8s-tags-11-backend:latest
@@ -27,4 +28,4 @@ spec:
         ports:
           - containerPort: 3000
 
-    restartPolicy: Always
+      restartPolicy: Always
