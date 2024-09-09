@@ -2,3 +2,4 @@
 ~*
 cri-dockerd_*.ubuntu-jammy_amd64.deb
 popote/deployment-monopod.yaml
+.DS_Store
