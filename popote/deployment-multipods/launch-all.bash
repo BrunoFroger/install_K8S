@@ -17,7 +17,7 @@ sleep 5
 podId=$(kubectl get pods | grep mariadb | awk -F ' ' '{print $1}')
 while :
 do
-    result=$(kubectl logs ${podId} | tail -2 | head -1 | grep "ready for connections" | wc -l) >/dev/null
+    result=$(kubectl logs ${podId} | tail -2 | head -1 | grep "ready for connections" | wc -l) 2>&1>/dev/null
     if [[ "X-${result}" == "X-1" ]]; then 
         break
     else
