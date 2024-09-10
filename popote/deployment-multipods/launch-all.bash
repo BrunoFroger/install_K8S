@@ -11,7 +11,7 @@ echo "*************************************"
 kubectl delete deployments.apps deployment-backend deployment-mariadb deployment-frontend deployment-nginx
 
 echo "====================================="
-module="backend"
+module="mariadb"
 echo "lancement de ${module}"
 kubectl apply -f deployment-${module}.yaml
 sleep 5
