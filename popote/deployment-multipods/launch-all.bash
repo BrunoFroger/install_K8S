@@ -12,6 +12,7 @@ echo "*************************************"
 echo "====================================="
 echo "lancement de mariadb"
 kubectl apply -f deployment-mariadb.yaml
+sleep 5
 podId=$(kubectl get pods | grep mariadb | awk -F ' ' '{print $1}')
 while :
 do
