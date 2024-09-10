@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: deployment-mariadb
+        app.kubernetes.io/name: proxy
     spec:
       containers:
       - name: popote-mariadb
