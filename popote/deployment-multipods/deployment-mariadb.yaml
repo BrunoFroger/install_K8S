@@ -19,12 +19,6 @@ spec:
         #image: fbruno/popote_vuejs_k8s-tags-10-mariadb:latest
         image: fbruno/popote_vuejs_k8s-tags-11-mariadb:latest
         resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
           - containerPort: 3306
         env:
