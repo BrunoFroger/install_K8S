@@ -6,19 +6,19 @@ spec:
   selector:
     app.kubernetes.io/name: proxy
   ports:
+
   - name: backend-port
     protocol: TCP
     port: 3000
     targetPort: backend-svc
+
   - name: frontend-port
     protocol: TCP
     port: 80
     targetPort: frontend-svc
+
   - name: mariadb-port
     protocol: TCP
     port: 3306
     targetPort: mariadb-svc
-  - name: nginx-port
-    protocol: TCP
-    port: 3306
-    targetPort: nginx-svc
+    
