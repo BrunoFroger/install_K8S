@@ -9,16 +9,16 @@ spec:
   - name: backend-port
     protocol: TCP
     port: 3000
-    targetPort: backend-service
+    targetPort: backend-svc
   - name: frontend-port
     protocol: TCP
     port: 80
-    targetPort: frontend-service
+    targetPort: frontend-svc
   - name: mariadb-port
     protocol: TCP
     port: 3306
-    targetPort: mariadb-service
+    targetPort: mariadb-svc
   - name: nginx-port
     protocol: TCP
     port: 3306
-    targetPort: nginx-service
+    targetPort: nginx-svc
