@@ -17,7 +17,7 @@ podId=$(kubectl get pods | grep mariadb | awk -F ' ' '{print $1}')
 while :
 do
     result=$(kubectl logs ${podId} | tail -2 | head -1 | grep "ready for connections" | wc -l)
-    if [[ result == 1 ]]; then 
+    if [[ ${result} == 1 ]]; then 
         break
     else
         echo ".\c"
