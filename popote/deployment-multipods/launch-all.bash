@@ -28,7 +28,7 @@ do
     ((cpt++))
     if [[ ${cpt} == 2 ]]; then
         echo "delai pour demarrer dépassé"
-        exit-1
+        exit -1
     fi
 done
 echo ""
