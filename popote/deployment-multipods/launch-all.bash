@@ -8,6 +8,7 @@ echo "*       individuellement            *"
 echo "*                                   *"
 echo "*************************************"
 
+kubectl delete deployments.apps deployment-backend deployment-mariadb deployment-frontend deployment-nginx
 
 echo "====================================="
 echo "lancement de mariadb"
