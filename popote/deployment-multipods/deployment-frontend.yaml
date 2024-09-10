@@ -21,4 +21,5 @@ spec:
         resources:
         ports:
           - containerPort: 8080
+            name: frontend-svc
       restartPolicy: Always

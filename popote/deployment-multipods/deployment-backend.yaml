@@ -21,6 +21,6 @@ spec:
         resources:
         ports:
           - containerPort: 3000
-            name: backend-port
+            name: backend-svc
 
       restartPolicy: Always

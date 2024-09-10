@@ -21,7 +21,7 @@ spec:
         resources:
         ports:
           - containerPort: 3306
-            name: mariadb-port
+            name: mariadb-svc
         env:
           - name: MYSQL_ROOT_PASSWORD
             value: root123
