@@ -26,7 +26,7 @@ do
     fi
     sleep 5
     cpt=$(cpt + 1)
-    if [[ ${cpt} > 2 ]]; then
+    if [[ "X-${cpt}" == "X-2" ]]; then
         echo "delai pour demarrer dépassé"
         exit-1
     fi
