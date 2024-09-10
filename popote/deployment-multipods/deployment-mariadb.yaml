@@ -17,7 +17,7 @@ spec:
       containers:
       - name: popote-mariadb
         #image: fbruno/popote_vuejs_k8s-tags-10-mariadb:latest
-        image: fbruno/popote_vuejs_k8s-tags-11-mariadb:latest
+        image: fbruno/popote_vuejs_k8s-tags-12-mariadb:latest
         resources:
         ports:
           - containerPort: 3306
