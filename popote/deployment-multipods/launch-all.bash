@@ -17,7 +17,7 @@ sleep 5
 podId=$(kubectl get pods | grep mariadb | awk -F ' ' '{print $1}')
 while :
 do
-    result=$(kubectl logs ${podId} | tail -2 | head -1 | grep "ready for connections" | wc -l)
+    result=$(kubectl logs ${podId} | tail -2 | head -1 | grep "ready for connections" | wc -l) >/dev/null
     if [[ "X-${result}" == "X-1" ]]; then 
         break
     else
@@ -26,5 +26,5 @@ do
     sleep 5
 done
 echo ""
-echo "mariadb démarré avec succès
+echo "mariadb démarré avec succès"
 echo "====================================="
