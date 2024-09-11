@@ -69,7 +69,7 @@ IMAGES=$(docker images | grep popote | awk -F ' ' '{print $1}')
 for image in $IMAGES
 do
     # test si l'image existe sur DockerHub
-    if [[ $(docker search popote | grep ${image} | wc -l) == 0 ]]; then
+    if [[ $(docker search popote | grep ${image} | tail -1 | wc -l) == 0 ]]; then
         pushImage=$(docker images | grep ${image} | awk -F' ' '{print $1}')
         echo "push de l'image ${pushImage} sur DockerHub/${loginDocker}"
         # push images in DockerHub repository
@@ -106,7 +106,7 @@ cp deployment-monopod-copy.yaml deployment-monopod.yaml
 for image in "mariadb" "backend" "frontend" "nginx"
 do
     # test si l'image existe sur DockerHub
-    dockerImage=$(docker search popote | grep ${image} | awk -F' ' '{print $1}' | cut -d'/' -f 2)
+    dockerImage=$(docker search popote | grep ${image} | tail -1 | awk -F' ' '{print $1}' | cut -d'/' -f 2)
     pullImage="${loginDocker}\/${dockerImage}"
     cible="IMAGE-$image"
     echo "remplacemnt de <$cible> par <$pullImage>"
