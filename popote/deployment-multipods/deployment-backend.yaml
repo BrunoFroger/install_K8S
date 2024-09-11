@@ -23,5 +23,8 @@ spec:
         ports:
           - containerPort: 3000
             name: backend-svc
+        env:
+          - name: IP_MARIADB
+            value: {{IP_MARIADB}}
 
       restartPolicy: Always
