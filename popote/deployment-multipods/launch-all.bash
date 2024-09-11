@@ -10,6 +10,14 @@ echo "*************************************"
 
 kubectl delete deployments.apps deployment-backend deployment-mariadb deployment-frontend deployment-nginx
 
+while :
+do
+    if [[ $(kubectl get pods | wc -l ) <= 1 ]]; then
+        break;
+    fi
+    sleep 2    
+done
+
 echo "====================================="
 module="mariadb"
 echo "lancement de ${module}"
