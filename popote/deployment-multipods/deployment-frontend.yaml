@@ -17,7 +17,7 @@ spec:
       containers:
       - name: popote-frontend
         #image: fbruno/popote_vuejs_k8s-tags-10-frontend:latest
-        image: fbruno/popote_vuejs_k8s-tags-12-frontend:latest
+        image: fbruno/popote_vuejs_k8s-tags-13-frontend:latest
         resources:
         ports:
           - containerPort: 8080
