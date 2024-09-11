@@ -41,7 +41,7 @@ echo "====================================="
 module="backend"
 echo "lancement de ${module}"
 IP_MARIADB=$(kubectl get pods | grep mariadb | head -1 | awk -F ' ' '{print $1}') ; echo $IP_MARIADB
-sed "s/{{{IP_MARIADB}}}/${IP_MARIADB}/" deployment-${module}.yaml
+sed -i "s/{{IP_MARIADB}}/${IP_MARIADB}/" deployment-${module}.yaml
 kubectl apply -f deployment-${module}.yaml
 sleep 5
 podId=$(kubectl get pods | grep ${module} | awk -F ' ' '{print $1}')
