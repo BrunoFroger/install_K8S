@@ -27,7 +27,7 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             value: root123
           - name: MYSQL_DATABASE
-            value: popote
+            value: Popote
           - name: MYSQL_USER
             value: popote
           - name: MYSQL_PASSWORD
