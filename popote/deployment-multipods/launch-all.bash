@@ -13,8 +13,10 @@ kubectl delete deployments.apps deployment-backend deployment-mariadb deployment
 while :
 do
     if [[ $(kubectl get pods | wc -l ) <= 1 ]]; then
+        echo ""
         break;
     fi
+    echo -n "."
     sleep 2    
 done
 
