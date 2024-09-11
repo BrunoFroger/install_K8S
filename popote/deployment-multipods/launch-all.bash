@@ -36,9 +36,9 @@ do
     else
         echo -n "."
     fi
-    sleep 5
+    sleep 2
     ((cpt++))
-    if [[ ${cpt} -gt 10 ]]; then
+    if [[ ${cpt} -gt 30 ]]; then
         echo "delai pour demarrer ${module} dépassé"
         exit -1
     fi
@@ -66,9 +66,9 @@ do
     else
         echo -n "."
     fi
-    sleep 5
+    sleep 2
     ((cpt++))
-    if [[ ${cpt} -gt 10 ]]; then
+    if [[ ${cpt} -gt 30 ]]; then
         echo "delai pour demarrer ${module} dépassé"
         exit -1
     fi
