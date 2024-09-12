@@ -17,7 +17,7 @@ spec:
       containers:
       - name: popote-nginx
         #image: fbruno/popote_vuejs_k8s-tags-10-nginx 
-        image: fbruno/popote_vuejs_k8s-tags-15-nginx 
+        image: fbruno/popote_vuejs_k8s-tags-12-nginx 
         resources:
         ports:
           - containerPort: 80
