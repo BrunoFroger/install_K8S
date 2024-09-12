@@ -32,7 +32,7 @@ cpt=0
 while :
 do
     # definir dans la ligne ci dessous les condiftion de fin d'initialisation
-    result=$(kubectl logs ${podId} | tail -2 | head -1 | grep "ready for connections" | wc -l ) 
+    result=$(kubectl logs ${podId} 2 > /dev/null| tail -2 | head -1 | grep "ready for connections" | wc -l ) 
     if [[ "X-${result}" == "X-1" ]]; then 
         break
     else
