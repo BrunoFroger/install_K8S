@@ -10,6 +10,7 @@ echo "*************************************"
 
 kubectl delete deployments.apps deployment-backend deployment-mariadb deployment-frontend deployment-nginx
 
+echo -n "suppression des pods existant : "
 while :
 do
     if [[ $(kubectl get pods | wc -l ) -le 1 ]]; then
@@ -19,6 +20,7 @@ do
     echo -n "."
     sleep 2    
 done
+echo " => done"
 
 echo "====================================="
 module="mariadb"
