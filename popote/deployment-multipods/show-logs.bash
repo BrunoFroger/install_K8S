@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $# ne 1 ]]; then
+if [[ $# -ne 1 ]]; then
     echo "manque nom du pod pour afficher ses logs"
     exit -1
 fi
