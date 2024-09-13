@@ -14,7 +14,7 @@ if [[ $# -eq 0 ]]; then
 fi
 TAG=$1
 
-echo -n "suppression des pods existant : "
+echo "suppression des pods existant : "
 kubectl delete deployments.apps deployment-backend deployment-mariadb deployment-frontend deployment-nginx
 while :
 do
@@ -32,7 +32,6 @@ module="mariadb"
 sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
 echo "lancement de ${module}"
 kubectl apply -f deployment-${module}.yaml
-exit 0
 sleep 5
 podId=$(kubectl get pods | grep ${module} | awk -F ' ' '{print $1}')
 cpt=0
