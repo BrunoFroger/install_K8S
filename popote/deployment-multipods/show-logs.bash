@@ -6,4 +6,5 @@ if [[ $# -ne 1 ]]; then
 fi
 
 POD=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
+echo "logs du pod : $POD"
 kubectl logs -f $POD
