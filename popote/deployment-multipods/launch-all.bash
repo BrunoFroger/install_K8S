@@ -8,6 +8,12 @@ echo "*       individuellement            *"
 echo "*                                   *"
 echo "*************************************"
 
+if [[ $# -eq 0 ]]; then
+    echo "manque identification du tag"
+    exit -1
+fi
+TAG=$1
+
 echo -n "suppression des pods existant : "
 kubectl delete deployments.apps deployment-backend deployment-mariadb deployment-frontend deployment-nginx
 while :
@@ -20,13 +26,6 @@ do
     sleep 2    
 done
 echo " => done"
-
-if [[ $# -eq 0 ]]; then
-    echo "manque identification du tag"
-    exit -1
-fi
-TAG=$1
-
 
 echo "====================================="
 module="mariadb"
