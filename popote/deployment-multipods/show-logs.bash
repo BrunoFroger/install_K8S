@@ -6,15 +6,15 @@ if [[ $# -ne 1 ]]; then
 fi
 
 POD=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
-echo $POD
+#echo $POD
 nbPods=$(echo $POD | wc -w)
-echo "nbPods = $nbPods"
+#echo "nbPods = $nbPods"
 if [[ $nbPods -gt 1 ]]; then 
-    echo "$1 ne correspond pas a un pod unique, veuillez affiner votre selection"
+    echo "<$1> ne correspond pas a un pod unique, veuillez affiner votre selection"
     exit -1
 fi
 if [[ $nbPods -eq 0 ]]; then 
-    echo "$1 ne correspond pas a un pod veuillez modifier votre selection"
+    echo "<$1> ne correspond pas a un pod veuillez modifier votre selection"
     exit -1
 fi
 echo "logs du pod : $POD"
