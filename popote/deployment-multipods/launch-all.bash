@@ -21,10 +21,19 @@ do
 done
 echo " => done"
 
+if [[ $# -eq 0 ]]; then
+    echo "manque identification du tag"
+    exit -1
+fi
+TAG=$1
+
+
 echo "====================================="
 module="mariadb"
+sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
 echo "lancement de ${module}"
 kubectl apply -f deployment-${module}.yaml
+exit 0
 sleep 5
 podId=$(kubectl get pods | grep ${module} | awk -F ' ' '{print $1}')
 cpt=0
@@ -50,6 +59,7 @@ echo "====================================="
 
 echo "====================================="
 module="backend"
+sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
 echo "lancement de ${module}"
 cp deployment-${module}-copy.yaml deployment-${module}.yaml
 POD_MARIADB=$(kubectl get pods | grep mariadb | head -1 | awk -F ' ' '{print $1}') ; echo $POD_MARIADB

@@ -18,7 +18,8 @@ spec:
       containers:
       - name: popote-backend
         #image: fbruno/popote_vuejs_k8s-tags-10-backend:latest
-        image: fbruno/popote_vuejs_k8s-tags-12-backend:latest
+        #image: fbruno/popote_vuejs_k8s-tags-12-backend:latest
+        image: {{IMAGE}}
         resources:
         ports:
           - containerPort: 3000
