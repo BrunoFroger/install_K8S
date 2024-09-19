@@ -6,7 +6,7 @@ if [[ "X-$1" == "X-" ]]; then
     exit -1
 fi
 
-podId=$(kubectl get pods | grep $1 |  | awk -F ' ' '{print $1}')
+podId=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
 if [[ "X-$podId" == "X-" ]]; then
     echo "le pod $1 n'existe pas"
     exit -1
