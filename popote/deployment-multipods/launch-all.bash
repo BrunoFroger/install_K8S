@@ -28,6 +28,8 @@ done
 echo " => done"
 
 echo "====================================="
+echo "=         M A R I A D B             ="
+echo "====================================="
 module="mariadb"
 sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
 echo "lancement de ${module}"
@@ -51,16 +53,18 @@ do
         exit -1
     fi
 done
+POD_MARIADB=$(kubectl get pods | grep ${module} | head -1 | awk -F ' ' '{print $1}') ; echo "pod ${module} = $POD_MARIADB"
+IP_MARIADB=$(kubectl describe pods $POD_MARIADB | egrep "^IP:" | tail -1 | awk -F ' ' '{print $NF}'); echo "IP ${module} = $IP_MARIADB"
 echo ""
 echo "${module} démarré avec succès"
 echo "====================================="
 
 echo "====================================="
+echo "=         B A C K E N D             ="
+echo "====================================="
 module="backend"
 sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
 echo "lancement de ${module}"
-POD_MARIADB=$(kubectl get pods | grep mariadb | head -1 | awk -F ' ' '{print $1}') ; echo "pod mariadb = $POD_MARIADB"
-IP_MARIADB=$(kubectl describe pods $POD_MARIADB | egrep "^IP:" | tail -1 | awk -F ' ' '{print $NF}'); echo "IP mariadb = $IP_MARIADB"
 sed -i "s/{{IP_MARIADB}}/${IP_MARIADB}/" deployment-${module}.yaml
 kubectl apply -f deployment-${module}.yaml
 sleep 5
@@ -83,10 +87,14 @@ do
         exit -1
     fi
 done
+POD_BACKEND=$(kubectl get pods | grep ${module} | head -1 | awk -F ' ' '{print $1}') ; echo "pod ${module} = $POD_BACKEND"
+IP_BACKEND=$(kubectl describe pods $POD_BACKEND | egrep "^IP:" | tail -1 | awk -F ' ' '{print $NF}'); echo "IP ${module} = $IP_BACKEND"
 echo ""
 echo "${module} démarré avec succès"
 echo "====================================="
 
+echo "====================================="
+echo "=         F R O N T E N D           ="
 echo "====================================="
 module="frontend"
 sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
@@ -112,10 +120,14 @@ do
         exit -1
     fi
 done
+POD_FRONTEND=$(kubectl get pods | grep ${module} | head -1 | awk -F ' ' '{print $1}') ; echo "pod ${module} = $POD_FRONTEND"
+IP_FRONTEND=$(kubectl describe pods $POD_FRONTEND | egrep "^IP:" | tail -1 | awk -F ' ' '{print $NF}'); echo "IP ${module} = $IP_FRONTEND"
 echo ""
 echo "${module} démarré avec succès"
 echo "====================================="
 
+echo "====================================="
+echo "=         N G I N X                 ="
 echo "====================================="
 module="nginx"
 sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
@@ -141,6 +153,8 @@ do
         exit -1
     fi
 done
+POD_NGINX=$(kubectl get pods | grep ${module} | head -1 | awk -F ' ' '{print $1}') ; echo "pod ${module} = $POD_NGINX"
+IP_NGINX=$(kubectl describe pods $POD_NGINX | egrep "^IP:" | tail -1 | awk -F ' ' '{print $NF}'); echo "IP ${module} = $IP_NGINX"
 echo ""
 echo "${module} démarré avec succès"
 echo "====================================="

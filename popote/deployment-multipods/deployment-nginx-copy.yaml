@@ -24,5 +24,12 @@ spec:
           - containerPort: 80
           - containerPort: 443
           - containerPort: 3000
+        env:
+          - name: IP_MARIADB
+            value: {{IP_MARIADB}}
+          - name: IP_BACKEND
+            value: {{IP_BACKEND}}
+          - name: IP_FRONTEND
+            value: {{IP_FRONTEND}}
 
       restartPolicy: Always
