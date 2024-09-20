@@ -23,4 +23,7 @@ spec:
         ports:
           - containerPort: 8080
             name: frontend-svc
+        env:
+          - name: IP_BACKEND
+            value: {{IP_BACKEND}}
       restartPolicy: Always

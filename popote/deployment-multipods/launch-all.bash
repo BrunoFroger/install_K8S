@@ -99,6 +99,7 @@ echo "====================================="
 module="frontend"
 sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
 echo "lancement de ${module}"
+sed -i "s/{{IP_BACKEND}}/${IP_BACKEND}/" deployment-${module}.yaml
 kubectl apply -f deployment-${module}.yaml
 sleep 5
 podId=$(kubectl get pods | grep ${module} | awk -F ' ' '{print $1}')
