@@ -1,4 +1,8 @@
 #!/bin/bash
 
 DEPLOYMENTS=$(kubectl get deployments.apps | grep deployment | awk -F ' ' '{print $1}')
-kubectl delete $DEPLOYMENTS
+
+for deployment in $DEPLOYMENTS
+do
+    kubectl delete deployments.apps $deployment
+done
