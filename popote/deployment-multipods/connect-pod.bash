@@ -12,4 +12,4 @@ if [[ "X-$podId" == "X-" ]]; then
     exit -1
 fi
 
-kubectl exec -it $podId bash
+kubectl exec -it $podId -- bash
