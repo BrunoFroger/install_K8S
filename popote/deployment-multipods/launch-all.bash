@@ -87,3 +87,61 @@ echo ""
 echo "${module} démarré avec succès"
 echo "====================================="
 
+echo "====================================="
+module="frontend"
+sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
+echo "lancement de ${module}"
+kubectl apply -f deployment-${module}.yaml
+sleep 5
+podId=$(kubectl get pods | grep ${module} | awk -F ' ' '{print $1}')
+echo "podId de $module = $podId"
+cpt=0
+while :
+do
+    # definir dans la ligne ci dessous les condiftion de fin d'initialisation
+    result=$(kubectl logs ${podId} | grep "webpack" | grep "compiled successfully" | wc -l ) 
+    if [[ "X-${result}" == "X-1" ]]; then 
+        break
+    else
+        echo -n "."
+    fi
+    sleep 2
+    ((cpt++))
+    if [[ ${cpt} -gt 30 ]]; then
+        echo "delai pour demarrer ${module} dépassé"
+        exit -1
+    fi
+done
+echo ""
+echo "${module} démarré avec succès"
+echo "====================================="
+
+echo "====================================="
+module="nginx"
+sed "s^{{IMAGE}}^fbruno/popote_vuejs_k8s-tags-${TAG}-${module}:latest^" deployment-${module}-copy.yaml > deployment-${module}.yaml
+echo "lancement de ${module}"
+kubectl apply -f deployment-${module}.yaml
+sleep 5
+podId=$(kubectl get pods | grep ${module} | awk -F ' ' '{print $1}')
+echo "podId de $module = $podId"
+cpt=0
+while :
+do
+    # definir dans la ligne ci dessous les condiftion de fin d'initialisation
+    result=$(kubectl logs ${podId} | grep "Connecté à la base de données MySQL Popote !" | wc -l ) 
+    if [[ "X-${result}" == "X-1" ]]; then 
+        break
+    else
+        echo -n "."
+    fi
+    sleep 2
+    ((cpt++))
+    if [[ ${cpt} -gt 30 ]]; then
+        echo "delai pour demarrer ${module} dépassé"
+        exit -1
+    fi
+done
+echo ""
+echo "${module} démarré avec succès"
+echo "====================================="
+
