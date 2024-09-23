@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 docker build -t monapp:0.1 .
 docker image tag monapp:0.1 fbruno/monapp:latest
