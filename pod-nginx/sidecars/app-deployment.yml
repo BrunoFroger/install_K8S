@@ -15,7 +15,7 @@ spec:
         app: monapp
     spec:
       containers:
-        - image: artefacts.sa-cim.local/monapp:0.1
+        - image: fbruno/monapp:latest
           name: monapp
           resources:
             requests:
