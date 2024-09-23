@@ -14,7 +14,7 @@ spec:
 
   - name: frontend-port
     protocol: TCP
-    port: 80
+    port: 8080
     targetPort: frontend-svc
 
   - name: mariadb-port

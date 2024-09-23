@@ -24,6 +24,7 @@ spec:
           - containerPort: 80
           - containerPort: 443
           - containerPort: 3000
+          - containerPort: 3306
         env:
           - name: IP_MARIADB
             value: {{IP_MARIADB}}
