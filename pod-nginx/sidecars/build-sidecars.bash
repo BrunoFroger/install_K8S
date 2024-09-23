@@ -13,3 +13,5 @@ kubectl create configmap monapp-nginx --from-file=nginx.conf
 kubectl apply -f app-deployment.yml
 
 kubectl apply -f app-service.yaml
+
+kubectl port-forward svc/monapp-service 8080:80
