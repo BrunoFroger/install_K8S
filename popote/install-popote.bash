@@ -117,4 +117,6 @@ kubectl apply -f popote-service.yaml
 
 kubectl apply -f deployment-monopod.yaml
 
+kubectl expose deployment deployment-monopod
+
 kubectl port-forward svc/popote-service 8080:8080 3000:3000 3306:3306
