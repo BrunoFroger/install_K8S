@@ -14,4 +14,7 @@ kubectl apply -f app-deployment.yml
 
 kubectl apply -f app-service.yaml
 
+echo "lancer dans un autre terminal : <curl http://localhost:8080>"
+echo "vous devez voir afficher <Hello>"
+
 kubectl port-forward svc/monapp-service 8080:80
