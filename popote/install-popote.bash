@@ -113,10 +113,14 @@ do
     sed -i "s/${cible}/${pullImage}/" deployment-monopod.yaml
 done
 
+echo "installation de popote-service.yaml"
 kubectl apply -f popote-service.yaml
 
+echo "installation de deployment-monopod.yaml"
 kubectl apply -f deployment-monopod.yaml
 
-kubectl expose deployment deployment-monopod
+echo "expose de deployment-monopod.yaml"
+kubectl expose deployment deployment-popote-monopod
 
+echo "port forward .... ^C pour quitter"
 kubectl port-forward svc/popote-service 8080:8080 3000:3000 3306:3306
