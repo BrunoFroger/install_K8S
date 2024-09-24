@@ -77,5 +77,6 @@ spec:
           - containerPort: 80
           - containerPort: 443
           - containerPort: 3000
+          - containerPort: 3306
 
       restartPolicy: Always

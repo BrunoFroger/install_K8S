@@ -20,6 +20,10 @@ spec:
   - protocol: TCP
     port: 3000
     targetPort: 3000
-    name: popote-backend
+    name: popote-port-backend
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+    name: popote-port-mariadb
   type: ClusterIP
   
