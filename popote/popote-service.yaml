@@ -12,11 +12,14 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
+    name: popote-port
   - protocol: TCP
     port: 443
     targetPort: 443
+    name: popote-port-sec
   - protocol: TCP
     port: 3000
     targetPort: 3000
+    name: popote-backend
   type: ClusterIP
   
