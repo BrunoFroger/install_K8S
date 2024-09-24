@@ -113,5 +113,7 @@ do
     sed -i "s/${cible}/${pullImage}/" deployment-monopod.yaml
 done
 
+kubectl apply -f popote-service.yaml
+
 kubectl apply -f deployment-monopod.yaml
 
