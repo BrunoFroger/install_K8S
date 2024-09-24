@@ -1,15 +1,22 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: monapp-service
+  name: popote-service
   labels:
-    app: monapp
+    app: popote
+  namespace: popote
 spec:
   selector:
-    app: monapp
+    app: popote
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
+  - protocol: TCP
+    port: 443
+    targetPort: 443
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
   type: ClusterIP
   
