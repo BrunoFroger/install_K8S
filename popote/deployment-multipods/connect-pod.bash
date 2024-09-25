@@ -18,7 +18,7 @@ if [[ "X-$podId" == "X-" ]]; then
 fi
 
 containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name'| tail -1 | sed 's/,/\n/g')
-nbContainers=$(echo $containerListe  wc -w)
+nbContainers=$(echo $containerListe | wc -w)
 
 containeur=""
 if [[ n$nbContainers -gt 1 ]]; then
