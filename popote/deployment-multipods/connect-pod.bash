@@ -17,7 +17,8 @@ else
 fi
 
 podId=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
-containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name')| tail -1 | sed 's/;/\n\g'
+echo "podId = $podId"
+containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name')| tail -1 | sed 's/;/\n/g'
 echo "Liste des containeurs = $containerListe"
 containerId=$(echo $containerListe | grep $2)
 echo "containeur sur lequel on se connecte : $containerId
