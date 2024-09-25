@@ -26,7 +26,8 @@ nbContainers=$(echo $containerListe | wc -w)
 echo "nombre des containeurs = $nbContainers"
 
 containeur=""
-if [[ n$nbContainers -gt 1 ]]; then
+if [[ $nbContainers -gt 1 ]]; then
+    echo "le pod $podId contient plusieurs containeurs"
     if [[ "X-$2" != "X-" ]]; then   
         containerId=$(echo "$containerListe" | grep $2)
         echo "containeur sur lequel on se connecte : $containerId"
