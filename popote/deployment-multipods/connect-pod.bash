@@ -9,22 +9,27 @@ if [[ "X-$1" == "X-" ]]; then
     exit -1
 fi
 
-if [[ "X-$2" != "X-" ]]; then   
-    echo "execution de la commande dans le containeur $2"
-    containeur="--container $2"
-else 
-    containeur=""
-fi
-
 podId=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
 echo "podId = $podId"
-containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name'| tail -1 | sed 's/,/\n/g')
-echo "Liste des containeurs = $containerListe"
-containerId=$(echo "$containerListe" | grep $2)
-echo "containeur sur lequel on se connecte : $containerId"
+
 if [[ "X-$podId" == "X-" ]]; then
     echo "le pod $1 n'existe pas"
     exit -1
+fi
+
+containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name'| tail -1 | sed 's/,/\n/g')
+nbContainers=$(echo $containerListe  wc -w)
+
+containeur=""
+if [[ n$nbContainers -gt 1 ]]; then
+    if [[ "X-$2" != "X-" ]]; then   
+        echo "Liste des containeurs = $containerListe"
+        containerId=$(echo "$containerListe" | grep $2)
+        echo "containeur sur lequel on se connecte : $containerId"
+        containeur="--container $$containerId"
+    else 
+        echo "erreur ce pod contient plusieurs container, il faut preciser sur quel container se connecter"
+    fi
 fi
 
 kubectl exec -it $podId $containeur -- bash
