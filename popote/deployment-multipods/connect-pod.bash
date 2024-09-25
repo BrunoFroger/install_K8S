@@ -8,7 +8,7 @@ fi
 
 if [[ "X-$2" != "X-" ]]; then   
     echo "execution de la commande dans le containeur $2"
-    containeur="--conainer $2"
+    containeur="--container $2"
 else 
     containeur=""
 fi
