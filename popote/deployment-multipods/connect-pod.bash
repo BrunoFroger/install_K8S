@@ -14,6 +14,8 @@ else
 fi
 
 podId=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
+containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name')
+echo "Liste des containeurs = $containerListe"
 if [[ "X-$podId" == "X-" ]]; then
     echo "le pod $1 n'existe pas"
     exit -1
