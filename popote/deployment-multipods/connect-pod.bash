@@ -3,6 +3,9 @@
 
 if [[ "X-$1" == "X-" ]]; then   
     echo "manque nom du pod (mariadb / backend / nginx / frontend)"
+    echo "syntaxe : connect-pod.bash pod [container]"
+    echo "          pod = chaine minimale permaettant d'dentifier un pod"
+    echo "          container = (si plusieurs container dans un pod) chaine minimale permaettant d'dentifier un container"
     exit -1
 fi
 
