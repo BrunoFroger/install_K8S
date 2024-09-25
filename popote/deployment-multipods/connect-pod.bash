@@ -6,10 +6,17 @@ if [[ "X-$1" == "X-" ]]; then
     exit -1
 fi
 
+if [[ "X-$2" != "X-" ]]; then   
+    echo "execution de la commande dans le containeur $2"
+    containeur="--conainer $2"
+else 
+    containeur=""
+fi
+
 podId=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
 if [[ "X-$podId" == "X-" ]]; then
     echo "le pod $1 n'existe pas"
     exit -1
 fi
 
-kubectl exec -it $podId -- bash
+kubectl exec -it $podId $containeur -- bash
