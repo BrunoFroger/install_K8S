@@ -21,12 +21,13 @@ if [[ "X-$podId" == "X-" ]]; then
 fi
 
 containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name'| tail -1 | sed 's/,/\n/g')
+echo "Liste des containeurs = $containerListe"
 nbContainers=$(echo $containerListe | wc -w)
+echo "nombre des containeurs = $nbContainers"
 
 containeur=""
 if [[ n$nbContainers -gt 1 ]]; then
     if [[ "X-$2" != "X-" ]]; then   
-        echo "Liste des containeurs = $containerListe"
         containerId=$(echo "$containerListe" | grep $2)
         echo "containeur sur lequel on se connecte : $containerId"
         containeur="--container $$containerId"
