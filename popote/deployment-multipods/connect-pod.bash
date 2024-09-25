@@ -21,7 +21,7 @@ echo "podId = $podId"
 containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name'| tail -1 | sed 's/;/\n/g')
 echo "Liste des containeurs = $containerListe"
 containerId=$(echo $containerListe | grep $2)
-echo "containeur sur lequel on se connecte : $containerId
+echo "containeur sur lequel on se connecte : $containerId"
 if [[ "X-$podId" == "X-" ]]; then
     echo "le pod $1 n'existe pas"
     exit -1
