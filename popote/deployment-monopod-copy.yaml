@@ -27,6 +27,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 3306
+            name: mariadb-port
         env:
           - name: MYSQL_ROOT_PASSWORD
             value: root123
@@ -49,6 +50,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 3000
+            name: backend-port
       
       - name: popote-frontend
         #image: fbruno/popote_vuejs_k8s-tags-10-frontend:latest
@@ -62,6 +64,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 8080
+            name: http-port
       
       - name: popote-nginx
         #image: fbruno/popote_vuejs_k8s-tags-10-nginx 
