@@ -9,21 +9,17 @@ spec:
   selector:
     app: deployment-popote-monopod
   ports:
-  - protocol: TCP
+  - name: popote-port
     port: 80
     targetPort: 80
-    name: popote-port
-  - protocol: TCP
+  - name: popote-port-sec
     port: 443
     targetPort: 443
-    name: popote-port-sec
-  - protocol: TCP
+  - name: popote-port-backend
     port: 3000
     targetPort: 3000
-    name: popote-port-backend
-  - protocol: TCP
+  - name: popote-port-mariadb
     port: 3306
     targetPort: 3306
-    name: popote-port-mariadb
   type: ClusterIP
   
