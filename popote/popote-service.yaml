@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: popote-service
   labels:
-    app: popote
+    app: deployment-popote-monopod
   namespace: popote
 spec:
   selector:
