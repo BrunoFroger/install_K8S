@@ -1,35 +1,14 @@
 #!/bin/bash
 
-# if [[ $# -ne 1 ]]; then
-#     echo "manque nom du pod pour afficher ses logs"
-#     exit -1
-# fi
-
-# POD=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
-# #echo $POD
-# nbPods=$(echo $POD | wc -w)
-# #echo "nbPods = $nbPods"
-# if [[ $nbPods -gt 1 ]]; then 
-#     echo "<$1> ne correspond pas a un pod unique, veuillez affiner votre selection"
-#     exit -1
-# fi
-# if [[ $nbPods -eq 0 ]]; then 
-#     echo "<$1> ne correspond pas a un pod veuillez modifier votre selection"
-#     exit -1
-# fi
-# echo "logs du pod : $POD"
-
-#!/bin/bash
-
 aide(){    
-    echo "syntaxe : connect-pod.bash pod [container]"
+    echo "syntaxe : show-logs.bash pod [container]"
     echo "          pod = chaine minimale permaettant d'identifier un pod"
     echo "          container = (si plusieurs container dans un pod) chaine minimale permaettant d'identifier un container"
     exit -1
 }
 
 if [[ "X-$1" == "X-" ]]; then   
-    echo "ERREUR : manque nom du pod (mariadb / backend / nginx / frontend)"
+    echo "ERREUR : manque nom du pod !"
     aide
 fi
 
