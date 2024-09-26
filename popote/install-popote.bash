@@ -95,7 +95,7 @@ if [[ $(kubectl get deployments.apps deployment-popote-monopod | wc -l) != 0 ]];
     echo "le deployment exste deja on le supprime"
     kubectl delete deployments.apps deployment-popote-monopod 
 fi
-while:
+while :
 do
     if [[ $(kubectl get deployments.apps deployment-popote-monopod | wc -l) = 0 ]]; then
         echo""
