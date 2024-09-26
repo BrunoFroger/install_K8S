@@ -95,6 +95,17 @@ if [[ $(kubectl get deployments.apps deployment-popote-monopod | wc -l) != 0 ]];
     echo "le deployment exste deja on le supprime"
     kubectl delete deployments.apps deployment-popote-monopod 
 fi
+while:
+do
+    if [[ $(kubectl get deployments.apps deployment-popote-monopod | wc -l) = 0 ]]; then
+        echo""
+        break
+    else 
+        echo -n "."
+        sleep 2
+    fi
+done
+
 echo "pwd = $(pwd)"
 #creation du persistant volume pour mariadb
 kubectl apply -f mariadb-pv.yaml
