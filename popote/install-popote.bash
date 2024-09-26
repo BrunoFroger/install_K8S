@@ -120,7 +120,7 @@ echo "installation de deployment-monopod.yaml"
 kubectl apply -f deployment-monopod.yaml
 
 echo "expose de deployment-monopod.yaml"
-kubectl expose deployment deployment-popote-monopod
+kubectl expose deployment deployment-monopod
 
 echo "port forward .... ^C pour quitter"
 kubectl port-forward svc/popote-service 8080:8080 3000:3000 3306:3306
