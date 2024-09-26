@@ -75,8 +75,12 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 80
+            name: http-port
           - containerPort: 443
+            name: https-port
           - containerPort: 3000
+            name: backend-port
           - containerPort: 3306
+            name: mariadb-port
 
       restartPolicy: Always

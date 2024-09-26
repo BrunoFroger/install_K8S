@@ -9,16 +9,16 @@ spec:
   selector:
     app: deployment-popote-monopod
   ports:
-  - name: popote-port
+  - name: http-port
     port: 80
     targetPort: 80
-  - name: popote-port-sec
+  - name: https-port
     port: 443
     targetPort: 443
-  - name: popote-port-backend
+  - name: backend-port
     port: 3000
     targetPort: 3000
-  - name: popote-port-mariadb
+  - name: mariadb-port
     port: 3306
     targetPort: 3306
   type: ClusterIP
