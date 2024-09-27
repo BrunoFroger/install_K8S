@@ -133,6 +133,7 @@ kubectl apply -f deployment-monopod.yaml
 echo "expose de deployment-monopod.yaml"
 kubectl expose deployment deployment-popote-monopod
 
+echo "on attend que le deployment soit 'running' pour continuer ...."
 while :
 do
     isRunning=$(kubectl get pods | grep popote | awk -F ' ' '{print $3}')
@@ -146,4 +147,4 @@ do
 done
 
 echo "port forward .... ^C pour quitter"
-kubectl port-forward svc/popote-service 8080:80
+kubectl port-forward svc/popote-service 8080:8080
