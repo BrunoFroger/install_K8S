@@ -67,7 +67,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 8080
-            name: http1-port
+            name: frontend-port
         env:
           - name: IP_BACKEND
             value: "http://127.0.0.1/api"
@@ -85,11 +85,11 @@ spec:
         ports:
           - containerPort: 80
             name: http-port
-          - containerPort: 443
-            name: https-port
-          - containerPort: 3000
-            name: backend-port
-          - containerPort: 3306
-            name: mariadb-port
+          # - containerPort: 443
+          #   name: https-port
+          # - containerPort: 3000
+          #   name: backend-port
+          # - containerPort: 3306
+          #   name: mariadb-port
 
       restartPolicy: Always
