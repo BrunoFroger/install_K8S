@@ -52,8 +52,8 @@ spec:
           - containerPort: 3000
             name: backend-port
         env:
-          - name: IP_BACKEND
-            value: "http://127.0.0.1:3000"
+          - name: IP_MARIADB
+            value: "127.0.0.1"
       
       - name: popote-frontend
         #image: fbruno/popote_vuejs_k8s-tags-10-frontend:latest
@@ -68,6 +68,9 @@ spec:
         ports:
           - containerPort: 8080
             name: http1-port
+        env:
+          - name: IP_BACKEND
+            value: "http://127.0.0.1:3000"
       
       - name: popote-nginx
         #image: fbruno/popote_vuejs_k8s-tags-10-nginx 
