@@ -30,7 +30,7 @@ if [[ $nbContainers -gt 1 ]]; then
     #echo "le pod $podId contient plusieurs containeurs"
     if [[ "X-$2" != "X-" ]]; then   
         containerId=$(echo "$containerListe" | grep $2)
-        #echo "containeur sur lequel on se connecte : $containerId"
+        echo "containerId : $containerId"
         containeur="--container $containerId"
     else 
         echo "ERREUR : ce pod contient plusieurs container, il faut preciser sur quel container se connecter"
