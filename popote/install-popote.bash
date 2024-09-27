@@ -133,5 +133,17 @@ kubectl apply -f deployment-monopod.yaml
 echo "expose de deployment-monopod.yaml"
 kubectl expose deployment deployment-popote-monopod
 
+while:
+do
+    isRunning=$(kubectl get pods | grep popote | awk -F ' ' '{print $3}')
+    if [[ "X-$isRunning" == "X-Running" ]]; then
+        echo ""
+        break
+    else
+        echo -n "."
+        sleep 2
+    fi
+done
+
 echo "port forward .... ^C pour quitter"
 kubectl port-forward svc/popote-service 8080:8080 3000:3000 3306:3306
