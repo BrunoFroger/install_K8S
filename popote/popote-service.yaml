@@ -20,9 +20,9 @@ spec:
   #   targetPort: 443
   # - name: backend-port
   #   port: 3000
-    targetPort: 3000
-  - name: mariadb-port
-    port: 3306
-    targetPort: 3306
+  #   targetPort: 3000
+  # - name: mariadb-port
+  #   port: 3306
+  #   targetPort: 3306
   type: ClusterIP
   
