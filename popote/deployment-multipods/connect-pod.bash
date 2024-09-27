@@ -13,12 +13,13 @@ if [[ "X-$1" == "X-" ]]; then
 fi
 
 podId=$(kubectl get pods | grep $1 | awk -F ' ' '{print $1}')
-echo "podId = $podId"
 
 if [[ "X-$podId" == "X-" ]]; then
     echo "ERREUR : le pod $1 n'existe pas"
     aide
 fi
+
+echo "podId : $podId"
 
 containerListe=$(kubectl get pods $podId -o='custom-columns=CONTAINERS:.spec.containers[*].name'| tail -1 | sed 's/,/\n/g')
 #echo "Liste des containeurs = $containerListe"
