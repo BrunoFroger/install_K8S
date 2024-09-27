@@ -133,7 +133,7 @@ kubectl apply -f deployment-monopod.yaml
 echo "expose de deployment-monopod.yaml"
 kubectl expose deployment deployment-popote-monopod
 
-while:
+while :
 do
     isRunning=$(kubectl get pods | grep popote | awk -F ' ' '{print $3}')
     if [[ "X-$isRunning" == "X-Running" ]]; then
