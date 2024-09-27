@@ -51,6 +51,9 @@ spec:
         ports:
           - containerPort: 3000
             name: backend-port
+        env:
+          - name: IP_BACKEND
+            value: "http://127.0.0.1:3000"
       
       - name: popote-frontend
         #image: fbruno/popote_vuejs_k8s-tags-10-frontend:latest
