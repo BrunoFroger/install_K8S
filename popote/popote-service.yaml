@@ -10,7 +10,7 @@ spec:
     app: deployment-popote-monopod
   ports:
   - name: http-port
-    port: 80
+    port: 8080
     targetPort: 80
   # - name: http1-port
   #   port: 8080
