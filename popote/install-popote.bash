@@ -6,8 +6,19 @@ if [[ "X-$1" == "X---build" ]]; then
     $1=""
     echo "On force la reconstruction des images popote"
 else
-    imagesPopote=$(docker images | grep "fbruno/popote" | wc -l)
+    if [[ "X-$1" == "X-version" ]]; then
+        if [[ "X-$2" == "X-" ]]; then
+            echo "ERREUR : manque numero de versiona  utiliser"
+            exit -1
+        fi
+        imagesPopote=$(docker search | grep "fbruno/popote" | grep "tags-$2" | wc -l)
+    else
+        imagesPopote=$(docker search | grep "fbruno/popote" | wc -l)
+    fi
 fi
+
+
+
 if [[ $imagesPopote == 0 ]]; then
     echo "Les images popote n'existent pas, il faut les creer !"
     rm -rf popote_files
