@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# d'apres l'article : https://kubernetes.github.io/ingress-nginx/deploy/
+
 # installation de ingress-nginx controler
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.2/deploy/static/provider/cloud/deploy.yaml
 
@@ -12,7 +14,7 @@ kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.
 
 # creation d'une ressource ingress associee
 #kubectl create ingress demo-localhost --class=nginx --rule="popote.zapto.org/*=demo:80"
-kubectl create ingress popote-localhost --class=nginx --rule="popote.zapto.org/*=deployment-popote-monopod:80"
+kubectl create ingress demo-localhost --class=nginx --rule="popote.zapto.org/*=deployment-popote-monopod:80" --type=loadbalancer
 
 # activation du port forward pour acceder a ce site
 kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
