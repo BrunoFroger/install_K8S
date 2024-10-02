@@ -158,4 +158,4 @@ do
 done
 
 echo "port forward .... ^C pour quitter"
-kubectl port-forward svc/popote-service 80:80
+kubectl port-forward svc/popote-service 8080:8080
