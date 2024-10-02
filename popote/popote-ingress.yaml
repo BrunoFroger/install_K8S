@@ -4,7 +4,7 @@ metadata:
   name: ingress-popote
   namespace: popote
 spec:
-  # ingressClassName: nginx
+  ingressClassName: nginx
   rules:
   # - host: "k8sbfr.zapto.org"
   - host: "popote.zapto.org"
