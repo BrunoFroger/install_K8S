@@ -8,9 +8,10 @@ metadata:
 spec:
   selector:
     app: deployment-popote-monopod
+  # type: LoadBalancer
   ports:
   - name: http-port
-    port: 8080
+    port: 80
     targetPort: 80
   # - name: http1-port
   #   port: 8080
@@ -24,5 +25,4 @@ spec:
   # - name: mariadb-port
   #   port: 3306
   #   targetPort: 3306
-  type: LoadBalancer
   
