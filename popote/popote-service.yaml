@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     app: deployment-popote-monopod
-  type: NodePort
+  type: LoadBalancer
   ports:
   - name: http-port
     port: 8080
