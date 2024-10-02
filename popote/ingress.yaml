@@ -4,15 +4,16 @@ metadata:
   name: ingress-popote
   namespace: popote
 spec:
+  # ingressClassName: nginx
   rules:
   # - host: "k8sbfr.zapto.org"
   - host: "popote.zapto.org"
     http:
       paths:
       - pathType: Prefix
-        path: "/popote"
+        path: "/"
         backend:
           service:
             name: popote-service
             port:
-              number: 8080
+              number: 80
