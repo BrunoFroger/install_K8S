@@ -141,8 +141,8 @@ kubectl apply -f popote-service.yaml
 echo "installation de deployment-monopod.yaml"
 kubectl apply -f deployment-monopod.yaml
 
-echo "expose de deployment-monopod.yaml"
-kubectl expose deployment deployment-popote-monopod
+#echo "expose de deployment-monopod.yaml"
+#kubectl expose deployment deployment-popote-monopod
 
 echo "on attend que le deployment soit 'running' pour continuer ...."
 while :
