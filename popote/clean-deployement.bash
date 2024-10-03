@@ -5,7 +5,7 @@ exec-cde(){
     result=$(kubectl get $1 | grep popote | wc -l)
     if [[ $result -ge 1 ]]; then
         result=$(kubectl get $1 | grep popote | awk -F '{print $1}')
-        kubectl delete $1s $result
+        kubectl delete $1 $result
         while :
         do
             result= $(kubectl get $1 | grep popote | wc -l)
