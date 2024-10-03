@@ -3,13 +3,13 @@
 exec-cde(){
     echo "suppresion de $1"
     result=$(kubectl get $1 | grep popote | wc -l)
-    if [[ $result >= 1 ]]; then
+    if [[ $result -ge 1 ]]; then
         result=$(kubectl get $1 | grep popote | awk -F '{print $1}')
         kubectl delete $1s $result
         while :
         do
             result= $(kubectl get $1 | grep popote | wc -l)
-            if [[ $result == 0 ]]; then
+            if [[ $result -eq 0 ]]; then
                 break
             fi
         done
