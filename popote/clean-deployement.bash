@@ -20,6 +20,6 @@ listeitems=("deployments.apps", "services", "ingress")
 
 for item in $listeItems
 do
-    exec-cde($item)
+    exec-cde $item
 done
 
