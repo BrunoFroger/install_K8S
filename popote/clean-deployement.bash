@@ -16,7 +16,7 @@ exec-cde(){
     fi
 }
 
-listeItems=("deployments.apps", "services", "ingress")
+listeItems=("deployments.apps" "services" "ingress")
 
 for item in $listeItems
 do
