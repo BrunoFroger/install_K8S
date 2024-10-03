@@ -9,7 +9,7 @@ exec-cde(){
         kubectl delete $1 $ressource
         while :
         do
-            result= $(kubectl get $1 | grep popote | wc -l)
+            result=$(kubectl get $1 | grep popote | wc -l)
             if [[ $result -eq 0 ]]; then
                 break
             fi
