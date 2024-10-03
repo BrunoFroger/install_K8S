@@ -21,6 +21,7 @@ listeItems=("deployments.apps" "services" "ingress")
 
 for item in $listeItems
 do
+    echo "item = $item"
     exec-cde $item
 done
 
