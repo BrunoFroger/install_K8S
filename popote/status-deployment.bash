@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-kubectl get deployements.apps
+kubectl get deployments.apps
 kubectl get services
 kubectl get ingress
