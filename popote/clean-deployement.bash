@@ -11,7 +11,7 @@ exec-cde(){
         do
             result=$(kubectl get $1 | grep popote | wc -l)
             if [[ $result -eq 0 ]]; then
-                break
+                continue
             fi
         done
     fi
