@@ -9,6 +9,7 @@ exec-cde(){
         kubectl delete $1 $ressource
         while :
         do
+            echo "on attends la fin de l'arret de $1"
             result=$(kubectl get $1 | grep popote | wc -l)
             if [[ $result -eq 0 ]]; then
                 continue
