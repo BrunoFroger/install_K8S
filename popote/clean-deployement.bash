@@ -6,6 +6,13 @@ exec-cde(){
     if [[ $result >= 1 ]]; then
         result=$(kubectl get $1 | grep popote | awk -F '{print $1}')
         kubectl delete $1s $result
+        while :
+        do
+            result= $(kubectl get $1 | grep popote | wc -l)
+            if [[ $result == 0 ]]; then
+                break
+            fi
+        done
     fi
 }
 
