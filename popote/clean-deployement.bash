@@ -1,7 +1,7 @@
 #!/bin/bash
 
 exec-cde(){
-    echo "suppresion de $1"
+    echo "suppresion de <$1>"
     result=$(kubectl get $1 | grep popote | wc -l)
     if [[ $result -ge 1 ]]; then
         result=$(kubectl get $1 | grep popote | awk -F '{print $1}')
