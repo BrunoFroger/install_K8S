@@ -14,7 +14,7 @@ if [ $(echo $PATH | sed "s/:/\n/g" | grep ${HOME}/bin | wc -l) -eq 0 ]; then
 fi
 
 listeFichiers=$(ls *bash | grep -v cree-liens)
-echo "nombre de fichiers a traiter : ${#listeFichiers[@]}"
+echo "nombre de fichiers a traiter : ${#listeFichiers[*]}"
 for fichier in $listeFichiers
 do
     # echo "check de $fichier"
