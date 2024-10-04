@@ -16,8 +16,6 @@ fi
 cptFichiers=0
 cptUpdates=0
 listeFichiers=$(ls *bash | grep -v cree-liens | tr '\n' ' ')
-echo "liste des ficheirs : $listeFichiers"
-echo "nombre de fichiers a traiter : ${#listeFichiers[@]}"
 for fichier in $listeFichiers
 do
     # echo "check de $fichier"
