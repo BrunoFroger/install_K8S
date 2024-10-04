@@ -12,3 +12,4 @@ if [[ "X-$K8S_NAMESPACE" == "X-" ]]; then
     fi
 fi
 kubectl config set-context --current --namespace=$K8S_NAMESPACE
+kubectl config get-contexts
