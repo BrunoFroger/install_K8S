@@ -38,7 +38,7 @@ else
     echo "la variable $variable existe deja"
     testValeur=$(env | grep $variable | cut -d'=' -f2)
     # on supprime et recree sa definition dans bashrc
-    sed -i '/$variable/d' ~/.bashrc
+    sed -i "/$variable/d" ~/.bashrc
     echo "export $1" >> ~/.bashrc
     echo "testValeur = $testValeur"
     export $1
