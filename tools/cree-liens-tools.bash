@@ -1,8 +1,14 @@
 #!/bin/bash
 
+# test si le repertoire bin du user existe
 if [ ! -d "${HOME}/bin" ];then
     echo "Création du repertoire local ~/bin ";
     mkdir ${HOME}/bin
+fi
+
+# ajout si necessaire du repertoire bin dans le path
+if [ $(echo $PATH | sed "s/:/\n/g" | grep ${HOME}/bin | wc -l) -eq 0 ]; then
+    echo "vous devez ajouter ${HOME}/bin au PATH de votre "
 fi
 
 listeFichiers=$(ls *bash | grep -v cree-liens)
