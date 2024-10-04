@@ -8,8 +8,8 @@ if [[ "X-$K8S_NAMESPACE" == "X-" ]]; then
         echo "Commande attendue : ./$0 <namespace>" 
         exit
     else
-        K8S_NAMESPACE=$1
-        source ./95-set-bash-variable.bash K8S_NAMESPACE=$1
+        export K8S_NAMESPACE=$1
+        source set-bash-variable.bash K8S_NAMESPACE=$1
     fi
 fi
 kubectl config set-context --current --namespace=$K8S_NAMESPACE
