@@ -12,6 +12,6 @@ do
     echo "check de $fichier"
     if [ ! -f ${HOME}/bin/${fichier} ]; then
         echo "creation du lien pour ${fichier} vers ${HOME}/bin/${fichier}"
-        ln -s ${fichier} ${HOME}/bin/${fichier}
+        ln -s ${PWD}/${fichier} ${HOME}/bin/${fichier}
     fi
 done
