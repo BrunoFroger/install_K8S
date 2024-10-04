@@ -13,14 +13,19 @@ if [ $(echo $PATH | sed "s/:/\n/g" | grep ${HOME}/bin | wc -l) -eq 0 ]; then
     exit
 fi
 
+cptFichier=0
+cptUpdate=0
 listeFichiers=$(ls *bash | grep -v cree-liens | tr '\n' ' ')
 echo "liste des ficheirs : $listeFichiers"
 echo "nombre de fichiers a traiter : ${#listeFichiers[@]}"
 for fichier in $listeFichiers
 do
     # echo "check de $fichier"
+    ((cptFichier++))
     if [ -f ${HOME}/bin/${fichier} ]; then
         rm ${HOME}/bin/${fichier}
+        ((cptUpdate++))
     fi
     ln -s ${PWD}/${fichier} ${HOME}/bin/${fichier}
 done
+echo "$((${cptFichiers}-${cptUpdate})) nouveaux fichiers"
