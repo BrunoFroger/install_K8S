@@ -9,6 +9,7 @@ fi
 # ajout si necessaire du repertoire bin dans le path
 if [ $(echo $PATH | sed "s/:/\n/g" | grep ${HOME}/bin | wc -l) -eq 0 ]; then
     echo "vous devez ajouter ${HOME}/bin au PATH de votre "
+    exit
 fi
 
 listeFichiers=$(ls *bash | grep -v cree-liens)
