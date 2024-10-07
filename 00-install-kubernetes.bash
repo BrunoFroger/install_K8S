@@ -30,6 +30,11 @@ source ./10-install-docker.bash
 echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
+#echo "kubernetes => installation des tools"
+source tools/cree-liens-tools.bash
+#-------------------------------------------------
+
+#-------------------------------------------------
 #echo "kubernetes => installation de kubeadm"
 source ./12-install-kubeadm.bash
 #-------------------------------------------------
