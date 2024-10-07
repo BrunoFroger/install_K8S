@@ -130,7 +130,7 @@ Dans l'onglet DNS vous pouvez ajouter au DNS local de la livebox les machines qu
 # Installation Kubernetes
 
 Ces étapes peuvent etres faites en local sur la machine ou via une machine distante connectée en ssh
-Vous pouvez alors récupérer les scripts d'installation en téléchargant la derniere release du projet :
+Vous pouvez alors récupérer les scripts d'installation en téléchargant la derniere release du projet (voir http://github.com/BrunoFroger/install_K8S/releases):
 
 ```
 cd ~
@@ -139,7 +139,7 @@ cd projets/install_K8S
 wget https://github.com/BrunoFroger/install_K8S/archive/tags/<version>.zip
 unzip <version>.zip
 ```
-ci dessus remplacer version par la version que vous voulez télécharger
+ci dessus remplacer version par la version que vous voulez télécharger (ex : 1.2)
 
 # execution de l'installation 
 
