@@ -99,6 +99,7 @@ if [[ $testPopote == 0 ]]; then
 else
     echo "namespace popote existe deja"
 fi
+kubectl config set-context --current --namespace=popote
 
 # deployment du pod multicontaineur de popote
 #TODO tester si deployment deja operation, si oui, le supprimer avant de le relancer
