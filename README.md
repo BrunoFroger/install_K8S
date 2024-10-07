@@ -165,7 +165,12 @@ l'installation du master génère automatiquement les fichiers suivants :
 
 Ne pas effecer ces fichiers ils vous seront utile pour générer la commande de join d'un esclave sur le cluster avec la commande 75-get-join-commande.bash
 
-# création d'un registry local
+Pour l'installation d'un noeud esclave , il faut finir l'installation par la definition du noued esclave en mode worker par la commande : 
+```
+kubectl label node <nom-du-noeud> node-role.kubernetes.io/worker=worker
+```
+
+# création d'un registry local (plus utilisé)
 
 Un registry local est utilisé pour stocker les images générées localement et ainsi pouvoir les deployer dans le cluster, cela necessite un certain nombre d'intervention décrite le tuto suivant : 
 
