@@ -137,7 +137,7 @@ cd ~
 mkdir -p projets/install_K8S
 cd projets/install_K8S
 wget https://github.com/BrunoFroger/install_K8S/archive/tags/<version>.zip
-unzip <version>>.zip
+unzip <version>.zip
 ```
 ci dessus remplacer version par la version que vous voulez télécharger
 
@@ -165,9 +165,29 @@ l'installation du master génère automatiquement les fichiers suivants :
 
 Ne pas effecer ces fichiers ils vous seront utile pour générer la commande de join d'un esclave sur le cluster avec la commande 75-get-join-commande.bash
 
-Pour l'installation d'un noeud esclave , il faut finir l'installation par la definition du noued esclave en mode worker par la commande : 
+Si le noeud esclave avait été installé avant le noeud maitre, pour intégrer le noeud esclave dans le cluster, il faut executer également modifier le mode de fonctionneemnt du noeud par la commande :
 ```
 kubectl label node <nom-du-noeud> node-role.kubernetes.io/worker=worker
+```
+Si le noued avait été préceédement installé avec un autre maitre, vous devez préalablement executer la commande 
+```
+./99-reset-init.bash
+```
+Il est possible de générer manuellement la commande de join avec la commande suivante :
+```
+kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
+```
+<master-ip> est l'adresse IP du noeud master et la valeur par defaut de <master-port> est 6443 
+
+la variable <token> peut est récupéré avec la commande : 
+```
+kubeadm token create
+```
+
+La variable <hash> peut etre recupérée avec la commande suivante :
+```
+openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | \
+   openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
 
 # création d'un registry local (plus utilisé)
