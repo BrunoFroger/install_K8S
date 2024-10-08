@@ -22,11 +22,11 @@ read mode
 if [[ "XX-$mode" == "X-k" ]]; then
     echo "installation de la version avec kong"
     kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
-    dashboard-url="https://localhost:8443"
+    dashboardUrl="https://localhost:8443"
 else
     echo "installation de la version standard"
     kubectl proxy --port=8001&
-    dashboard-url="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard-kong-proxy:443/proxy/"
+    dashboardUrl="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard-kong-proxy:443/proxy/"
 fi
 
 
