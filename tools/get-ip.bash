@@ -1,3 +1,3 @@
 #!/bin/bash
 
-return $(hostname -I | sed 's/ /\n/g' | grep '192,168,1')
+ifconfig | grep '192.168.1.' | grep -v 'broadcast 0.0.0.0' | awk -F ' ' '{print $2}'

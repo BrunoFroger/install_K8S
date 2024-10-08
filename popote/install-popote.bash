@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# login sur DockerHub
+if [[ $(docker info | grep Username | wc -l) == 0 ]]; then
+    echo "login sur DockerHub : "
+    read loginDocker
+    echo "conexion au docker hub "
+    echo "saisissez le mot de passe : "
+    docker login -u ${loginDocker}
+else
+    loginDocker=$(docker info | grep Username | cut -d':' -f 2)
+    echo "vous etes connecté sur dockerHub avec le login ${loginDocker}"
+fi
+
 # test si les images docker popote existent
 if [[ "X-$1" == "X---build" ]]; then
     imagesPopote=0
@@ -64,18 +76,6 @@ else
     echo "les images docker de popote existent"
 fi
 
-# push images sur DockerHub
-if [[ $(docker info | grep Username | wc -l) == 0 ]]; then
-    echo "login sur DockerHub : "
-    read loginDocker
-    echo "conexion au docker hub "
-    echo "saisissez le mot de passe : "
-    docker login -u ${loginDocker}
-else
-    loginDocker=$(docker info | grep Username | cut -d':' -f 2)
-    echo "vous etes connecté sur dockerHub avec le login ${loginDocker}"
-fi
-
 IMAGES=$(docker images | grep popote | awk -F ' ' '{print $1}')
 for image in $IMAGES
 do
@@ -137,6 +137,9 @@ do
 done
 
 echo "installation de popote-service.yaml"
+echo "verifier que l'adresse IP dans le ficheir popote-service.yaml correspond bien a l'adresse IP du master"
+echo "puis appuyez sur return pour continuer"
+read
 kubectl apply -f popote-service.yaml
 
 echo "installation de popote-ingress.yaml"

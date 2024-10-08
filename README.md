@@ -7,7 +7,7 @@ Ce dépot est un exemple simpliste de ce qui peut etre fait pour créer un clust
 
 Avant de vous lancer dans l'installation de votre cluster, voici quelques pré-requis :
 
-- Avoir un compte sur gitHub.com (obligatoire)
+- Avoir un compte sur gitHub.com (obligatoire) et de préférence avoir executé la commande docker login avant de lancer l'installation
 - Avoir un minimum de connaissance dans les domaines suivants :
   - Réseau ()
   - Cloud (containerisation, virtualisation)
