@@ -6,5 +6,7 @@
 kubectl create namespace my-grafana
 
 
+kubectl apply -f grafana-pvc.yaml --namespace=my-grafana
 kubectl apply -f grafana.yaml --namespace=my-grafana
+kubectl apply -f grafana-service.yaml --namespace=my-grafana
 
