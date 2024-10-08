@@ -65,6 +65,6 @@ else
   sudo systemctl enable --now cri-docker.socket
 
   echo "-------------------------------------------------"
-  source ./95-set-bash-variable.bash K8S_SCRIPT_INSTALL_DOCKER="OK"
+  source set-bash-variable.bash K8S_SCRIPT_INSTALL_DOCKER="OK"
   echo "installation de docker => fin"
 fi

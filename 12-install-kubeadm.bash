@@ -67,7 +67,7 @@ else
 
 
     echo "-------------------------------------------------"
-    source ./95-set-bash-variable.bash K8S_SCRIPT_INSTALL_KUBEADM="OK"
+    source set-bash-variable.bash K8S_SCRIPT_INSTALL_KUBEADM="OK"
     echo "installation de kubeadm => fin"
 
 fi

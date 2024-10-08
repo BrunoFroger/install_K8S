@@ -6,6 +6,15 @@ echo "script d'installation de kubernetes => debut"
 echo "(c) B.FROGER 2024"
 #=================================================
 
+if [[ ! -d ~/bin ]]; then
+    mkdir ~/bin
+fi
+
+if [[ $(env | grep PATH | grep ${HOME}/bin) -ne 1 ]]; then
+    export PATH=${PATH}/${HOME}/bin
+    set-bash-variable.bash PATH=${PATH}:${HOME}/bin
+fi
+tools/cree-liens-tools.bash
 
 #-------------------------------------------------
 echo "kubernetes => initialisations debut"
@@ -28,11 +37,6 @@ source ./10-install-docker.bash
 #-------------------------------------------------
 
 echo -n "appuyer sur une touche pour continuer "; read
-
-#-------------------------------------------------
-#echo "kubernetes => installation des tools"
-source tools/cree-liens-tools.bash
-#-------------------------------------------------
 
 #-------------------------------------------------
 #echo "kubernetes => installation de kubeadm"
