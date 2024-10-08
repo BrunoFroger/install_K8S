@@ -36,11 +36,11 @@ kubectl apply -f dashboard-adminuser.yaml
 kubectl apply -f clusterRoleBinding-dashboard.yaml 
 kubectl apply -f secret-longLifeBearer-token-dashboard.yaml
 
-echo ${dashbord-url} > dashbord-url.log
-echo "pour acceder au desktop ${dashboad-url}"
-echo "cette url est stockée dans le fichier dashboard-url.log"
+echo ${dashboardUrl} > dashboardUrl.log
+echo "pour acceder au desktop ${dashboardUrl}"
+echo "cette url est stockée dans le fichier dashboardUrl.log"
 echo "pour vous connecter et recuperer le token de connexion tapez la commande : kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d"
 
 
-echo "-------------------------------------------------"
-echo "creation d"
+# echo "-------------------------------------------------"
+# echo "creation d"
