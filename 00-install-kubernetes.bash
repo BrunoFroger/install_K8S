@@ -11,10 +11,12 @@ if [[ ! -d ~/bin ]]; then
 fi
 
 if [[ $(env | grep PATH | grep ${HOME}/bin) -ne 1 ]]; then
-    export PATH=${PATH}/${HOME}/bin
-    set-bash-variable.bash PATH=${PATH}:${HOME}/bin
+    export PATH=${PATH}:${HOME}/bin
 fi
-tools/cree-liens-tools.bash
+cd tools
+./cree-liens-tools.bash
+cd ..
+set-bash-variable.bash PATH=${PATH}:${HOME}/bin
 
 #-------------------------------------------------
 echo "kubernetes => initialisations debut"
