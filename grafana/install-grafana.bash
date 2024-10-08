@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 # cf doc : https://grafana.com/docs/grafana/latest/setup-grafana/installation/kubernetes/
 
