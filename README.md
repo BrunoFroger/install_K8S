@@ -220,7 +220,7 @@ Un registry local est utilisé pour stocker les images générées localement et
       <td>desciption d'un noeud</td>
     </tr>
     <tr>
-      <td rowspan="3">namespaces</td>
+      <td rowspan="4">namespaces</td>
       <td>kubectl get namespaces</td>
       <td>liste des namespaces</td>
     </tr>
@@ -233,12 +233,16 @@ Un registry local est utilisé pour stocker les images générées localement et
       <td>desciption d'un namespace</td>
     </tr>
     <tr>
+      <td>kubectl config set-context --current --namespace=$K8S_NAMESPACE</td>
+      <td>changement de namespace</td>
+    </tr>
+    <tr>
       <td rowspan="4">pods</td>
-      <td>kubectl get pods``</td>
+      <td>kubectl get pods</td>
       <td>liste des pods du namespace courant</td>
     </tr>
     <tr>
-      <td>kubectl get pods -A``</td>
+      <td>kubectl get pods -A</td>
       <td>liste des pods de tous les namespaces</td>
     </tr>
     <tr>
