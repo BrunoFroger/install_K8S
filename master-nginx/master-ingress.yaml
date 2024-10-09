@@ -13,7 +13,7 @@ spec:
       - path: /popote
         pathType: Prefix
         backend:
-          amespace: popote 
+          namespace: popote 
           service:
             name: popote-service
             port: 
