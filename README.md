@@ -233,7 +233,7 @@ Un registry local est utilisé pour stocker les images générées localement et
       <td>desciption d'un namespace</td>
     </tr>
     <tr>
-      <td>kubectl config set-context --current --namespace=$K8S_NAMESPACE</td>
+      <td>kubectl config set-context --current --namespace=nom-du-namespace</td>
       <td>changement de namespace</td>
     </tr>
     <tr>
