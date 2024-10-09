@@ -6,7 +6,6 @@ metadata:
     app: deployment-popote-monopod
   namespace: popote
 spec:
-  hostname: popote-service
   selector:
     app: deployment-popote-monopod
   # type: NodePort
