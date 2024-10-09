@@ -7,6 +7,6 @@ kubectl create namespace master-nginx
 change-namespace.bash master-nginx
 
 # deploiement ....
-kubeadm apply -f popote-service.yaml
+kubectl apply -f popote-service.yaml
 kubectl apply -f master-service.yaml
 kubectl apply -f master-ingress.yaml
