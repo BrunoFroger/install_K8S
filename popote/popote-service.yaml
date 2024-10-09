@@ -8,11 +8,11 @@ metadata:
 spec:
   selector:
     app: deployment-popote-monopod
-  type: LoadBalancer
-  externalIPs:
-  - 192.168.1.17
+  # type: LoadBalancer
+  # externalIPs:
+  # - 192.168.1.17
   ports:
-  - name: http-port
+  - name: popote-http-port
     port: 8080
     targetPort: 80
   

@@ -13,12 +13,12 @@ kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.
 #kubectl expose deployment demo
 
 # creation d'une ressource ingress associee
-#kubectl create ingress demo-localhost --class=nginx --rule="popote.zapto.org/*=demo:80"
-kubectl create ingress demo-localhost --class=nginx --rule="popote.zapto.org/*=service-popote:80" --type=LoadBalancer
+#kubectl create ingress demo-localhost --class=nginx --rule="k8sbfr.zapto.org/*=demo:80"
+kubectl create ingress demo-localhost --class=nginx --rule="k8sbfr.zapto.org/*=service-popote:80" --type=LoadBalancer
 
 # activation du port forward pour acceder a ce site
 kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
 
 # test 
 echo "test : doit afficher 'Itworks!'"
-curl --resolve popote.zapto.org:8080:127.0.0.1 http://popote.zapto.org:8080
+curl --resolve k8sbfr.zapto.org:8080:127.0.0.1 http://k8sbfr.zapto.org:8080
