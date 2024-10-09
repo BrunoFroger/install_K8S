@@ -9,8 +9,8 @@ spec:
   - host: "k8sbfr.zapto.org"
     http:
       paths:
-      - pathType: Prefix
-        path: "/popote"
+      # - pathType: Prefix
+      - path: /popote
         backend:
           serviceName: popote-service
           servicePort: popote-http
