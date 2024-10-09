@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: master-service
+  labels:
+    app: deployment-master-nginx
+  namespace: master-nginx
+spec:
+  selector:
+    app: deployment-master-nginx
+  type: LoadBalancer
+  externalIPs:
+  - 192.168.1.17
+  ports:
+  - name: http-port
+    port: 8080
+    targetPort: 8080
+  

@@ -1,18 +1,20 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: master-service
-  labels:
-    app: deployment-master-nginx
+  name: ingress-nginx
   namespace: master-nginx
 spec:
-  selector:
-    app: deployment-master-nginx
-  type: LoadBalancer
-  externalIPs:
-  - 192.168.1.17
+  type: NodePort
   ports:
-  - name: http-port
-    port: 8080
-    targetPort: 8080
-  
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  - name: https
+    port: 443
+    targetPort: 443
+    protocol: TCP
+  externalIPs:
+    - 192.168.1.17
+  selector:
+    app: ingress-nginx
