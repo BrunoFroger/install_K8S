@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: popote-service
+    namespace: master-nginx
+spec:
+    type: ExternalName
+    ExternalName: popote-service.popote.svc.cluster.local
