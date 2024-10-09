@@ -14,4 +14,3 @@ spec:
         backend:
           service:
             name: popote-service
-            port: popote-http
