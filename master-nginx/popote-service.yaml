@@ -5,4 +5,4 @@ metadata:
     namespace: master-nginx
 spec:
     type: ExternalName
-    ExternalName: popote-service.popote.svc.cluster.local
+    externalName: popote-service.popote.svc.cluster.local
