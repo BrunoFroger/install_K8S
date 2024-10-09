@@ -16,4 +16,4 @@ spec:
           service:
             name: popote-svc
             port: 
-              number: popote-http
+              number: 8080
