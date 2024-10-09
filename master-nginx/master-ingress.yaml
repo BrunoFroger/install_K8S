@@ -15,7 +15,6 @@ spec:
         backend:
           namespace: popote 
           service:
-            namespace: popote 
             name: popote-service
             port: 
               number: 8080
