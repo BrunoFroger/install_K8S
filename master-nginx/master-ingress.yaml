@@ -12,7 +12,5 @@ spec:
       - pathType: Prefix
         path: "/popote"
         backend:
-          service:
-            name: popote-service
-            port:
-              name: popote-http
+          serviceName: popote-service
+          servicePort: popote-http
