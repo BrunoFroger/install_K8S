@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: master-ingress
-  namespace: master-ingress
+  namespace: master-nginx
 spec:
   ingressClassName: nginx
   rules:
@@ -15,4 +15,5 @@ spec:
           service:
             name: popote-service
             port:
+              name: popote-http-port
               number: 8080
