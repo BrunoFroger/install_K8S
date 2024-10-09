@@ -14,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: popote-service
+            name: popote-svc
             port: 
-              number: 8080
+              number: popote-http
