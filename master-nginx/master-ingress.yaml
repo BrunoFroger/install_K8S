@@ -15,4 +15,4 @@ spec:
           service:
             name: popote-service
             port:
-              name: popote-http-port
+              name: popote-http

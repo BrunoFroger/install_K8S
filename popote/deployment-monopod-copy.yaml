@@ -84,7 +84,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 80
-            name: popote-http-port
+            name: popote-http
           # - containerPort: 443
           #   name: https-port
           # - containerPort: 3000
