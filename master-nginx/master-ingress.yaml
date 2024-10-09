@@ -14,5 +14,6 @@ spec:
         backend:
           service:
             name: popote-service
+            namespace: popote
             port:
               name: popote-http
