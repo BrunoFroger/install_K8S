@@ -13,6 +13,6 @@ spec:
         path: "/popote"
         backend:
           service:
-            name: popote/popote-service
+            name: popote-service
             port:
               name: popote-http
