@@ -16,4 +16,3 @@ spec:
             name: popote-service
             port:
               name: popote-http-port
-              number: 8080
