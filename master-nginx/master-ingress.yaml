@@ -12,8 +12,8 @@ spec:
       # - pathType: Prefix
       - path: /popote
         pathType: Prefix
-        namespace: popote
         backend:
+          amespace: popote 
           service:
             name: popote-service
             port: 
