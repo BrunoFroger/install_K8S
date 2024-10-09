@@ -11,6 +11,7 @@ spec:
       paths:
       # - pathType: Prefix
       - path: /popote
+        pathType: Prefix
         backend:
           service:
             name: popote-service
