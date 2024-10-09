@@ -22,3 +22,4 @@ kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 
 # test 
 echo "test : doit afficher 'Itworks!'"
 curl --resolve k8sbfr.zapto.org:8080:127.0.0.1 http://k8sbfr.zapto.org:8080
+echo ""
