@@ -8,8 +8,8 @@ metadata:
 spec:
   selector:
     app: deployment-popote-monopod
-  type: NodePort
-  # type: ClusterIP
+  # type: NodePort
+  type: ClusterIP
   # type: LoadBalancer
   # externalIPs:
   # - 192.168.1.17
