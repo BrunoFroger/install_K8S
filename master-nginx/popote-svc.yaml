@@ -5,6 +5,6 @@ metadata:
     namespace: master-nginx
 spec:
     type: ExternalName
-    externalName: popote.popote.svc.cluster.local
+    externalName: popote-service.popote.svc.cluster.local
     selector:
         app: master-ingress
