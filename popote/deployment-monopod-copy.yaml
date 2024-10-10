@@ -5,6 +5,7 @@ metadata:
   namespace: popote
   name: deployment-popote-monopod
 spec:
+  dnsPolicy: standard
   replicas: 1
   selector:
     matchLabels:
