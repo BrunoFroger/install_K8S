@@ -49,7 +49,7 @@ echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => installation des runner github"
-source ./16-install-runners-github.bash
+# source ./16-install-runners-github.bash
 #-------------------------------------------------
 
 
