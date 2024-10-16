@@ -28,5 +28,5 @@ else
 
     echo "-------------------------------------------------"
     source set-bash-variable.bash K8S_RUNNERS_GITHUB="OK"
-    echo "installation de docker => fin"
+    echo "installation des runners github => fin"
 fi
