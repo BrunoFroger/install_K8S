@@ -33,65 +33,67 @@ fi
 
 if [[ $imagesPopote == 0 ]]; then
     echo "Les images popote n'existent pas, il faut les creer !"
-    rm -rf popote_files
-    mkdir popote_files
-    cd popote_files
-    wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
-    rm latest
-    archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
-    #echo "archive = $archive"
-    version=$(echo $archive | awk -F'/' '{print $NF}')
-    #echo "version = $version"
-    zipFile=$(echo "$archive.zip" | sed 's/releases/archive/g' | sed 's/tag/tags/g')
-    #echo "zipFile = $zipFile"
-    rm wget.log
-    fichier="$(echo $zipFile | awk -F'/' '{print $NF}')"
-    #echo "fichier = $fichier"
-    wget $zipFile
-    unzip $fichier
-    rm $fichier
-    echo on efface les anciennes images popote locale
-    while :
-    do
-        if [[ $(docker images | grep popote_vuejs_k8s-tags- | wc -l) > 0 ]]; then
-            image=$(docker images | grep popote_vuejs_k8s-tags- | awk -F' ' '{print $1}')
-            echo "on efface l'image $image"
-            docker rmi $image
-        else
-            break;
-        fi
-    done
-    cd popote_vueJS_K8S-tags-$version
-    echo "construction des images docker popote en cours ....."
-    docker compose build --no-cache
+    echo "demandez a générer les images popotes ...."
 
-    echo "on quitte le repertoire $(pwd)" 
-    cd ..   # on sort du repertoire popte_vueJS_K8S-tags-version
-    echo "on quitte le repertoire $(pwd)" 
-    cd ..   # on sort du repertoire popote_files
-    echo "on efface le repertoire popote_files"
-    rm -rf popote_files
-    echo "pwd = $(pwd)"
+    # rm -rf popote_files
+    # mkdir popote_files
+    # cd popote_files
+    # wget https://github.com/BrunoFroger/popote_vueJS_K8S/releases/latest > wget.log 2>&1 
+    # rm latest
+    # archive="$(cat wget.log | grep release | tail -1 | awk -F' ' '{print $NF}')"
+    # #echo "archive = $archive"
+    # version=$(echo $archive | awk -F'/' '{print $NF}')
+    # #echo "version = $version"
+    # zipFile=$(echo "$archive.zip" | sed 's/releases/archive/g' | sed 's/tag/tags/g')
+    # #echo "zipFile = $zipFile"
+    # rm wget.log
+    # fichier="$(echo $zipFile | awk -F'/' '{print $NF}')"
+    # #echo "fichier = $fichier"
+    # wget $zipFile
+    # unzip $fichier
+    # rm $fichier
+    # echo on efface les anciennes images popote locale
+    # while :
+    # do
+    #     if [[ $(docker images | grep popote_vuejs_k8s-tags- | wc -l) > 0 ]]; then
+    #         image=$(docker images | grep popote_vuejs_k8s-tags- | awk -F' ' '{print $1}')
+    #         echo "on efface l'image $image"
+    #         docker rmi $image
+    #     else
+    #         break;
+    #     fi
+    # done
+    # cd popote_vueJS_K8S-tags-$version
+    # echo "construction des images docker popote en cours ....."
+    # docker compose build --no-cache
+
+    # echo "on quitte le repertoire $(pwd)" 
+    # cd ..   # on sort du repertoire popte_vueJS_K8S-tags-version
+    # echo "on quitte le repertoire $(pwd)" 
+    # cd ..   # on sort du repertoire popote_files
+    # echo "on efface le repertoire popote_files"
+    # rm -rf popote_files
+    # echo "pwd = $(pwd)"
 else    
     echo "les images docker de popote existent"
 fi
 
-IMAGES=$(docker images | grep popote | awk -F ' ' '{print $1}')
-for image in $IMAGES
-do
-    # test si l'image existe sur DockerHub
-    if [[ $(docker search popote | grep ${image} | tail -1 | wc -l) == 0 ]]; then
-        pushImage=$(docker images | grep ${image} | awk -F' ' '{print $1}')
-        echo "push de l'image ${pushImage} sur DockerHub/${loginDocker}"
-        # push images in DockerHub repository
-        docker image tag ${pushImage}:latest ${loginDocker}/${pushImage}:latest
-        docker image push ${loginDocker}/${pushImage}:latest
-    else 
-        echo "l'image ${pushImage} existe deja sur DokerHub"
-    fi
-done
+# IMAGES=$(docker images | grep popote | awk -F ' ' '{print $1}')
+# for image in $IMAGES
+# do
+#     # test si l'image existe sur DockerHub
+#     if [[ $(docker search popote | grep ${image} | tail -1 | wc -l) == 0 ]]; then
+#         pushImage=$(docker images | grep ${image} | awk -F' ' '{print $1}')
+#         echo "push de l'image ${pushImage} sur DockerHub/${loginDocker}"
+#         # push images in DockerHub repository
+#         docker image tag ${pushImage}:latest ${loginDocker}/${pushImage}:latest
+#         docker image push ${loginDocker}/${pushImage}:latest
+#     else 
+#         echo "l'image ${pushImage} existe deja sur DokerHub"
+#     fi
+# done
 
-#creation du namespace popote si necessaire
+# creation du namespace popote si necessaire
 testPopote=$(kubectl get namespaces | grep popote | wc -l)
 if [[ $testPopote == 0 ]]; then 
     echo "création du namespace popote"
@@ -137,7 +139,8 @@ do
 done
 
 echo "installation de popote-service.yaml"
-echo "verifier que l'adresse IP dans le ficheir popote-service.yaml correspond bien a l'adresse IP du master"
+echo "verifier que l'adresse IP dans le fichier popote-service.yaml correspond bien a l'adresse IP du master"
+echo "sinon, modifier l'adresse avant de valider"
 echo "puis appuyez sur return pour continuer"
 read
 kubectl apply -f popote-service.yaml
