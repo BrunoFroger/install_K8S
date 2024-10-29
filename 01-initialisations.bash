@@ -24,7 +24,7 @@ else
                 source set-bash-variable.bash K8S_MASTER_KUBERNETES="$(hostname).local"
             elif [[ "$type_install" == "slave" ]]; then
                 source set-bash-variable.bash K8S_TYPE_NOEUD="slave"
-                echo -n "nom de la machine master (ex:machinexx.local) <$K8S> : "
+                echo -n "nom de la machine master (ex:machinexx.local) <$K8S_MASTER_KUBERNETES> : "
                 read master
                 if [[ "X-$master" != "X-" ]]; then
                     source set-bash-variable.bash K8S_MASTER_KUBERNETES=$master
