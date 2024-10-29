@@ -14,7 +14,6 @@ if [[ $(env | grep PATH | grep ${HOME}/bin | wc -l ) -ne 1 ]]; then
     export PATH=${PATH}:${HOME}/bin
 fi
 
-echo "PATH = <${PATH}>"
 cd tools
 ./cree-liens-tools.bash
 cd ..
