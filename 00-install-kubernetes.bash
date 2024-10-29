@@ -16,6 +16,9 @@ fi
 cd tools
 ./cree-liens-tools.bash
 cd ..
+
+source ~/.bashrc
+
 set-bash-variable.bash PATH=${PATH}:${HOME}/bin
 
 #-------------------------------------------------
