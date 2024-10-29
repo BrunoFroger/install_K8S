@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash 
 #exec > >(tee ./install_K8S.out.log) 2>./install_K8S.err.log
 
 #=================================================
