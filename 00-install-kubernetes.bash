@@ -13,6 +13,8 @@ fi
 if [[ $(env | grep PATH | grep ${HOME}/bin) -ne 1 ]]; then
     export PATH=${PATH}:${HOME}/bin
 fi
+
+echo "PATH = <${PATH}>"
 cd tools
 ./cree-liens-tools.bash
 cd ..
