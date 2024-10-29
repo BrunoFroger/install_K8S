@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash -e
 #exec > >(tee ./install_K8S.out.log) 2>./install_K8S.err.log
 
 #=================================================
@@ -10,7 +10,7 @@ if [[ ! -d ~/bin ]]; then
     mkdir ~/bin
 fi
 
-if [[ $(env | grep PATH | grep ${HOME}/bin) -ne 1 ]]; then
+if [[ $(env | grep PATH | grep ${HOME}/bin | wc -l ) -ne 1 ]]; then
     export PATH=${PATH}:${HOME}/bin
 fi
 
