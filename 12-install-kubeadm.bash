@@ -57,6 +57,7 @@ else
 
     echo "-------------------------------------------------"
     echo "kubeadm => création d'un alias k pour kubectl"
+    if [[ $env |]]
     alias k=kubectl
     complete -o default -F __start_kubectl k
 
