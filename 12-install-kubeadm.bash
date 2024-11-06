@@ -57,10 +57,11 @@ else
 
     echo "-------------------------------------------------"
     echo "kubeadm => création d'un alias k pour kubectl"
-    if [[ $env |]]
-    alias k=kubectl
-    complete -o default -F __start_kubectl k
-
+    if [[ $(alias | grep 'k=kubectl' | wc -l ) == 0 ]]; then
+      alias k=kubectl
+      complete -o default -F __start_kubectl k
+    fi
+    
     # echo "-------------------------------------------------"
     # echo "kubeadm => initialisation du namespace $K8S_NAMESPACE"
     # source ./20-change-namespace.bash $K8S_NAMESPACE
