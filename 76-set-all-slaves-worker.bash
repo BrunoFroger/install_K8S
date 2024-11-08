@@ -7,5 +7,5 @@ echo "liste des esclaves : ${slaves}"
 for [[ slave in slaves ]]; do
 
     echo "traitement de $salve"
-    
+
 done
