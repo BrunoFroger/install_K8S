@@ -6,6 +6,7 @@ echo "liste des esclaves : ${slaves}"
 
 for  slave in ${slaves} ; do
 
-    echo "traitement de ${slave}"
+    echo "set ${slave} worker"
+    kubectl label node ${slave} node-role.kubernetes.io/worker=worker
 
 done
