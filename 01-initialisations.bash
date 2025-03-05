@@ -9,6 +9,8 @@ echo "*************************************************"
 if [[ "X-$K8S_SCRIPT_INITIALISATION" == "X-OK" ]]; then
     echo "Initialisations déjà réalisées"
 else 
+    echo "installation de Wiptail (interface graphique pour bash)"
+    apt install -y wiptail
     while :
     do
         echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
