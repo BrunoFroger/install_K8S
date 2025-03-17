@@ -10,11 +10,17 @@ if [[ "X-$K8S_SCRIPT_INITIALISATION" == "X-OK" ]]; then
     echo "Initialisations déjà réalisées"
 else 
     echo "installation de Wiptail (interface graphique pour bash)"
-    apt install -y wiptail
+    testWhiptail=$(whiptail -v | cut -d " " -f 2)
+    if [[ "X-testWhiptail" != "X-(newt):" ]]
+        apt install -y whiptail
     while :
     do
-        echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
-        read type_install
+        # echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
+        # read type_install
+        type_install=$(whiptail --menu "choisissez votre type installation : " 15 60 2 \
+            "master" "" \
+            "slave" "" \
+            3>&1 1>&2 2>&3)
 
         # if [[ "X-$K8S_TYPE_NOEUD" != "X-" ]]; then
         #     type_install=$K8S_TYPE_NOEUD
@@ -26,8 +32,9 @@ else
                 source set-bash-variable.bash K8S_MASTER_KUBERNETES="$(hostname).local"
             elif [[ "$type_install" == "slave" ]]; then
                 source set-bash-variable.bash K8S_TYPE_NOEUD="slave"
-                echo -n "nom de la machine master (ex:machinexx.local) <$K8S_MASTER_KUBERNETES> : "
-                read master
+                # echo -n "nom de la machine master (ex:machinexx.local) <$K8S_MASTER_KUBERNETES> : "
+                # read master
+                master=$(whiptail --inputbox "nom de la machine master (ex:machinexx.local) :" 10 50 3>&1 1>&2 2>&3)
                 if [[ "X-$master" != "X-" ]]; then
                     source set-bash-variable.bash K8S_MASTER_KUBERNETES=$master
                 fi
@@ -35,18 +42,23 @@ else
                 echo "saisie incorrecte !"
             fi
         fi
-        echo -n "nom du namespace a utiliser <$K8S_NAMESPACE> : "
-        read namespace
+        # echo -n "nom du namespace a utiliser <$K8S_NAMESPACE> : "
+        # read namespace
+        namespace=$(whiptail --inputbox "nom du namespace a utiliser <$K8S_NAMESPACE> : " 10 50 3>&1 1>&2 2>&3)
         if [[ "X-$namespace" != "X-" ]]; then
             source set-bash-variable.bash K8S_NAMESPACE=$namespace
         fi
 
-        echo "type install      : $K8S_TYPE_NOEUD"
-        echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
-        echo "master namespace  : $K8S_NAMESPACE"
+        # echo "type install      : $K8S_TYPE_NOEUD"
+        # echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
+        # echo "master namespace  : $K8S_NAMESPACE"
 
-        echo -n "est-ce que ces donnees sont exactes : (o/N) : "
-        read valid
+        # echo -n "est-ce que ces donnees sont exactes : (o/N) : "
+        # read valid
+        valid=$(whiptail --yesno "type install      : $K8S_TYPE_NOEUD\n\
+master Kubernetes : $K8S_MASTER_KUBERNETES\n\
+master namespace  : $K8S_NAMESPACE\n\n\n\
+est-ce que ces donnees sont exactes :" 12 50 3>&1 1>&2 2>&3)
         if [[  "X-$valid" == "X-o" || "X-$valid" == "X-O" ]]; then
             break
         fi
