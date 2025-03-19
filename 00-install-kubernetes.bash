@@ -28,7 +28,7 @@ source ./01-initialisations.bash -e
 echo "kubernetes => initialisations fin"
 #-------------------------------------------------
 
-echo -n "appuyer sur une touche pour continuer "; read
+# echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => post-install linux"
