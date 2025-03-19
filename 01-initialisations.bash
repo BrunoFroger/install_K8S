@@ -59,6 +59,7 @@ else
         valid=$(whiptail --yesno "type install      : $K8S_TYPE_NOEUD\n\
 master Kubernetes : $K8S_MASTER_KUBERNETES\n\
 master namespace  : $K8S_NAMESPACE\n\n\n\
+valid  : $valid\n\n\n\
 est-ce que ces donnees sont exactes :" 12 50 3>&1 1>&2 2>&3)
         if [[  "X-$valid" == "X-Oui" ]]; then
             break
