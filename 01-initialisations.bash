@@ -11,8 +11,8 @@ if [[ "X-$K8S_SCRIPT_INITIALISATION" == "X-OK" ]]; then
 else 
     echo "installation de Wiptail (interface graphique pour bash)"
     testWhiptail=$(whiptail -v | cut -d " " -f 2)
-    if [[ "X-testWhiptail" != "X-(newt):" ]]; then 
-        apt install -y whiptail
+    if [[ "X-$testWhiptail" != "X-(newt):" ]]; then 
+        sudo apt install -y whiptail
     fi
     while :
     do
