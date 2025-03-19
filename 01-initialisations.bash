@@ -21,7 +21,7 @@ else
         type_install=$(whiptail --menu "choisissez votre type installation : " 15 60 2 \
             "master" "" \
             "slave" "" \
-            --default "$K8S_TYPE_NOEUD"
+            --default "$K8S_TYPE_NOEUD" \
             3>&1 1>&2 2>&3)
 
         # if [[ "X-$K8S_TYPE_NOEUD" != "X-" ]]; then
