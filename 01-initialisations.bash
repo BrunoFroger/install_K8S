@@ -35,7 +35,7 @@ else
                 source set-bash-variable.bash K8S_TYPE_NOEUD="slave"
                 # echo -n "nom de la machine master (ex:machinexx.local) <$K8S_MASTER_KUBERNETES> : "
                 # read master
-                master=$(whiptail --inputbox "nom de la machine master (ex:machinexx.local) :" 10 50 3>&1 1>&2 2>&3)
+                master=$(whiptail --inputbox "nom de la machine master (ex:machinexx.local) :" 10 50 "$K8S_MASTER_KUBERNETES" 3>&1 1>&2 2>&3)
                 if [[ "X-$master" != "X-" ]]; then
                     source set-bash-variable.bash K8S_MASTER_KUBERNETES=$master
                 fi
