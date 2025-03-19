@@ -45,7 +45,7 @@ else
         fi
         # echo -n "nom du namespace a utiliser <$K8S_NAMESPACE> : "
         # read namespace
-        namespace=$(whiptail --inputbox "nom du namespace a utiliser <$K8S_NAMESPACE> : " 10 50 3>&1 1>&2 2>&3)
+        namespace=$(whiptail --inputbox "nom du namespace a utiliser : " 10 50 "$K8S_NAMESPACE" 3>&1 1>&2 2>&3)
         if [[ "X-$namespace" != "X-" ]]; then
             source set-bash-variable.bash K8S_NAMESPACE=$namespace
         fi
