@@ -13,6 +13,7 @@ else
     testWhiptail=$(whiptail -v | cut -d " " -f 2)
     if [[ "X-testWhiptail" != "X-(newt):" ]]
         apt install -y whiptail
+    fi
     while :
     do
         # echo -n "quel tye de noeud voulez vous installer (master/slave) <${K8S_TYPE_NOEUD}> ? : "
