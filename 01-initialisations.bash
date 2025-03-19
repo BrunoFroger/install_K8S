@@ -9,7 +9,7 @@ echo "*************************************************"
 if [[ "X-$K8S_SCRIPT_INITIALISATION" == "X-OK" ]]; then
     echo "Initialisations déjà réalisées"
 else 
-    echo "installation de Wiptail (interface graphique pour bash)"
+    echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
     testWhiptail=$(whiptail -v | cut -d " " -f 2)
     if [[ "X-$testWhiptail" != "X-(newt):" ]]; then 
         sudo apt install -y whiptail
@@ -60,8 +60,8 @@ else
 master Kubernetes : $K8S_MASTER_KUBERNETES\n\
 master namespace  : $K8S_NAMESPACE\n\n\n\
 valid  : $valid_install\n\
-est-ce que ces donnees sont exactes :" 12 50 3>&1 1>&2 2>&3)
-        if [[  "X-$valid_install" == "X-" ]]; then
+est-ce que ces donnees sont exactes :" 12 50 3>&1 1>&2 2>&3 ; echo $?)
+        if [[  "X-$valid_install" == "X-0" ]]; then
             echo "valid_install OK = <$valid_install>"
             break
         fi
