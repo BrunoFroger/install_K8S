@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kubectl apply ingress-k8sbfr.yaml --namespace ingress-nginx
+kubectl apply -f ingress-k8sbfr.yaml --namespace ingress-nginx
