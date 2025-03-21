@@ -6,6 +6,8 @@ kubectl	get 		pods								-A (all namespaces)					liste des pods
 
 					pod	<nomPod>						-o yaml
 
+					exec -it [nom-pod] -- /bin/bash
+
 					nodes								
 
 					services																liste les services d'un namespace
