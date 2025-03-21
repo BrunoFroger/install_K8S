@@ -9,12 +9,12 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=120s
 
 # creation d'un serveur http provisoire pour test
-#kubectl create deployment demo --image=httpd --port=80
-#kubectl expose deployment demo
+kubectl create deployment demo --image=httpd --port=80
+kubectl expose deployment demo
 
 # creation d'une ressource ingress associee
-#kubectl create ingress demo-localhost --class=nginx --rule="k8sbfr.zapto.org/*=demo:80"
-kubectl create ingress demo-localhost --class=nginx --rule="k8sbfr.zapto.org/*=service-popote:8080" --type=LoadBalancer
+kubectl create ingress demo-localhost --class=nginx --rule="k8sbfr.zapto.org/*=demo:80"
+#kubectl create ingress demo-localhost --class=nginx --rule="k8sbfr.zapto.org/*=service-popote:8080" --type=LoadBalancer
 
 # activation du port forward pour acceder a ce site
 kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
