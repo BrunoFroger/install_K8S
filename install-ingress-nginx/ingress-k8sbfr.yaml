@@ -15,7 +15,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: popote-service
+            name: popote/popote-service
             port:
               number: 80
       - path: /(.*)
