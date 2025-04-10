@@ -3,6 +3,7 @@
         - kubectl config set-context --current --namespace=default
     - creation du service
         - kubectl apply -f loadBalancer-service.yaml
+        - kubectl apply -f run-bfrk8s-nginx.yaml
 
 
 
