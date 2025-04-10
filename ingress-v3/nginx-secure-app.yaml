@@ -40,7 +40,7 @@ spec:
           name: nginxconfigmap
       containers:
       - name: nginxhttps
-        image: bprashanth/nginxhttps
+        image: soltest4hpvsop/nginxhttps
         ports:
         - containerPort: 443
         - containerPort: 80
