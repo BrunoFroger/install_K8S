@@ -1,0 +1,3 @@
+- creation d'un load balancer externe
+    - creation du service
+    - kubectl apply -f loadBalancer-service.yaml
