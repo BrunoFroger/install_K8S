@@ -17,7 +17,7 @@ spec:
   selector:
     run: bfrk8s-nginx
 ---
-apiVersion: apps/v2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bfrk8s-nginx
