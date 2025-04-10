@@ -4,7 +4,7 @@ metadata:
   name: loadbalancer-service
 spec:
   selector:
-    app: example
+    app: k8sbfr-app
   ports:
     - port: 8765
       targetPort: 9376

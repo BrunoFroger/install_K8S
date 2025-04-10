@@ -3,3 +3,8 @@
         - kubectl config set-context --current --namespace=default
     - creation du service
         - kubectl apply -f loadBalancer-service.yaml
+
+
+
+- suppression du loadBalancer
+    - kubectl delete svc loadBalancer-service
