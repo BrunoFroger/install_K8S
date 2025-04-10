@@ -1,3 +1,5 @@
 - creation d'un load balancer externe
+    - utilisation du namespace default : 
+        - kubectl config set-context --current --namespace=default
     - creation du service
-    - kubectl apply -f loadBalancer-service.yaml
+        - kubectl apply -f loadBalancer-service.yaml
