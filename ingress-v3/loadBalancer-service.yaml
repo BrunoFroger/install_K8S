@@ -8,4 +8,5 @@ spec:
   ports:
     - port: 8765
       targetPort: 9376
+  externalTrafficPolicy: Local
   type: LoadBalancer
