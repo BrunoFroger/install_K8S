@@ -164,6 +164,7 @@ echo "${module} démarré avec succès"
 echo "====================================="
 
 kubectl apply -f popote-service.yaml
+kubectl expose deplyement-nginx 
 
 
 kubectl port-forward svc/service-popote 80:80 3000:3000 3306:3306
