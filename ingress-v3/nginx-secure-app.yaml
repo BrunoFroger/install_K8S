@@ -40,7 +40,7 @@ spec:
           name: nginxconfigmap
       containers:
       - name: nginxhttps
-        image: nginxhttps
+        image: bprashanth/nginxhttps:1.0
         ports:
         - containerPort: 443
         - containerPort: 80
