@@ -1,0 +1,39 @@
+K8Sbfr (cloud prive Bruno Froger)
+
+- Reset global ingress (a completer, pas operationnel)
+	- suppression ingress nginx (a completer, pas operationnel)
+		- kubectl config set-context --current --namespace=ingress-nginx
+		- kubectl delete ingress -n ingress-nginx demo-localhost
+		- kubectl delete deployments.apps demo ingress-nginx-controller
+		- kubectl delete services demo docker-hello-world-svc ingress-nginx-controller ingress-nginx-controller-admission
+		- kubectl delete configmap ingress-nginx-controller ingress-controller-leader
+		- kubectl delete serviceaccounts ingress-nginx ingress-nginx-admission
+		- kubectl delete role ingress-nginx ingress-nginx-admission
+		- kubectl delete clusterrole ingress-nginx ingress-nginx-admission
+		- kubectl delete rolebindings.rbac.authorization.k8s.io ingress-nginx ingress-nginx-admission
+		- kubectl delete clusterrolebindings.rbac.authorization.k8s.io ingress-nginx ingress-nginx-admission
+		- kubectl delete ingressclasses.networking.k8s.io nginx
+		- kubectl delete validatingwebhookconfigurations.admissionregistration.k8s.io ingress-nginx-admission
+		- kubectl delete namespaces ingress-nginx
+
+	- suppression ingress popote (a completer, pas operationnel)
+		- kubectl delete ingress -n popote demo-popote
+
+
+- Ouverture des services a l'exterieur
+	- frontal du cloud (serveur demo) : (a completer, pas operationnel)
+		- ingress : demo-localhost lien : k8sbfr.zapto.org/
+		- installation :
+			- kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.2/deploy/static/provider/cloud/deploy.yaml
+			- kubectl config set-context --current --namespace=ingress-nginx 
+			- attendre que la commande "kubectl get svc -n ingress-nginx" affiche :
+				NAME                                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+				ingress-nginx-controller             LoadBalancer   10.99.170.2     <pending>     80:31583/TCP,443:31935/TCP   112s
+				ingress-nginx-controller-admission   ClusterIP      10.98.217.244   <none>        443/TCP                      111s
+			- kubectl create deployment demo --image=httpd --port=80
+			- kubectl expose deployment demo
+			- kubectl create ingress demo-localhost --class=nginx --rule="k8sbfr.zapto.org/*=demo:80"
+			- kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
+
+	- serveur popote : (a completer, pas operationnel)
+		- ingress : demo-popote lien : k8sbfr.zapto.org/popote
