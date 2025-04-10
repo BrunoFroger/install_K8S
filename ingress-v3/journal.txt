@@ -4,8 +4,11 @@
     - creation du service
         - kubectl apply -f loadBalancer-service.yaml
         - kubectl apply -f run-bfrk8s-nginx.yaml
-
-
+        - kubectl expose deployment/bfrk8s-nginx
+        - kubectl create configmap nginxconfigmap --from-file=default.conf
+        - openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /tmp/nginx.key -out /tmp/nginx.crt -subj "/CN=my-nginx/O=my-nginx"
+        - 
+        - 
 
 - suppression du loadBalancer
     - kubectl delete svc loadBalancer-service
