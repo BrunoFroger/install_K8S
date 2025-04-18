@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bfrk8s-nginx
+  name: k8sbfr-nginx
 spec:
   selector:
     matchLabels:
-      run: bfrk8s-nginx
+      run: k8sbfr-nginx
   replicas: 2
   template:
     metadata:
       labels:
-        run: bfrk8s-nginx
+        run: k8sbfr-nginx
     spec:
       containers:
-      - name: bfrk8s-nginx
+      - name: k8sbfr-nginx
         image: nginx
         ports:
         - containerPort: 80

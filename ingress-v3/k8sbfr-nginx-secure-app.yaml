@@ -29,23 +29,23 @@ spec:
   template:
     metadata:
       labels:
-        run: bfrk8s-nginx
+        run: k8sbfr-nginx
     spec:
       volumes:
-      - name: secret-volume
+      - name: k8sbfr-secret-volume
         secret:
-          secretName: nginxsecret
-      - name: configmap-volume
+          secretName: k8sbfr-nginxsecret
+      - name: k8sbfr-configmap-volume
         configMap:
-          name: nginxconfigmap
+          name: k8sbfr-nginxconfigmap
       containers:
-      - name: nginxhttps
+      - name: k8sbfr-nginxhttps
         image: soltest4hpvsop/nginxhttps
         ports:
         - containerPort: 443
         - containerPort: 80
         volumeMounts:
         - mountPath: /etc/nginx/ssl
-          name: secret-volume
+          name: k8sbfr-secret-volume
         - mountPath: /etc/nginx/conf.d
-          name: configmap-volume
+          name: k8sbfr-configmap-volume
