@@ -8,7 +8,7 @@
     - exposer le service
         - kubectl expose deployment k8sbfr-hello-node --type=LoadBalancer --port=8080
     - test local :
-        kupectl port    
+        - 
 
 
 - nettoyage 
