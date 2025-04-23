@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8sbfr-ingress-hello-node
+spec:
+  rules:
+    - host: k8sbfr.zapto.org
+      http:
+        paths:
+          - path: /hello
+            pathType: Prefix
+            backend:
+              service:
+                name: k8sbfr-hello-node
+                port:
+                  number: 8080
