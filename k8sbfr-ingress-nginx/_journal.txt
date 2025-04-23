@@ -1,0 +1,18 @@
+
+- creation de l'ingress 
+    - kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.2/deploy/static/provider/cloud/deploy.yaml
+		- kubectl config set-context --current --namespace=ingress-nginx 
+		- attendre que la commande "kubectl get svc -n ingress-nginx" affiche :
+				NAME                                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+				ingress-nginx-controller             LoadBalancer   10.99.170.2     <pending>     80:31583/TCP,443:31935/TCP   112s
+				ingress-nginx-controller-admission   ClusterIP      10.98.217.244   <none>        443/TCP                      111s
+		- kubectl create deployment demo --image=httpd --port=80
+		- kubectl expose deployment demo
+		- kubectl create ingress k8sbfr-localhost --class=nginx --rule="k8sbfr.zapto.org/hello/*=k8sbfr-hello-node:8080"
+		- kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
+
+
+
+- suppression de l'ingress 
+    - 
+    - kubectl delete namespace bfrk8s-ingress-nginx 

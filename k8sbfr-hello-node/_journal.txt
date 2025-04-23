@@ -1,0 +1,21 @@
+- creation de l'application k8sbfr-hello-node
+    - creation du namespace k8sbfr-hello-node
+        - kubectl create namespace k8sbfr-hello-node
+        - kubectl config set-context --current --namespace=k8sbfr-hello-node
+    - creation du deployement k8sbfr-hello-node
+        - kubectl create deployment k8sbfr-hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
+        - verifier sa creation avec : kubectl get deployments
+    - exposer le service
+        - kubectl expose deployment k8sbfr-hello-node --type=LoadBalancer --port=8080
+    - test local :
+        - recuperer adresse ip de l'application avec "kubectl describe svc k8sbfr-hello-node"
+        - adresse ip dans le champ EndPoints: sous forme ip:port
+        - lancer un browser web avec cette adresse ip:port
+        - le resultat doit donner date et heure
+
+
+- nettoyage 
+    - kubectl delete services k8sbfr-hello-node
+    - kubectl delete deployment k8sbfr-hello-node
+    - kubectl config set-context --current --namespace=default
+    - kubectl delete namespace k8sbfr-hello-node
