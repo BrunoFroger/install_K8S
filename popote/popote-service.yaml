@@ -11,10 +11,8 @@ spec:
   # type: NodePort
   # type: ClusterIP
   type: LoadBalancer
-  externalIPs:
-  - 192.168.1.17
   ports:
   - name: popote-http
     port: 8080
-    targetPort: 80
+    targetPort: 8080
   

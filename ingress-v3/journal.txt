@@ -1,4 +1,5 @@
 - creation d'un load balancer externe
+    voir article : 
     - utilisation du namespace default : 
         - kubectl config set-context --current --namespace=default
     - creation du service
@@ -8,8 +9,8 @@
         - kubectl create configmap k8sbfr-nginxconfigmap --from-file=k8sbfr-nginx-default.conf
         - openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /tmp/nginx.key -out /tmp/nginx.crt -subj "/CN=my-nginx/O=my-nginx"
         - generer les cles pour les mettres dans le fichier nginxdefault.conf
-            - cat /d/tmp/nginx.crt | base64
-            - cat /d/tmp/nginx.key | base64
+            - cat /tmp/nginx.crt | base64
+            - cat /tmp/nginx.key | base64
             - copier resultat de ces commandes dans le ficheir k8sbfr-nginx-default.conf
         - kubectl apply -f k8sbfr-nginxsecrets.yaml
 

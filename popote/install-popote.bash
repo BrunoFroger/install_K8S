@@ -145,8 +145,8 @@ echo "puis appuyez sur return pour continuer"
 read
 kubectl apply -f popote-service.yaml
 
-echo "installation de popote-ingress.yaml"
-kubectl apply -f popote-ingress.yaml
+#echo "installation de popote-ingress.yaml"
+#kubectl apply -f popote-ingress.yaml
 
 echo "installation de deployment-monopod.yaml"
 kubectl apply -f deployment-monopod.yaml
