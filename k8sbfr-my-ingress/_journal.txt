@@ -1,0 +1,7 @@
+- creation ingress
+    - kubectl create namespace k8sbfr-my-ingress (si necessaire)
+    - kubectl apply -f k8sbfr-my-ingress.yaml -n k8sbfr-my-ingress
+
+
+-suppression ingress
+    - kubectl delete ingress -n k8sbfr-my-ingress k8sbfr-my-ingress
