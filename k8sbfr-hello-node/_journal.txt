@@ -6,7 +6,8 @@
         - kubectl create deployment k8sbfr-hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
         - verifier sa creation avec : kubectl get deployments
     - exposer le service
-        - kubectl expose deployment k8sbfr-hello-node --type=LoadBalancer --port=8080
+        - kubectl apply -f svc-hello-node.yaml
+        #- kubectl expose deployment k8sbfr-hello-node --type=LoadBalancer --port=8080
     - test local :
         - recuperer adresse ip de l'application avec "kubectl describe svc k8sbfr-hello-node"
         - adresse ip dans le champ EndPoints: sous forme ip:port
