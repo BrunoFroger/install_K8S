@@ -8,7 +8,7 @@ spec:
     - host: k8sbfr.zapto.org
       http:
         paths:
-          - path: /hello
+          - path: /
             pathType: Prefix
             backend:
               service:
