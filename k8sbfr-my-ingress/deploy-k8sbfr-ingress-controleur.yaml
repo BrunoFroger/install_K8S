@@ -426,7 +426,7 @@ spec:
         - /nginx-ingress-controller
         - --publish-service=$(POD_NAMESPACE)/k8sbfr-my-ingress-controller
         - --election-id=k8sbfr-my-ingress-leader
-        - --controller-class=k8s.io/k8sbfr-my-ingress
+        - --controller-class=registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3
         - --ingress-class=nginx
         - --configmap=$(POD_NAMESPACE)/k8sbfr-my-ingress-controller
         - --validating-webhook=:8443
@@ -444,7 +444,7 @@ spec:
               fieldPath: metadata.namespace
         - name: LD_PRELOAD
           value: /usr/local/lib/libmimalloc.so
-        image: registry.k8s.io/k8sbfr-my-ingress/controller:v1.11.2@sha256:d5f8217feeac4887cb1ed21f27c2674e58be06bd8f5184cacea2a69abaf78dce
+        image: registry.k8s.io/ingress-nginx/controller:v1.11.2@sha256:d5f8217feeac4887cb1ed21f27c2674e58be06bd8f5184cacea2a69abaf78dce
         imagePullPolicy: IfNotPresent
         lifecycle:
           preStop:
@@ -545,7 +545,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: registry.k8s.io/k8sbfr-my-ingress/kube-webhook-certgen:v1.4.3@sha256:a320a50cc91bd15fd2d6fa6de58bd98c1bd64b9a6f926ce23a600d87043455a3
+        image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3@sha256:a320a50cc91bd15fd2d6fa6de58bd98c1bd64b9a6f926ce23a600d87043455a3
         imagePullPolicy: IfNotPresent
         name: create
         securityContext:
