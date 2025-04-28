@@ -15,7 +15,7 @@ spec:
                 name: k8sbfr-hello-node
                 port:
                   number: 8080
-              namespace: k8sbfr-hello-node
+              #namespace: k8sbfr-hello-node
           - path: /popote
             pathType: Prefix
             backend:
@@ -23,4 +23,4 @@ spec:
                 name: deployment-popote-monopod
                 port:
                   number: 80
-              namespace: popote
+              #namespace: popote
