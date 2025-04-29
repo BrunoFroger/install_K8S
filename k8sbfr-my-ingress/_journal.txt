@@ -6,3 +6,4 @@
 
 -suppression ingress
     - kubectl delete ingress -n k8sbfr-my-ingress k8sbfr-my-ingress
+    - kubectl delete namespace k8sbfr-my-ingress
