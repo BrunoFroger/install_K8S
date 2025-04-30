@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  #name: k8sbfr-my-ingress
-  name: ingress-nginx
+  name: k8sbfr-my-ingress
+  #name: ingress-nginx
   namespace: ingress-nginx
 spec:
   rules:
