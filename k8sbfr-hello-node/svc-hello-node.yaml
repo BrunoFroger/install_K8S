@@ -4,6 +4,8 @@ metadata:
   name: k8sbfr-hello-node
   namespace: k8sbfr-hello-node
 spec:
+  externalTrafficPolicy: Local
+  type: LoadBalancer
   selector:
     app: k8sbfr-hello-node
   ports:
