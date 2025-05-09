@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Service
-  metadata:
-    name: external-k8s-hello-node
-  spec:
-    type: ExternalName
-    externalName: k8sbfr-hello-node.k8sbfr-hello-node.svc.cluster.local
-    
+metadata:
+  name: external-k8s-hello-node
+spec:
+  type: ExternalName
+  externalName: k8sbfr-hello-node.k8sbfr-hello-node.svc.cluster.local
