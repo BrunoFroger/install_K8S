@@ -4,21 +4,13 @@ metadata:
   name: k8sbfr-ingress-hello-node
   namespace: k8sbfr-hello-node
 spec:
-  # externalTrafficPolicy: Local
-  type: LoadBalancer
-  selector:
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
-  ports:
-    - port: 8080
-      targetPort: http
-  # rules:
-  #   - host: k8sbfr.zapto.org
-  #     http:
-  #       paths:
-  #         - path: /hello
-  #           pathType: Prefix
-  #           backend:
-  #             service:
-  #               name: k8sbfr-hello-node
-  #               port: 8080
+  rules:
+    - host: k8sbfr.zapto.org
+      http:
+        paths:
+          - path: /hello
+            pathType: Prefix
+            backend:
+              service:
+                name: k8sbfr-hello-node
+                port: 8080
