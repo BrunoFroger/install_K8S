@@ -15,4 +15,5 @@ spec:
             backend:
               service:
                 name: k8sbfr-hello-node
-                port: 8080
+                port: 
+                  number: 8080
