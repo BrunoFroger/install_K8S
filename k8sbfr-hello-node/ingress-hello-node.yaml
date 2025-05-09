@@ -4,6 +4,12 @@ metadata:
   name: k8sbfr-ingress-hello-node
   namespace: k8sbfr-hello-node
 spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+  ports:
+    - port: 80
   rules:
     - host: k8sbfr.zapto.org
       http:
