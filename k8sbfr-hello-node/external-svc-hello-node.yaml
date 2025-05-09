@@ -6,3 +6,5 @@ metadata:
 spec:
   type: ExternalName
   externalName: k8sbfr-hello-node.k8sbfr-hello-node.svc.cluster.local
+  selector:
+    app: k8sbfr-hello-node
