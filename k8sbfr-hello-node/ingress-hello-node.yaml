@@ -15,4 +15,5 @@ spec:
                 name: k8sbfr-hello-node
                 port:
                   number: 8080
-        port: 8080
+        port: 
+          number: 8080
