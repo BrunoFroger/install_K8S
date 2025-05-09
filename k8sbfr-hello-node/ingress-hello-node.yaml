@@ -14,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: k8sbfr-hello-node
+                name: external-k8sbfr-hello-node
                 port: 
                   number: 8080
