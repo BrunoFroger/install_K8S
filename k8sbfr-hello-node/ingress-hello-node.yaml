@@ -4,7 +4,7 @@ metadata:
   name: k8sbfr-ingress-hello-node
   namespace: k8sbfr-hello-node
 spec:
-  externalTrafficPolicy: Local
+  # externalTrafficPolicy: Local
   type: LoadBalancer
   selector:
     app.kubernetes.io/name: ingress-nginx
