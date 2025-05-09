@@ -6,9 +6,9 @@ metadata:
 spec:
   externalTrafficPolicy: Local
   type: LoadBalancer
-  # selector:
-  #   app.kubernetes.io/name: ingress-nginx
-  #   app.kubernetes.io/part-of: ingress-nginx
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
   ports:
     - port: 8080
       targetPort: http
