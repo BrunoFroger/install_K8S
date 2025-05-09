@@ -12,3 +12,10 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 8080
+
+kind: Service
+  metadata:
+    name: external-k8s-hello-node
+  spec:
+    type: ExternalName
+    externalName: k8sbfr-hello-node.k8sbfr-hello-node.svc.cluster.local
