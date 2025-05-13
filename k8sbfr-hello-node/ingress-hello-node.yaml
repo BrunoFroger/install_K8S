@@ -15,6 +15,7 @@ spec:
             backend:
               service:
                 #name: external-k8sbfr-hello-node
-                namespace: k8sbfr-hello-node
+                name: k8sbfr-hello-node
+                #namespace: k8sbfr-hello-node
                 port: 
                   number: 8080
