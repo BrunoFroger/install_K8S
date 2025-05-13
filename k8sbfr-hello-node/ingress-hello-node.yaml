@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: k8sbfr-ingress-hello-node
-  #namespace: k8sbfr-hello-node
-  namespace: ingress-nginx
+  namespace: k8sbfr-hello-node
+  #namespace: ingress-nginx
 spec:
   ingressClassName: nginx
   rules:
