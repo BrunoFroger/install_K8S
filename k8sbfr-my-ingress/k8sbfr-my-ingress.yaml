@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: k8sbfr-my-ingress
   namespace: ingress-nginx
+  IngressClas: nginx
 spec:
   rules:
     - host: k8sbfr.zapto.org
