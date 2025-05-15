@@ -12,4 +12,5 @@ kubectl proxy
 
 # sur la machine master lancer firefox
 http://localhost:8081/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
-# selectionner token#copier le token affiche avec la commande precedente
+# selectionner token
+# copier le token généré avec la commande precedente
