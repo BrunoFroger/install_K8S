@@ -1,9 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+IngressClas: nginx
 metadata:
   name: k8sbfr-my-ingress
   namespace: ingress-nginx
-  IngressClas: nginx
 spec:
   rules:
     - host: k8sbfr.zapto.org
