@@ -13,10 +13,10 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: services/k8sbfr-hello-node
+                name: k8sbfr-hello-node
                 port:
                   number: 80
-              #namespace: k8sbfr-hello-node
+              namespace: k8sbfr-hello-node
           - path: /popote
             pathType: Prefix
             backend:
