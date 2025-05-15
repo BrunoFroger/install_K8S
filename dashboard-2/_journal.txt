@@ -1,0 +1,14 @@
+
+# commandes a taper sur master imperativement
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+kubectl create serviceaccount dashboard-admin -n kubernetes-dashboard
+kubectl create clusterrolebinding dashboard-admin-binding --clusterrole=cluster-admin --serviceaccount=kubernetes-dashboard:dashboard-admin
+kubectl -n kubernetes-dashboard create token dashboard-admin
+
+# cette dernière commande affiche un tokern a reutiliser plus tard
+
+kubectl proxy
+
+# sur la machine master lancer firefox
+http://localhost:8081api/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/replicationcontroller?namespace=_all
