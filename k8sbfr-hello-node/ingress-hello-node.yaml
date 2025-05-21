@@ -11,8 +11,8 @@ spec:
     #- host: *
       http:
         paths:
-          - path: /*
-          #- path: /hello
+          #- path: /*
+          - path: /hello
             pathType: Prefix
             backend:
               service:
