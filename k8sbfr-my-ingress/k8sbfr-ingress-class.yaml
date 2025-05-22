@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: IngressClass
 metadata:
-  name: nginx
+  name: k8sbfr-nginx-class
   namespace: ingress-nginx
 spec:
   #controller: nginx.org/ingress-controller
