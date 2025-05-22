@@ -11,6 +11,6 @@ spec:
   ports:
     #- protocol: TCP
     - protocol: HTTP
-      port: 80
-      targetPort: 8080
+      port: 8080
+      targetPort: 80
 
