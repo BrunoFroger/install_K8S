@@ -5,7 +5,7 @@ metadata:
   namespace: k8sbfr-hello-node
 spec:
   # externalTrafficPolicy: Local
-  type: LoadBalancer
+  type: clusterIP
   selector:
     app: k8sbfr-hello-node
   ports:

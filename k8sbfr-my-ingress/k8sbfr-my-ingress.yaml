@@ -4,7 +4,7 @@ metadata:
   name: k8sbfr-my-ingress
   namespace: ingress-nginx
 spec:
-  ingressClassName: nginx
+  ingressClassName: k8sbfr-nginx-class
   rules:
     - host: k8sbfr.zapto.org
       http:
