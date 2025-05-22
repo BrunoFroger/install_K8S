@@ -10,7 +10,7 @@ spec:
     app: k8sbfr-hello-node
   ports:
     #- protocol: TCP
-    - protocol: HTTP
+    - protocol: TCP
       port: 8080
       targetPort: 80
 
