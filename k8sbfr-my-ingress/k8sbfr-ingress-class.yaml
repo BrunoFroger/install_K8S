@@ -3,5 +3,5 @@ kind: IngressClass
 metadata:
   name: nginx
 spec:
-  #controller: nginx.org/ingress-controller
-  controleur: services/ingress-nginx-controller
+  controller: nginx.org/ingress-controller
+  
