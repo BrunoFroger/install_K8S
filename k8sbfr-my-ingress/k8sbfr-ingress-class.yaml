@@ -5,4 +5,4 @@ metadata:
   namespace: ingress-nginx
 spec:
   #controller: nginx.org/ingress-controller
-  controleur: services/ingress-nginx-controller
+  controller: services/ingress-nginx-controller
