@@ -11,7 +11,7 @@ echo "creation du namespace k8sbfr-hello-node, si necessaire"
 cd k8sbfr-hello-node
 if [[ $(kubectl get namespaces 2> /dev/null | grep k8sbfr-hello-node | wc -l) == 0 ]]; then
     echo "creation du namespace en cours ....."
-    kubectl create namespace k8sbfr-hello-node --wait
+    kubectl create namespace k8sbfr-hello-node
 fi
 echo "changement de namespace vers k8sbfr-hello-node"
 kubectl config set-context --current --namespace=k8sbfr-hello-node
