@@ -29,6 +29,8 @@ do
 
     if [[ "X-$nomApplication" != "X-" ]]; then
         if [[ "$nomApplication" == "quitter" ]]; then
+            echo "on quitte la boucle installation d'applications"
+            sleep 5
             break;
         elif [[ "$nomApplication" == "hello_node" ]]; then
             echo "installation de hello-node"
