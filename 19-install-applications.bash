@@ -33,16 +33,16 @@ do
             break;
         elif [[ "$nomApplication" == "hello node" ]]; then
             if [[ "X-$applicationHelloNode" == "X-" ]]; then 
-                source ./31-desinstall-hello-node.bash
-            else
                 source ./30-install-hello-node.bash
+            else
+                source ./31-desinstall-hello-node.bash
             fi
 
         elif [[ "$nomApplication" == "popote" ]]; then
             if [[ "X-$applicationPopote" == "X-" ]]; then 
-                source ./31-desinstall-popote.bash
-            else
                 source ./30-install-popote.bash
+            else
+                source ./31-desinstall-popote.bash
             fi
         else
             echo "saisie incorrecte !"
