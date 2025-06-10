@@ -34,6 +34,7 @@ if [[ $(kubectl get deployments.apps 2> /dev/null | grep -v NAME | grep k8sbfr-h
 else
     echo "l'application hello-node est deja deployé"
 fi
+echo "Appuyez sur enter pour continuer"
 read
 cd ..
 
