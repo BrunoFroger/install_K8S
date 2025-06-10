@@ -9,7 +9,7 @@ echo "*************************************************"
 
 #creation du namespace k8sbfr-hello-node
 cd k8sbfr-hello-node
-if [[ $(kubectl get namespaces k8sbfr-hello-node | wc -l) != 0 ]]; then
+if [[ $(kubectl get namespaces | grep k8sbfr-hello-node | wc -l) != 0 ]]; then
     kubectl create namespace k8sbfr-hello-node
 fi
 kubectl config set-context --current --namespace=k8sbfr-hello-node
