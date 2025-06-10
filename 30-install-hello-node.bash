@@ -16,7 +16,7 @@ echo "changement de namespace vers k8sbfr-hello-node"
 kubectl config set-context --current --namespace=k8sbfr-hello-node
 
 echo "essai installation de hello-node"
-if [[ $(kubectl get deployments.apps k8sbfr-hello-node | wc -l) != 0 ]]; then
+if [[ $(kubectl get deployments.apps k8sbfr-hello-node | wc -l) == 0 ]]; then
     echo "creation du deployement k8sbfr-hello-node"
     kubectl create deployment k8sbfr-hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
             # - verifier sa creation avec : kubectl get deployments
