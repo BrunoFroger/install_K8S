@@ -31,7 +31,7 @@ do
     if [[ "X-$nomApplication" != "X-" ]]; then
         if [[ "$nomApplication" == "quitter" ]]; then
             break;
-        elif [[ "$nomApplication" == "hello_node" ]]; then
+        elif [[ "$nomApplication" == "hello node" ]]; then
             echo "installation de hello-node"
             applicationHelloNode="installée"
             slep 2
