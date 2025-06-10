@@ -33,10 +33,12 @@ do
         elif [[ "$type_install" == "hello_node" ]]; then
             echo "installation de hello-node"
             applicationHelloNode="installée"
+            slep 2
 
         elif [[ "$type_install" == "popote" ]]; then
             echo "installation de popote"
             applicationPopote="installée"
+            slep 2
         else
             echo "saisie incorrecte !"
         fi
