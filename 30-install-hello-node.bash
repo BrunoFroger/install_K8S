@@ -10,7 +10,8 @@ echo "*************************************************"
 echo "creation du namespace k8sbfr-hello-node, si necessaire"
 cd k8sbfr-hello-node
 if [[ $(kubectl get namespaces 2> /dev/null | grep k8sbfr-hello-node | wc -l) == 0 ]]; then
-    kubectl create namespace k8sbfr-hello-node
+    echo "creation du namespace en cours ....."
+    kubectl create namespace k8sbfr-hello-node --wait
 fi
 echo "changement de namespace vers k8sbfr-hello-node"
 kubectl config set-context --current --namespace=k8sbfr-hello-node
@@ -18,13 +19,13 @@ kubectl config set-context --current --namespace=k8sbfr-hello-node
 echo "essai installation de hello-node"
 if [[ $(kubectl get deployments.apps 2> /dev/null | grep -v NAME | grep k8sbfr-hello-node | wc -l) == 0 ]]; then
     echo "creation du deployement k8sbfr-hello-node, veuillez patienter ....."
-    kubectl create deployment k8sbfr-hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
+    kubectl create deployment k8sbfr-hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080 --wait
             # - verifier sa creation avec : kubectl get deployments
     echo "attendre fin installation deployement hello-node"
     kubectl wait --for=condition=Available deployment/k8sbfr-hello-node --timeout=120s
 
     echo "creation du service, veuillez patienter ....."
-    kubectl apply -f svc-hello-node.yaml
+    kubectl apply -f svc-hello-node.yaml --wait
         # - test local :
         #     - recuperer adresse ip de l'application avec "kubectl describe svc k8sbfr-hello-node"
         #     - adresse ip dans le champ EndPoints: sous forme ip:port
