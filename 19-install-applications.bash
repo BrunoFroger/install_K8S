@@ -21,7 +21,7 @@ fi
 
 while :
 do
-    nomApplication=$(whiptail --menu "choisissez quelle application vous voulez installer : " 15 60 2 \
+    nomApplication=$(whiptail --menu "choisissez quelle application vous voulez installer : " 15 60 3 \
         "hello node" $applicationHelloNode \
         "popote" $applicationPopote \
         "quitter" "" \
