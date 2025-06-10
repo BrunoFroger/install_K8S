@@ -9,7 +9,7 @@ echo "*************************************************"
 
 echo "creation du namespace k8sbfr-hello-node, si necessaire"
 cd k8sbfr-hello-node
-if [[ $(kubectl get namespaces | grep k8sbfr-hello-node | wc -l) != 0 ]]; then
+if [[ $(kubectl get namespaces | grep k8sbfr-hello-node | wc -l) == 0 ]]; then
     kubectl create namespace k8sbfr-hello-node
 fi
 echo "changement de namespace vers k8sbfr-hello-node"
@@ -20,6 +20,7 @@ if [[ $(kubectl get deployments.apps k8sbfr-hello-node | wc -l) == 0 ]]; then
     echo "creation du deployement k8sbfr-hello-node"
     kubectl create deployment k8sbfr-hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
             # - verifier sa creation avec : kubectl get deployments
+    echo "attendre fin installation deployement hello-node"
     kubectl wait --for=condition=Available deployment/k8sbfr-hello-node --timeout=120s
 
     echo "creation du service"
