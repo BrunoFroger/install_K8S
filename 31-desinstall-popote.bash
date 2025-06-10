@@ -7,7 +7,10 @@ echo "*                 popote"
 echo "*"
 echo "*************************************************"
 
-echo "desinstallation de l'application popote"
-read
+if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement desinstaller popote ?" 10 60) then
 
-unset K8S_POPOTE_INSTALLED
+    unset K8S_POPOTE_INSTALLED
+    echo "popote desinstallé"
+    echo "appuyez sur enter pour continuer"
+    read
+fi
