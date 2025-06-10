@@ -34,11 +34,13 @@ do
         elif [[ "$nomApplication" == "hello node" ]]; then
             echo "installation de hello-node"
             applicationHelloNode="installée"
+            source set-bash-variable.bash K8S_HELLO_NODE_INSTALLED="OK"
             slep 2
 
         elif [[ "$nomApplication" == "popote" ]]; then
             echo "installation de popote"
             applicationPopote="installée"
+            source set-bash-variable.bash K8S_POPOTE_INSTALLED="OK"
             slep 2
         else
             echo "saisie incorrecte !"
