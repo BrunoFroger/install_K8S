@@ -10,9 +10,12 @@ echo "*************************************************"
 if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement desinstaller hello-node ?" 10 60) then
 
     kubectl config set-context --current --namespace=k8sbfr-hello-node
+    echo "destruction service k8sbfr-hello-node en cours ...."
     kubectl delete services k8sbfr-hello-node --wait
+    echo "destruction deployement k8sbfr-hello-node en cours ...."
     kubectl delete deployment k8sbfr-hello-node --wait
     kubectl config set-context --current --namespace=default
+    echo "destruction namespace k8sbfr-hello-node en cours ...."
     kubectl delete namespace k8sbfr-hello-node --wait
 
     unset K8S_HELLO_NODE_INSTALLED
