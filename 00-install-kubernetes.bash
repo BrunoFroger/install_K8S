@@ -56,6 +56,11 @@ echo -n "appuyer sur une touche pour continuer "; read
 # source ./16-install-runners-github.bash
 #-------------------------------------------------
 
+#-------------------------------------------------
+#echo "kubernetes => installation des applications"
+source ./19-install-applications.bash
+#-------------------------------------------------
+
 
 #=================================================
 echo "script d'installation de kubernetes => fin"
