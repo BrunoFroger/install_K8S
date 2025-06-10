@@ -12,7 +12,7 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     kubectl config set-context --current --namespace=k8sbfr-hello-node
     echo "destruction ingress k8sbfr-hello-node en cours ...."
     kubectl delete ingress k8sbfr-hello-node --wait
-    echo "destruction service ingress-hello-node en cours ...."
+    echo "destruction service k8sbfr-ingress-hello-node en cours ...."
     kubectl delete services k8sbfr-hello-node --wait
     echo "destruction deployement k8sbfr-hello-node en cours ...."
     kubectl delete deployment k8sbfr-hello-node --wait
