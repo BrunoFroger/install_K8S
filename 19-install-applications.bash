@@ -11,17 +11,21 @@ testWhiptail=$(whiptail -v | cut -d " " -f 2)
 if [[ "X-$testWhiptail" != "X-(newt):" ]]; then 
     sudo apt install -y whiptail
 fi
-applicationHelloNode=""
-if [[ "X-$K8S_HELLO_NODE_INSTALLED" != "X-" ]] then 
-    applicationHelloNode="installée"
-fi 
-applicationPopote=""
-if [[ "X-$K8S_POPOTE_INSTALLED" != "X-" ]] then 
-    applicationPopote="installée"
-fi 
 
 while :
 do
+
+    if [[ "X-$K8S_HELLO_NODE_INSTALLED" != "X-" ]] then 
+        applicationHelloNode="installée"
+    else
+        applicationHelloNode=""
+    fi 
+    if [[ "X-$K8S_POPOTE_INSTALLED" != "X-" ]] then 
+        applicationPopote="installée"
+    else
+        applicationPopote=""    
+    fi 
+
     nomApplication=$(whiptail --menu "choisissez quelle application vous voulez installer : " 15 60 3 \
         "hello node" "$applicationHelloNode " \
         "popote" "$applicationPopote " \
