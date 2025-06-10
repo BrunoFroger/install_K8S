@@ -32,16 +32,18 @@ do
         if [[ "$nomApplication" == "quitter" ]]; then
             break;
         elif [[ "$nomApplication" == "hello node" ]]; then
-            echo "installation de hello-node"
-            applicationHelloNode="installée"
-            source set-bash-variable.bash K8S_HELLO_NODE_INSTALLED="OK"
-            slep 2
+            if [[ "X-$applicationHelloNode" == "X-" ]]; then 
+                source ./31-desinstall-hello-node.bash
+            else
+                source ./30-install-hello-node.bash
+            fi
 
         elif [[ "$nomApplication" == "popote" ]]; then
-            echo "installation de popote"
-            applicationPopote="installée"
-            source set-bash-variable.bash K8S_POPOTE_INSTALLED="OK"
-            slep 2
+            if [[ "X-$applicationPopote" == "X-" ]]; then 
+                source ./31-desinstall-popote.bash
+            else
+                source ./30-install-popote.bash
+            fi
         else
             echo "saisie incorrecte !"
         fi
