@@ -11,11 +11,12 @@ testWhiptail=$(whiptail -v | cut -d " " -f 2)
 if [[ "X-$testWhiptail" != "X-(newt):" ]]; then 
     sudo apt install -y whiptail
 fi
-
-if [[ "X-K8S_HELLO_NODE_INSTALLED" != "X-" ]] then 
+applicationHelloNode=""
+if [[ "X-$K8S_HELLO_NODE_INSTALLED" != "X-" ]] then 
     applicationHelloNode="installée"
 fi 
-if [[ "X-K8S_POPOTE_INSTALLED" != "X-" ]] then 
+applicationPopote=""
+if [[ "X-$K8S_POPOTE_INSTALLED" != "X-" ]] then 
     applicationPopote="installée"
 fi 
 
