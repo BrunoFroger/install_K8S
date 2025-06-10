@@ -13,6 +13,7 @@ if [[ $(kubectl get namespaces 2> /dev/null | grep k8sbfr-hello-node | wc -l) ==
     echo "creation du namespace en cours ....."
     kubectl create namespace k8sbfr-hello-node
 fi
+
 echo "changement de namespace vers k8sbfr-hello-node"
 kubectl config set-context --current --namespace=k8sbfr-hello-node
 
@@ -31,6 +32,10 @@ if [[ $(kubectl get deployments.apps 2> /dev/null | grep -v NAME | grep k8sbfr-h
         #     - adresse ip dans le champ EndPoints: sous forme ip:port
         #     - lancer un browser web avec cette adresse ip:port
         #     - le resultat doit donner date et heure
+
+    echo "creation de l'ingress, veuillez patienter ....."
+    kubectl apply -f ingress-hello-node.yaml --wait
+
     echo "installation de l'application hello-node ok"
 else
     echo "l'application hello-node est deja deployé"
