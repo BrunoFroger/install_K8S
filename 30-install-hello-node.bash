@@ -8,6 +8,7 @@ echo "*"
 echo "*************************************************"
 
 #creation du namespace k8sbfr-hello-node
+cd k8sbfr-hello-node
 kubectl create namespace k8sbfr-hello-node
 kubectl config set-context --current --namespace=k8sbfr-hello-node
 
@@ -25,6 +26,7 @@ kubectl apply -f svc-hello-node.yaml
     #     - le resultat doit donner date et heure
 echo "installation de l'application hello-node ok"
 read
+cd ..
 
 
 source set-bash-variable.bash K8S_HELLO_NODE_INSTALLED="OK"
