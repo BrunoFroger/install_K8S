@@ -15,4 +15,4 @@
 
 - suppression de l'ingress 
     - 
-    - kubectl delete namespace bfrk8s-ingress-nginx 
+    - kubectl delete namespace k8sbfr-ingress-nginx 
