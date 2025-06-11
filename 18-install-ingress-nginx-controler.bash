@@ -17,7 +17,7 @@ echo "creation du namespace ingress-nginx, si necessaire"
 if [[ $(kubectl get namespaces 2> /dev/null | grep ingress-nginx | wc -l) == 0 ]]; then
     echo "creation du namespace en cours ....."
     kubectl create namespace ingress-nginx
-fichier
+fi
 
 echo "essai installation de ingress-controller"
 if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-nginx-controller | wc -l) == 0 ]]; then
