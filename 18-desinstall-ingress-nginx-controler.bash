@@ -14,6 +14,6 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     kubectl delete services ingress-nginx-controller ingress-nginx-controller-admission
     kubectl delete jobs.batch ingress-nginx-admission-create ingress-nginx-admission-patch 
     change-namespace.bash default
-    kubectl delete namespace ingress-nginx
     echo "Suppression du namespace en cours ....."
+    kubectl delete namespace ingress-nginx > /dev/null
 fi
