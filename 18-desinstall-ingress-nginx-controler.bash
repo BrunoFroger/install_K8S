@@ -7,8 +7,9 @@ echo "*"
 echo "*************************************************"
 
 
-if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement desinstaller k8sbfr-my-ingress ?" 10 60) then
+if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement desinstaller ingress-controller ?" 10 60) then
 
+    change-namespace.bash ingress-nginx
     kubectl delete deployments.apps ingress-nginx-controller
     kubectl delete services ingress-nginx-controller ingress-nginx-controller-admission
     kubectl delete jobs.batch ingress-nginx-admission-create ingress-nginx-admission-patch 
