@@ -11,8 +11,6 @@ echo "-----------------------------"
 echo "       a developper"
 echo "-----------------------------"
 
-cd k8sbfr-my-ingress
-
 echo "creation du namespace ingress-nginx, si necessaire"
 if [[ $(kubectl get namespaces 2> /dev/null | grep ingress-nginx | wc -l) == 0 ]]; then
     echo "creation du namespace en cours ....."
@@ -31,5 +29,3 @@ else
 fi
 echo "Appuyez sur enter pour continuer"
 read
-
-cd ..
