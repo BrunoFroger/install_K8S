@@ -27,5 +27,3 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
 else
     echo "lingress-nginx-controleur est deja deployé"
 fi
-echo "Appuyez sur enter pour continuer"
-read
