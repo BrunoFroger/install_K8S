@@ -32,7 +32,7 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
     externalIp=$(ifconfig eno1 | grep "inet "| awk '{ print $2 }')
     echo "l'adresse IP externe utilisée est : $externalIp"
     kubectl get services ingress-nginx-controller -o yaml > k8sbfr-service-ingress-nginx-controller.yaml
-    awk '/type: LoadBalancer/ { print ""; next} {print} k8sbfr-service-ingress-nginx-controller.yaml > k8sbfr-service-ingress-nginx-controller1.yaml
+    awk '/type: LoadBalancer/ { print ""; next} {print}' k8sbfr-service-ingress-nginx-controller.yaml > k8sbfr-service-ingress-nginx-controller1.yaml
     awk -v extIp=$externalIp '/spec:/ { print; print "  externalIPs:"; print  "    - " extIp; next }1' k8sbfr-service-ingress-nginx-controller1.yaml | kubectl apply -f -
     rm k8sbfr-service-ingress-nginx-controller*.yaml
     echo "installation de ingress-nginx-controleur ok"
