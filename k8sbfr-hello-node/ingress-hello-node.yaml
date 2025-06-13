@@ -5,7 +5,7 @@ metadata:
   name: k8sbfr-ingress-hello-node
   namespace: k8sbfr-hello-node
 spec:
-  ingressClassName: nginx
+  ingressClassName: k8sbfr-nginx
   rules:
     # - host: 
     #   - k8sbfr.zapto.org
