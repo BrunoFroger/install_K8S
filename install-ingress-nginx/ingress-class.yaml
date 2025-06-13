@@ -5,4 +5,5 @@ metadata:
   # annotations:
   #   ingressclass.kubernetes.io/is-default-class: "true"
 spec:
-  controller: nginx.org/ingress-controller 
+  controller: service/ingress-nginx-controller
+  
