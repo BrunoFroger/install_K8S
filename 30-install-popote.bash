@@ -29,7 +29,6 @@ if [[ $(kubectl get deployments.apps 2> /dev/null | grep -v NAME | grep deployme
     kubectl apply -f deployment-monopod.yaml
     kubectl expose deployment deployment-popote-monopod --type=LoadBalancer
 
-echo "installation de l'application popote"
-read
+fi
 
 source set-bash-variable.bash K8S_POPOTE_INSTALLED="OK"

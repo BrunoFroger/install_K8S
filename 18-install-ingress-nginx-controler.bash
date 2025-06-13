@@ -37,5 +37,5 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
     rm k8sbfr-service-ingress-nginx-controller*.yaml
     echo "installation de ingress-nginx-controleur ok"
 else
-    echo "lingress-nginx-controleur est deja deployé"
+    echo "l'ingress-nginx-controleur est deja deployé"
 fi

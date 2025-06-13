@@ -16,6 +16,4 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     change-namespace.bash default
     unset K8S_POPOTE_INSTALLED
     echo "popote desinstallé"
-    echo "appuyez sur enter pour continuer"
-    read
 fi

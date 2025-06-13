@@ -23,6 +23,4 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
 
     unset K8S_HELLO_NODE_INSTALLED
     echo "hello-node desinstallé"
-    echo "appuyez sur enter pour continuer"
-    read
 fi
