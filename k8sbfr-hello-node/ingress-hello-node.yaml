@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: k8sbfr-nginx
   rules:
-    - host: 
+    - hosts: 
       - k8sbfr.zapto.org
       - localhost
     - http:
