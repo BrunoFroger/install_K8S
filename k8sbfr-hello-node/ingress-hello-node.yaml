@@ -14,10 +14,10 @@ spec:
     - hosts: k8sbfr.zapto.org
     - http:
       path: /hello
-          pathType: Prefix
-          backend:
-            service:
-              #name: external-k8sbfr-hello-node
-              name: k8sbfr-hello-node
-              port: 
-                number: 8080
+        pathType: Prefix
+        backend:
+          service:
+            #name: external-k8sbfr-hello-node
+            name: k8sbfr-hello-node
+            port: 
+              number: 8080
