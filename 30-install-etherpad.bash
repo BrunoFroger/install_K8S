@@ -20,7 +20,7 @@ echo "changement de namespace vers k8sbfr-etherpad"
 kubectl config set-context --current --namespace=k8sbfr-etherpad
 
 echo "essai installation de etherpad"
-if [[ $(kubectl get deployments.apps 2> /dev/null | grep -v NAME | grep k8sbfr-etherpad | wc -l) == 0 ]]; then
+if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep k8sbfr-etherpad | wc -l) == 0 ]]; then
     echo "creation du deployement k8sbfr-etherpad, veuillez patienter ....."
     kubectl apply -f etherpadDeployment.yaml
     kubectl wait --for=condition=Available deployment/k8sbfr-etherpad --timeout=120s
