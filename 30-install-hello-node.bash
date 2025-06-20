@@ -23,7 +23,7 @@ if [[ $(kubectl get deployments.apps 2> /dev/null | grep -v NAME | grep k8sbfr-h
     kubectl create deployment k8sbfr-hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
             # - verifier sa creation avec : kubectl get deployments
     echo "attendre fin installation deployement hello-node, veuillez patienter ....."
-    kubectl wait --for=condition=Available deployment/k8sbfr-hello-node --timeout=120s
+    kubectl wait --for=condition=Available deployment/k8sbfr-hello-node --timeout=500s
 
     echo "creation du service, veuillez patienter ....."
     kubectl apply -f svc-hello-node.yaml --wait
