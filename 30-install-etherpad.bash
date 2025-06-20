@@ -24,8 +24,8 @@ if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep etherpad | wc -l) ==
     docker pull etherpad/etherpad
 
     echo "creation du configMap, veuillez patienter ....."
-    kubectl apply -f etherpadconfigMap.yaml
-    
+    kubectl apply -f etherpadConfigMap.yaml
+
     echo "creation du deployement etherpad, veuillez patienter ....."
     kubectl apply -f etherpadDeployment.yaml
     kubectl wait --for=condition=Available pod/etherpad --timeout=120s
