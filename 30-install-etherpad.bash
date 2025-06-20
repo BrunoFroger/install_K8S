@@ -7,6 +7,8 @@ echo "*                 etherpad"
 echo "*"
 echo "*************************************************"
 
+status="KO"
+
 echo "creation du namespace k8sbfr-etherpad, si necessaire"
 cd k8sbfr-etherpad
 if [[ $(kubectl get namespaces 2> /dev/null | grep k8sbfr-etherpad | wc -l) == 0 ]]; then
@@ -33,9 +35,10 @@ if [[ $(kubectl get deployments.apps 2> /dev/null | grep -v NAME | grep k8sbfr-e
     kubectl apply -f etherpadIngress.yaml
 
     echo "installation de l'application etherpad ok"
+    status="OK"
 else
     echo "l'application etherpad est deja deployée"
 fi
 cd ..
 
-source set-bash-variable.bash K8S_HELLO_NODE_INSTALLED="OK"
+source set-bash-variable.bash K8S_HELLO_NODE_INSTALLED="${status}"
