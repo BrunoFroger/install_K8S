@@ -21,14 +21,14 @@ spec:
 #        httpGet:
 #          path: /
 #          port: 80
-    - name: sh
-      image: busybox
-      command:
-        - "/bin/sh"
-        - "-c"
-        - "--"
-      args:
-        - "while true; do sleep 30; done;"
+    # - name: sh
+    #   image: busybox
+    #   command:
+    #     - "/bin/sh"
+    #     - "-c"
+    #     - "--"
+    #   args:
+    #     - "while true; do sleep 30; done;"
 #  volumes:
 #    - name: config-volume
 #      configMap:
