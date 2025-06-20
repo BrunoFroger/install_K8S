@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: etherpad-config
+data:
+  TITLE: "K8SBFREtherpad"
+  SKIN_NAME: "colibris"
+  DEFAULT_PAD_TEXT: "Welcome to K8SBFR"
+  TRUST_PROXY: "true"
+  
