@@ -23,7 +23,7 @@ echo "essai installation de etherpad"
 if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep k8sbfr-etherpad | wc -l) == 0 ]]; then
     echo "creation du deployement k8sbfr-etherpad, veuillez patienter ....."
     kubectl apply -f etherpadDeployment.yaml
-    kubectl wait --for=condition=Available deployment/k8sbfr-etherpad --timeout=120s
+    kubectl wait --for=condition=Available pod/k8sbfr-etherpad --timeout=120s
 
     echo "creation du configMap, veuillez patienter ....."
     kubectl apply -f etherpadconfigMap.yaml
