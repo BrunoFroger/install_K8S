@@ -22,12 +22,13 @@ kubectl config set-context --current --namespace=k8sbfr-etherpad
 echo "essai installation de etherpad"
 if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep etherpad | wc -l) == 0 ]]; then
     docker pull etherpad/etherpad
-    echo "creation du deployement etherpad, veuillez patienter ....."
-    kubectl apply -f etherpadDeployment.yaml
-    kubectl wait --for=condition=Available pod/etherpad --timeout=120s
 
     echo "creation du configMap, veuillez patienter ....."
     kubectl apply -f etherpadconfigMap.yaml
+    
+    echo "creation du deployement etherpad, veuillez patienter ....."
+    kubectl apply -f etherpadDeployment.yaml
+    kubectl wait --for=condition=Available pod/etherpad --timeout=120s
 
     echo "creation du service, veuillez patienter ....."
     kubectl apply -f etherpadServiceClusterIP.yaml
