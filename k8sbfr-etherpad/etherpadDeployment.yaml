@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: etherpad
+  name: k8sbfr-etherpad
   labels:
     app: etherpad
 spec:
