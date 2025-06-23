@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8sbfr-ingress-popote
+  namespace: popote
+spec:
+  rules:
+    - host: k8sbfr.zapto.org
+      http:
+        paths:
+          - path: /popote
+            pathType: Prefix
+            backend:
+              service:
+                name: deployment-popote-monopod
+                port:
+                  number: 80
