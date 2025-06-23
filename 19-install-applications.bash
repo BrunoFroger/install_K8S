@@ -6,6 +6,8 @@ echo "*       installation des applications"
 echo "*"
 echo "*************************************************"
 
+liste_application="hello-node popote etherpad"
+
 echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
 testWhiptail=$(whiptail -v | cut -d " " -f 2)
 if [[ "X-$testWhiptail" != "X-(newt):" ]]; then 
@@ -24,6 +26,11 @@ do
         applicationPopote="installée"
     else
         applicationPopote=""    
+    fi 
+    if [[ "X-$K8S_ETHERPAD_INSTALLED" != "X-" ]] then 
+        applicationEtherpad="installée"
+    else
+        applicationEtherpad=""    
     fi 
 
     nomApplication=$(whiptail --menu "choisissez quelle application vous voulez installer : " 15 60 3 \
@@ -48,6 +55,14 @@ do
             else
                 source ./31-desinstall-popote.bash
             fi
+
+        elif [[ "$nomApplication" == "etherpad" ]]; then
+            if [[ "X-$applicationEtherpad" == "X-" ]]; then 
+                source ./30-install-etherpad.bash
+            else
+                source ./31-desinstall-etherpad.bash
+            fi
+
         else
             echo "saisie incorrecte !"
         fi
