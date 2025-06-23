@@ -33,7 +33,7 @@ do
         applicationEtherpad=""    
     fi 
 
-    nomApplication=$(whiptail --menu "choisissez quelle application vous voulez installer : " 15 60 3 \
+    nomApplication=$(whiptail --menu "choisissez quelle application vous voulez installer : " 15 60 5 \
         "hello node" "$applicationHelloNode " \
         "popote" "$applicationPopote " \
         "etherpad" "$applicationEtherpad " \
