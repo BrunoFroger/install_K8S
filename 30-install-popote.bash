@@ -9,7 +9,7 @@ echo "*************************************************"
 
 
 echo "creation du namespace popote, si necessaire"
-cd popote
+cd k8Sbfr-popote
 if [[ $(kubectl get namespaces 2> /dev/null | grep popote | wc -l) == 0 ]]; then
     echo "creation du namespace en cours ....."
     kubectl create namespace popote

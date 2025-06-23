@@ -14,6 +14,7 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     echo "-----------------------------"
 
     change-namespace.bash default
+    kubectl delete namespace popote
     unset K8S_POPOTE_INSTALLED
     echo "popote desinstallé"
 fi
