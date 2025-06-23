@@ -36,6 +36,7 @@ do
     nomApplication=$(whiptail --menu "choisissez quelle application vous voulez installer : " 15 60 3 \
         "hello node" "$applicationHelloNode " \
         "popote" "$applicationPopote " \
+        "etherpad" "$applicationEtherpad " \
         "quitter" "" \
         3>&1 1>&2 2>&3)
 
