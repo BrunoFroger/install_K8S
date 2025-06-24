@@ -6,13 +6,31 @@ echo "*       installation des applications"
 echo "*"
 echo "*************************************************"
 
-liste_application="hello-node popote etherpad"
+liste_applications="hello popote etherpad"
+nbApp=1
+whiptailContenu=""
+for application in $liste_applications 
+do
+    echo "traitement de l'application : ${application}"
+    applicationInstallee=$(env | grep INSTALLED | grep -i ${application} | cut -d "=" -f2)
+    #applicationInstallee="$(env | grep -i ${application} | grep OK)"
+    echo "$application installée ? => $applicationInstallee" 
+    ((nbApp++))
+    whiptailContenu+=$(echo -e "$application $applicationInstallee  \n")
+done
+echo "nb application = $nbApp"
+echo $whiptailContenu
+echo " A FINIR DE DEVELLOPER"
+read
+
 
 echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
 testWhiptail=$(whiptail -v | cut -d " " -f 2)
 if [[ "X-$testWhiptail" != "X-(newt):" ]]; then 
     sudo apt install -y whiptail
 fi
+
+
 
 while :
 do
