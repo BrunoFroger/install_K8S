@@ -9,7 +9,7 @@ echo "*************************************************"
 
 if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement desinstaller hello-node ?" 10 60) then
 
-    kubectl config set-context --current --namespace=k8sbfr-etherpad
+    kubectl config set-context --current --namespace=k8sbfr-hello-node
     echo "destruction ingress k8sbfr-ingress-hello-node en cours ...."
     kubectl delete ingress k8sbfr-ingress-hello-node --wait
     echo "destruction service k8sbfr-hello-node en cours ...."
