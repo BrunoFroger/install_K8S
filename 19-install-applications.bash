@@ -44,7 +44,7 @@ do
             applicationInstallee=$(env | grep INSTALLED | grep -i ${nomApplication} | cut -d "=" -f2)
             if [[ "X-$applicationInstallee" == "X-OK" ]]; then
                 # echo "desinstallation de l'application ${nomApplication}"
-                cde="31-desinstall-${nomApplication}.bash"
+                cde="./31-desinstall-${nomApplication}.bash"
             else
                 # echo "installation de l'application ${nomApplication}"
                 cde="./30-install-${nomApplication}.bash"
