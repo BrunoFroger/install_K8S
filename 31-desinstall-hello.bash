@@ -19,6 +19,7 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     kubectl config set-context --current --namespace=default
     echo "destruction namespace k8sbfr-hello-node en cours ...."
     change-namespace.bash default
+    echo "finalisation de la suppression de k8s-bfr-hello-node, veuillez patienter ....."
     kubectl delete namespace k8sbfr-hello-node --wait
 
     unset K8S_HELLO_NODE_INSTALLED
