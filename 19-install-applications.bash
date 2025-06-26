@@ -48,9 +48,9 @@ do
             else
                 # echo "installation de l'application ${nomApplication}"
                 cde="./30-install-${nomApplication}.bash"
-                source $cde
             fi
             echo "execution de la commande : <$cde>"
+            source $cde
         fi
     else
         echo "aucune application selectionnée : $nomApplication"
