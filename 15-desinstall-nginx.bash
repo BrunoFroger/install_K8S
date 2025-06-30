@@ -16,6 +16,7 @@ else
   sudo systemctl stop nginx
   
   echo "-------------------------------------------------"
+  sudo apt autoremove nginx -y
   echo " A FINALISER"
 
 

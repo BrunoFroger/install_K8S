@@ -66,7 +66,7 @@ A executer sur la machine cible
 mkdir .ssh
 cd .ssh
 ssh-keygen -N "" -f id_rsa
-service sshd restart
+service sshd restart ou service ssh restrart
 ```
 
 Executer ensuite sur la machine distante la commande suivante : ``ssh-copy-id <username>@<nomMachine.local>``
