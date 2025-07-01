@@ -58,7 +58,9 @@ echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
 #echo "kubernetes => installation des applications"
-source ./19-install-applications.bash
+if [[ "X-$K8S_TYPE_NOEUD" == "master" ]]; then
+    source ./19-install-applications.bash
+fi
 #-------------------------------------------------
 
 
