@@ -147,7 +147,7 @@ Si vous avez les droits sur le projet :
 ```
 cd ~
 mkdir -p projets/install_K8S
-cd projets/install_K8S
+cd projets
 git clone git@github.com:BrunoFroger/install_K8S.git
 ```
 
