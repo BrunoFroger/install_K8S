@@ -142,6 +142,15 @@ unzip <version>.zip
 ```
 ci dessus remplacer version par la version que vous voulez télécharger (ex : 1.2)
 
+Si vous avez les droits sur le projet :
+
+```
+cd ~
+mkdir -p projets/install_K8S
+cd projets/install_K8S
+git clone git@github.com:BrunoFroger/install_K8S.git
+```
+
 # execution de l'installation 
 
 Pour lancer l'installatipn de kubernetes sur votre/vos machine(s) vous devez executer les commandes suivantes 
