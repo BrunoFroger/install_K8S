@@ -9,6 +9,7 @@ metadata:
   #   nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   # ingressClassName: k8sbfr-nginx
+  ingressClassName: nginx
   rules:
     # - hosts: 
     #   - k8sbfr.zapto.org
