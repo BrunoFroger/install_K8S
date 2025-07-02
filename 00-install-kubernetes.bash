@@ -57,6 +57,13 @@ echo -n "appuyer sur une touche pour continuer "; read
 #-------------------------------------------------
 
 #-------------------------------------------------
+#echo "kubernetes => installation de l'Ingress-nginx-controler"
+if [[ "X-$K8S_TYPE_NOEUD" == "master" ]]; then
+    source ./18-install-ingress-nginx-controler.bash
+fi
+#-------------------------------------------------
+
+#-------------------------------------------------
 #echo "kubernetes => installation des applications"
 if [[ "X-$K8S_TYPE_NOEUD" == "master" ]]; then
     source ./19-install-applications.bash
