@@ -37,15 +37,15 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
     # awk '/ports:/ { print; print "  - appProtocol: http"; print "    name: http"; print "    port: 8080"; print "    protocol: TCP"; print "targetPort: http"; next}1' | \
     kubectl apply -f -
     rm k8sbfr-service-ingress-nginx-controller*.yaml
-    kubectl delete ingressClass -n ingress-nginx nginx
-    echo 'apiVersion: networking.k8s.io/v1
-kind: IngressClass
-metadata:
-  name: k8sbfr-nginx
-  # annotations:
-  #   ingressclass.kubernetes.io/is-default-class: "true"
-spec:
-  controller: service/ingress-nginx-controller ' | kubectl apply -f -
+#     kubectl delete ingressClass -n ingress-nginx nginx
+#     echo 'apiVersion: networking.k8s.io/v1
+# kind: IngressClass
+# metadata:
+#   name: k8sbfr-nginx
+#   # annotations:
+#   #   ingressclass.kubernetes.io/is-default-class: "true"
+# spec:
+#   controller: service/ingress-nginx-controller ' | kubectl apply -f -
     echo "installation de ingress-nginx-controleur ok"
     source set-bash-variable.bash K8S_INGRESS_NGINX="OK"
 else
