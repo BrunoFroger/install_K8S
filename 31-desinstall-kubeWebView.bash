@@ -17,7 +17,8 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
         kubectl delete deployments.apps kube-web-view
         kubectl delete services kube-web-view
         pod_name=$(kubectl get pods | grep kube-web-view | awk '{print $1}')
-        kubectl wait --for=delete deployments/${pod_name} --timeout=300s
+        echo "attendre fin execution pod : ${pod_name}"
+        kubectl wait --for=delete pod/${pod_name} --timeout=300s
         rm -rf kube-web-view 
     else
         echo "Le dossier Kube-Web-View n'existe pas."
