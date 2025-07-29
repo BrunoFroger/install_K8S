@@ -11,9 +11,9 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
 
     change-namespace.bash default
 
-    if [ -d "Kube-Web-View" ]; then
-        echo "Le dossier Kube-Web-View existe."
-        cd Kube-Web-View
+    if [ -d "kube-web-view" ]; then
+        echo "Le dossier kube-web-view existe."
+        cd kube-web-view
         kubectl delete deployments.apps kube-web-view
         kubectl delete services kube-web-view
         rm -rf kube-web-view 
