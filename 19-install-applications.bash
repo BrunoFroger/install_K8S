@@ -8,7 +8,7 @@ echo "*************************************************"
 
 
 #liste_applications="hello popote etherpad"
-liste_applications="hello popote"
+liste_applications="hello popote KubernetesWebView"
 
 echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
 testWhiptail=$(whiptail -v | cut -d " " -f 2)
