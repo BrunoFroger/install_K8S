@@ -9,7 +9,7 @@ echo "*************************************************"
 
 if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement desinstaller Kube-Web-View ?" 10 60) then
 
-    change-namespace.bash Kube-Web-View
+    change-namespace.bash default
 
     if [ -d "Kube-Web-View" ]; then
         echo "Le dossier Kube-Web-View existe."
