@@ -1,0 +1,12 @@
+Kubernetes Web View
+
+doc officielle : https://kube-web-view.readthedocs.io/en/latest/
+
+installation :
+$ git clone https://codeberg.org/hjacobs/kube-web-view
+$ kubectl apply -f kube-web-view/deploy
+
+$ kubectl port-forward service/kube-web-view 8080:80
+
+se connecter sur : http://localhost:8080/
+

@@ -16,6 +16,7 @@ spec:
                 name: k8sbfr-hello-node
                 port:
                   number: 80
+                  
               #namespace: k8sbfr-hello-node
           - path: /popote
             pathType: Prefix

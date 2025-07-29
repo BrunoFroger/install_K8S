@@ -29,8 +29,7 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     kubectl delete namespace k8sbfr-etherpad --wait
 
     echo "suppression de l'application etherpad ok"
-    status="OK"
+
+    source set-bash-variable.bash K8S_ETHERPAD=""
 fi
 cd ..
-
-source set-bash-variable.bash K8S_ETHERPAD="${status}"
