@@ -12,8 +12,10 @@ status="KO"
 echo "essai installation de kube-web-view"
 
 change-namespace.bash default
-mkdir kube-web-view
-cd kube-web-view
+if [ ! -d "k8s-kube-web-view" ]; then
+    mkdir k8s-kube-web-view
+fi
+cd k8s-kube-web-view
 if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep kube-web-view | wc -l) == 0 ]]; then
     if [ ! -d "kube-web-view" ]; then
         git clone https://codeberg.org/hjacobs/kube-web-view
