@@ -43,4 +43,4 @@ else
 fi
 cd ..
 
-source set-bash-variable.bash K8S_ETHERPAD="${status}"
+source set-bash-variable.bash K8S_ETHERPAD_INSTALLED="${status}"

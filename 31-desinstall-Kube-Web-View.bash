@@ -20,6 +20,6 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     else
         echo "Le dossier Kube-Web-View n'existe pas."
     fi
-    source set-bash-variable.bash K8S_KUBEWEBVIEW=""
+    unset K8S_KUBEWEBVIEW_INSTALLED
     cd ..
 fi

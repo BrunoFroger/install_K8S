@@ -27,4 +27,4 @@ else
 fi
 cd ..
 
-source set-bash-variable.bash K8S_KUBEWEBVIEW="${status}"
+source set-bash-variable.bash K8S_KUBEWEBVIEW_INSTALLED="${status}"

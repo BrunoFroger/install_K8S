@@ -30,6 +30,6 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
 
     echo "suppression de l'application etherpad ok"
 
-    source set-bash-variable.bash K8S_ETHERPAD=""
+    unset K8S_ETHERPAD_INSTALLED
 fi
 cd ..
