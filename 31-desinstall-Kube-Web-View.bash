@@ -15,6 +15,7 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
         echo "Le dossier Kube-Web-View existe."
         cd Kube-Web-View
         kubectl delete deployments.apps kube-web-view
+        kubectl delete services kube-web-view
         rm -rf kube-web-view 
     else
         echo "Le dossier Kube-Web-View n'existe pas."
