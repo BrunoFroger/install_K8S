@@ -24,7 +24,6 @@ if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep kube-web-view | wc -
 
     KUBE-WEB-VIEW-IP=$(kubectl describe svc kube-web-view | grep "IPs:" | awk '{ print $2 }')
 
-    echo "installation de l'application kube-web-view ok"
     echo "vous pouvez acceder a l'interface Web avec l'adresse http://${KUBE-WEB-VIEW-IP}"
     echo "#!/bin/bash \
             firefox ${KUBE-WEB-VIEW-IP} &" > launch_kubewebview.bash
@@ -35,4 +34,5 @@ else
 fi
 cd ..
 
+echo "installation de l'application kube-web-view : ${status}"
 source set-bash-variable.bash K8S_KUBEWEBVIEW_INSTALLED="${status}"
