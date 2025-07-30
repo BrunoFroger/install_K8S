@@ -12,7 +12,7 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     change-namespace.bash default
 
     if [ -d "k8sbfr-kube-web-view" ]; then
-        echo "Le dossier kube-web-view existe."
+        echo "Le dossier k8sbfr-kube-web-view existe."
         cd k8sbfr-kube-web-view
         kubectl delete deployments.apps kube-web-view
         kubectl delete services kube-web-view
@@ -20,9 +20,9 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
         echo "attendre fin execution pod : ${pod_name}"
         kubectl wait --for=delete pod/${pod_name} --timeout=300s
         rm -rf kube-web-view 
+        cd ..
     else
-        echo "Le dossier Kube-Web-View n'existe pas."
+        echo "Le dossier k8sbfr-kube-web-view n'existe pas."
     fi
     unset K8S_KUBEWEBVIEW_INSTALLED
-    cd ..
 fi
