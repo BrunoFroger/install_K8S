@@ -10,3 +10,5 @@ $ kubectl port-forward service/kube-web-view 8080:80
 
 se connecter sur : http://localhost:8080/
 
+Utiliser le fichier launch_kubewebview.bash pour acceder a la page web 
+
