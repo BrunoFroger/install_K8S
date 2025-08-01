@@ -22,11 +22,10 @@ if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep kube-web-view | wc -
     fi
     kubectl apply -k kube-web-view/deploy
 
-    KUBE-WEB-VIEW-IP=$(kubectl describe svc kube-web-view | grep "IPs:" | awk '{ print $2 }')
+    KUBE_WEB_VIEW_IP=$(kubectl describe svc kube-web-view | grep "IPs:" | awk '{ print $2 }')
 
-    echo "vous pouvez acceder a l'interface Web avec l'adresse http://${KUBE-WEB-VIEW-IP}"
-    echo "#!/bin/bash \
-            firefox ${KUBE-WEB-VIEW-IP} &" > launch_kubewebview.bash
+    echo "vous pouvez acceder a l'interface Web avec l'adresse http://${KUBE_WEB_VIEW_IP}"
+    echo -e "firefox ${KUBE_WEB_VIEW_IP} & \n" > launch_kubewebview.bash
     chmod +x launch_kubewebview.bash
     status="OK"
 else
