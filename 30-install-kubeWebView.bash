@@ -16,7 +16,7 @@ if [ ! -d "k8sbfr-kube-web-view" ]; then
     mkdir k8sbfr-kube-web-view
 fi
 cd k8sbfr-kube-web-view
-if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep kube-web-view | wc -l) == 0 ]]; then
+if [[ $(kubectl get pods 2> /dev/null | grep kube-web-view | wc -l) == 0 ]]; then
     if [ ! -d "kube-web-view" ]; then
         git clone https://codeberg.org/hjacobs/kube-web-view
     fi
@@ -27,6 +27,28 @@ if [[ $(kubectl get pods 2> /dev/null | grep -v NAME | grep kube-web-view | wc -
     echo "vous pouvez acceder a l'interface Web avec l'adresse http://${KUBE_WEB_VIEW_IP}"
     echo -e "firefox ${KUBE_WEB_VIEW_IP} & \n" > launch_kubewebview.bash
     chmod +x launch_kubewebview.bash
+
+    cat > "k8sbfr-kubeWebVew-ingress.yaml" <<EOF
+apiVersion: networking.k8s.io/v1
+#apiVersion: v1
+kind: Ingress
+metadata:
+  name: k8sbfr-kubWebView
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: k8sbfr.zapto.org
+      http:
+        paths:
+          - path: /kubeWebView
+            pathType: Prefix
+            backend:
+              service:
+                name: kube-web-view
+                port: 
+                  number: 80
+EOF
+    kubectl apply -f k8sbfr-kubeWebVew-ingress.yaml
     status="OK"
 else
     echo "l'application kube-web-view est deja deployée"
