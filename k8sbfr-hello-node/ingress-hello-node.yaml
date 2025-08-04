@@ -15,8 +15,8 @@ spec:
   rules:
     # - hosts: 
     #   - k8sbfr.zapto.org
-    - host: k8sbfr.zapto.org
-      http:
+    # - host: k8sbfr.zapto.org
+    - http:
         paths:
           - path: /hello
             pathType: Prefix
