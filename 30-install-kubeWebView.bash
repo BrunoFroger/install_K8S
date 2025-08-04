@@ -28,26 +28,6 @@ if [[ $(kubectl get pods 2> /dev/null | grep kube-web-view | wc -l) == 0 ]]; the
     echo -e "firefox ${KUBE_WEB_VIEW_IP} & \n" > launch_kubewebview.bash
     chmod +x launch_kubewebview.bash
 
-    cat > "k8sbfr-kubeWebVew-ingress.yaml" <<EOF
-apiVersion: networking.k8s.io/v1
-#apiVersion: v1
-kind: Ingress
-metadata:
-  name: k8sbfr-kubWebView
-spec:
-  ingressClassName: nginx
-  rules:
-    - host: k8sbfr.zapto.org
-      http:
-        paths:
-          - path: /kubeWebView
-            pathType: Prefix
-            backend:
-              service:
-                name: kube-web-view
-                port: 
-                  number: 80
-EOF
     kubectl apply -f k8sbfr-kubeWebVew-ingress.yaml
     status="OK"
 else
