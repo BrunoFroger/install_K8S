@@ -16,4 +16,4 @@ spec:
               service:
                 name: kube-web-view
                 port: 
-                  number: 80
+                  number: 8080
