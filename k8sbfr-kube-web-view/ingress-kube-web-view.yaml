@@ -7,8 +7,8 @@ spec:
   ingressClassName: nginx
   rules:
     # - host: k8sbfr.zapto.org
-    - host: *
-      http:
+    # - host: *
+    - http:
         paths:
           - path: /kubewebview
             pathType: Prefix
