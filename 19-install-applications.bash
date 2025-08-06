@@ -36,14 +36,14 @@ do
     texte1="choisissez quelle application vous"
     texte2="voulez installer/desinstaller :" 
     COLUMNS=$(tput cols) 
-    decal=$(((${#texte1}+$COLUMNS)/2))
+    decal=$(((${COLUMNS}-${#texte1})/2))
     echo "decal : $decal"
-    decalage=$(printf "%*s\n" $(((${COLUMNS}-${#texte1})/2)))
+    decalage=$(printf "%*s" $decal)
     echo "taille texte1 : ${#texte1}"
     echo "COLUMNS : $COLUMNS"
     echo "decalage : <$decalage>"
     echo "taille decalage : ${#decalage}"
-    message="${decalage}${texte1}${decalage}${texte2}"
+    message="${decalage}${texte1}\n${decalage}${texte2}"
     echo "message : $message"
     nomApplication=$(whiptail --menu "$message" 15 80 $nbApp ${whiptailContenu} 3>&1 1>&2 2>&3)
     nomApplication=$(echo $nomApplication | cut -d'"' -f2)
