@@ -28,7 +28,7 @@ if [[ $(kubectl get pods 2> /dev/null | grep kube-web-view | wc -l) == 0 ]]; the
     echo -e "/usr/bin/firefox ${KUBE_WEB_VIEW_IP} & \n" > launch_kubewebview.bash
     chmod +x launch_kubewebview.bash
 
-    kubectl apply -f ingress-kub-web-view.yaml
+    kubectl apply -f ingress-kube-web-view.yaml
     status="OK"
 else
     echo "l'application kube-web-view est deja deployée"
