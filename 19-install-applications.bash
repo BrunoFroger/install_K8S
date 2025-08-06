@@ -35,7 +35,7 @@ do
     whiptailContenu=${whiptailContenu}'"Quitter" ""'
     COLUMNS=$(tput cols) 
     texte="choisissez quelle application vous \nvoulez installer/desinstaller : " 
-    message=$(printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$texte")
+    message=$(printf "<%*s\n" $(((${#title}+$COLUMNS)/2)) "$texte>")
     nomApplication=$(whiptail --menu "$message" 15 80 $nbApp ${whiptailContenu} 3>&1 1>&2 2>&3)
     nomApplication=$(echo $nomApplication | cut -d'"' -f2)
 
