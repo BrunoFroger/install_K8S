@@ -36,7 +36,7 @@ do
     texte1="choisissez quelle application vous"
     texte2="voulez installer/desinstaller : " 
     COLUMNS=$(tput cols) 
-    decalage=$(((${#texte}+$COLUMNS)/2))
+    decalage=$(((${#texte1}+$COLUMNS)/2))
     echo "taille texte : " $({#texte})
     echo "COLUMNS : $COLUMNS"
     echo "decalage : $decalage"
