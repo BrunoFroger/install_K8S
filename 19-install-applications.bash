@@ -43,7 +43,7 @@ do
     echo "COLUMNS : $COLUMNS"
     echo "decalage : <$decalage>"
     echo "taille decalage : ${#decalage}"
-    message="${decalage}${texte1}\n${decalage}${texte2}"
+    message="$(printf"${decalage}${texte1}\n${decalage}${texte2}")"
     echo "message : $message"
     nomApplication=$(whiptail --menu "$message" 15 80 $nbApp ${whiptailContenu} 3>&1 1>&2 2>&3)
     nomApplication=$(echo $nomApplication | cut -d'"' -f2)
