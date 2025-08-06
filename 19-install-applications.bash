@@ -35,17 +35,19 @@ do
     whiptailContenu=${whiptailContenu}'"Quitter" ""'
     texte1="choisissez quelle application vous"
     texte2="voulez installer/desinstaller :" 
+    # COLUMNS=$(tput cols) 
     COLUMNS=80
     decal=$(((${COLUMNS}-${#texte1})/2))
-    echo "decal : $decal"
+    # echo "decal : $decal"
     decalage=$(printf "%*s" $decal)
-    echo "taille texte1 : ${#texte1}"
-    echo "COLUMNS : $COLUMNS"
-    echo "decalage : <$decalage>"
-    echo "taille decalage : ${#decalage}"
+    # echo "taille texte1 : ${#texte1}"
+    # echo "COLUMNS : $COLUMNS"
+    # echo "decalage : <$decalage>"
+    # echo "taille decalage : ${#decalage}"
     message=$(echo -e "${decalage}${texte1}\n${decalage}${texte2}")
-    echo "message : $message"
-    nomApplication=$(whiptail --menu "$message" 15 ${COLUMNS} $nbApp ${whiptailContenu} 3>&1 1>&2 2>&3)
+    # echo "message : $message"
+    hauteurWhiptail=$((${nbApp}+7))
+    nomApplication=$(whiptail --menu "$message" ${hauteurWhiptail} ${COLUMNS} $nbApp ${whiptailContenu} 3>&1 1>&2 2>&3)
     nomApplication=$(echo $nomApplication | cut -d'"' -f2)
 
     if [[ "X-$nomApplication" != "X-" ]]; then
