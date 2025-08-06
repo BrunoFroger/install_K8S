@@ -46,7 +46,7 @@ do
     echo "taille decalage : ${#decalage}"
     message=$(echo -e "${decalage}${texte1}\n${decalage}${texte2}")
     echo "message : $message"
-    hauteurWhiptail=$((${nbApp}+7))
+    hauteurWhiptail=$((${nbApp} + 10 ))
     echo "hauteurWhiptail : ${hauteurWhiptail}"
     nomApplication=$(whiptail --menu "$message" ${hauteurWhiptail} ${COLUMNS} $nbApp ${whiptailContenu} 3>&1 1>&2 2>&3)
     nomApplication=$(echo $nomApplication | cut -d'"' -f2)
