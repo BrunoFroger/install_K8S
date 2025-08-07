@@ -25,7 +25,7 @@ if [[ $(kubectl get pods 2> /dev/null | grep kube-web-view | wc -l) == 0 ]]; the
     KUBE_WEB_VIEW_IP=$(kubectl describe svc kube-web-view | grep "IPs:" | awk '{ print $2 }')
 
     echo "vous pouvez acceder a l'interface Web avec l'adresse http://${KUBE_WEB_VIEW_IP}"
-    echo -e "/usr/bin/firefox ${KUBE_WEB_VIEW_IP} & \n" > launch_kubewebview.bash
+    echo -e "/usr/bin/firefox http://${KUBE_WEB_VIEW_IP} & \n" > launch_kubewebview.bash
     chmod +x launch_kubewebview.bash
 
     kubectl apply -f ingress-kube-web-view.yaml

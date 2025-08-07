@@ -4,7 +4,7 @@ while :
 do
     if [[ "X-$K8S_TYPE_NOEUD" == "X-master" ]]; then
         echo "installation du noeud master ... "
-        sudo kubeadm init --pod-network-cidr=10.168.0.0/16 \
+        sudo kubeadm init --pod-network-cidr=192.168.0.0/16 \
         --cri-socket=unix:///var/run/cri-dockerd.sock \
         > >(tee ./kubeadm-init.out.log) 2>./kubeadm-init.err.log
         echo "*******************************************************"
