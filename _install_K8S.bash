@@ -43,6 +43,7 @@ do
             execute_commande "$titre" "$message"
             if [ $? -eq 1 ]; then
                 . ./76-set-all-slaves-worker.bash
+                whiptail --msgbox --title "info" "Tous les esclaves sont workers" 10 50
             fi
         else
             whiptail --msgbox --title "erreur" "commande <$commande> pas implementée" 10 50
