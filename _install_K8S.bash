@@ -29,7 +29,7 @@ do
     if [[ "X-$commande" != "X-" ]]; then
         if [[ "$commande" == "quitter" ]]; then
             break;
-        else if [[ "$commande" == "worker" ]]; then
+        elif [[ "$commande" == "worker" ]]; then
             . ./76-set-all-slaves-worker.bash
         fi
     else
