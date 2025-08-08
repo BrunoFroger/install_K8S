@@ -15,7 +15,7 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
 fi
 
 execute_commande () {
-    return whiptail --yesno --title "$1" "$2" 10 50)
+    return $(whiptail --yesno --title "$1" "$2" 10 50)
 }
 
 while :
