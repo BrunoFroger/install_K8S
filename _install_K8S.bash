@@ -41,7 +41,7 @@ do
             titre="set Worker"
             message="Voulez vous configurer les noeuds slave en worker ?"
             execute_commande "$titre" "$message"
-            if [ $? -eq 1 ]; then
+            if [ $? -eq 0 ]; then
                 . ./76-set-all-slaves-worker.bash
                 whiptail --msgbox --title "info" "Tous les esclaves sont workers" 10 50
             fi
