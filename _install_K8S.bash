@@ -53,7 +53,7 @@ do
             message="Voulez vous générer la commande join ?"
             execute_commande "$titre" "$message"
             if [ $? -eq 0 ]; then
-                commande=$(. ./75-get-join-commande)
+                commande=$(. ./75-get-join-commande.bash)
                 whiptail --msgbox --title "commande join" "$commande" 10 50
             fi
         else
