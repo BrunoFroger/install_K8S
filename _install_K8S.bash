@@ -49,7 +49,7 @@ do
                 whiptail --msgbox --title "info" "Tous les esclaves sont workers" 10 50
             fi
         elif [[ "$commande" == "Join" ]]; then
-            titre="set Worker"
+            titre="join slave => master"
             message="Voulez vous générer la commande join ?"
             execute_commande "$titre" "$message"
             if [ $? -eq 0 ]; then
