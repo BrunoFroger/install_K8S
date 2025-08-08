@@ -20,7 +20,7 @@ execute_commande () {
 
 while :
 do
-    commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 6 \
+    commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 80 6 \
         "Install" "installer Kubernetes" \
         "Applications" "installer applications" \
         "Reset" "reset kubadm (avant de faire un join si deja associé)" \
