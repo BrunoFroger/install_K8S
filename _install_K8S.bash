@@ -45,7 +45,7 @@ do
                 . ./76-set-all-slaves-worker.bash
             fi
         else
-            whiptail --msgbox --title "erreur" "commande <$commande> inconnue" 10 50
+            whiptail --msgbox --title "erreur" "commande <$commande> pas implementée" 10 50
         fi
     else
         whiptail --msgbox--title "erreur" "saisie incorrecte !" 10 50
