@@ -36,13 +36,13 @@ do
         elif [[ "$commande" == "Install" ]]; then
             titre="install kubernetes"
             message="Voulez vous installer Kubernetes ?"
-            if ($(execute_commande "$titre" "$message") == 1); then
+            if (( $(execute_commande "$titre" "$message") == 1 )); then
                 . ./00-install-kubernetes.bash
             fi
         elif [[ "$commande" == "Worker" ]]; then
             titre="set Worker"
             message="Voulez vous configurer les noeuds slave en worker ?"
-            if ($(execute_commande "$titre" "$message") == 1); then
+            if (( $(execute_commande "$titre" "$message") == 1 )); then
                 . ./76-set-all-slaves-worker.bash
             fi
         else
