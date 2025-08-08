@@ -19,7 +19,7 @@ commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 6
     "installer applications" "" \
     "reset kubadm" "" \
     "get join commande pour node" "" \
-    "set node worker" "" \
+    "set node worker" "worker" \
     "quitter" "" \
     3>&1 1>&2 2>&3)
 
