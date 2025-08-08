@@ -50,7 +50,7 @@ do
             fi
         elif [[ "$commande" == "Join" ]]; then
             titre="set Worker"
-            message="Voulez vous configurer les noeuds slave en worker ?"
+            message="Voulez vous générer la commande join ?"
             execute_commande "$titre" "$message"
             if [ $? -eq 0 ]; then
                 commande=$(. ./75-get-join-commande)
