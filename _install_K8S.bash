@@ -47,6 +47,7 @@ do
             fi
         else
             echo "commande inconnue"
+        fi
     else
         echo "saisie incorrecte !"
     fi
