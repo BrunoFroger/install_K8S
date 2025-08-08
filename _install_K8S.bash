@@ -23,7 +23,7 @@ do
     commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 6 \
         "Install" "installer Kubernetes" \
         "Applications" "installer applications" \
-        "Reset" "reset kubadm" \
+        "Reset" "reset kubadm (avant de faire un join si deja associé)" \
         "Join" "get join commande pour node" \
         "Worker" "set node worker" \
         "Quitter" "" \
@@ -33,10 +33,13 @@ do
     if [[ "X-$commande" != "X-" ]]; then
         if [[ "$commande" == "Quitter" ]]; then
             break;
-        elif [[ "$commande" == "Install" ]]; then
-            titre="install kubernetes"
-            message="Voulez vous installer Kubernetes ?"
-            # TODO
+        elif [[ "$commande" == "Applications" ]]; then
+            titre="install applications"
+            message="Voulez vous installer/desinstaller des applications dans le cluster Kubernetes ?"
+            execute_commande "$titre" "$message"
+            if [ $? -eq 0 ]; then
+                . ./19-install-applications.bash
+            fi
         elif [[ "$commande" == "Worker" ]]; then
             titre="set Worker"
             message="Voulez vous configurer les noeuds slave en worker ?"
