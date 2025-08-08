@@ -14,17 +14,17 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
     sudo apt install -y whiptail
 fi
 
-commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 6 \
-    "Install" "installer Kubernetes" \
-    "Applications" "installer applications" \
-    "Reset" "reset kubadm" \
-    "Join" "get join commande pour node" \
-    "Worker" "set node worker" \
-    "Quitter" "" \
-    3>&1 1>&2 2>&3)
-
 while :
 do
+    commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 6 \
+        "Install" "installer Kubernetes" \
+        "Applications" "installer applications" \
+        "Reset" "reset kubadm" \
+        "Join" "get join commande pour node" \
+        "Worker" "set node worker" \
+        "Quitter" "" \
+        3>&1 1>&2 2>&3)
+
     echo $commande
     if [[ "X-$commande" != "X-" ]]; then
         if [[ "$commande" == "Quitter" ]]; then
