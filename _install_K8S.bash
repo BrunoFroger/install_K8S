@@ -57,7 +57,7 @@ do
                 whiptail --msgbox --title "commande join" "$commande" 30 80
             fi
         else
-            whiptail --msgbox --title "erreur" "commande <$commande> pas implementée" 10 50
+            whiptail --msgbox --title "erreur" "commande <$commande> pas implementée" 6 40
         fi
     else
         whiptail --msgbox--title "erreur" "saisie incorrecte !" 10 50
