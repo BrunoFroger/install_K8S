@@ -14,6 +14,10 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
     sudo apt install -y whiptail
 fi
 
+execute_commande () {
+    return whiptail --yesno --title "$1" "$2" 10 50)
+}
+
 while :
 do
     commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 6 \
@@ -29,8 +33,19 @@ do
     if [[ "X-$commande" != "X-" ]]; then
         if [[ "$commande" == "Quitter" ]]; then
             break;
+        elif [[ "$commande" == "Install" ]]; then
+            titre="install kubernetes"
+            message="Voulez vous installer Kubernetes ?"
+            if ($(execute_commande $titre $message) == 1); then
+                . ./00-install-kubernetes.bash
+            fi
+        fi
         elif [[ "$commande" == "Worker" ]]; then
-            . ./76-set-all-slaves-worker.bash
+            titre="set Worker"
+            message="Voulez vous configurer les noeuds slave en worker ?"
+            if ($(execute_commande $titre $message) == 1); then
+                . ./76-set-all-slaves-worker.bash
+            fi
         fi
     else
         echo "saisie incorrecte !"
