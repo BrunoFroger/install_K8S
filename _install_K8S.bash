@@ -56,6 +56,15 @@ do
                 commande=$(. ./75-get-join-commande.bash)
                 whiptail --msgbox --title "commande join" "$commande" 16 80
             fi
+        elif [[ "$commande" == "Reset" ]]; then
+            titre="Reset kubadm"
+            message="A T T E N T I O N \nCeci va desactiver kubeadm, si vous etes sur master, cela rendra indisponible le cluster, sur un esclavec, cela dle desolidarisera du cluster (utile pour joinde un noiuveau cluster)"
+            execute_commande "$titre" "$message"
+            if [ $? -eq 0 ]; then
+                # TODO verifier si pas sur master 
+                # commande=$(. ./98-reset-kubeadm.bash)
+                # whiptail --msgbox --title "info" "kubeadm est desactivé sur le noeud $noeud " 10 50
+            fi
         else
             whiptail --msgbox --title "erreur" "commande <$commande> pas implementée" 10 50
         fi
