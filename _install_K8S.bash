@@ -54,7 +54,7 @@ do
             execute_commande "$titre" "$message"
             if [ $? -eq 0 ]; then
                 commande=$(. ./75-get-join-commande.bash)
-                whiptail --msgbox --title "commande join" "$commande" 14 80
+                whiptail --msgbox --title "commande join" "$commande" 16 80
             fi
         else
             whiptail --msgbox --title "erreur" "commande <$commande> pas implementée" 10 50
