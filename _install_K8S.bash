@@ -41,13 +41,13 @@ do
             titre="set Worker"
             message="Voulez vous configurer les noeuds slave en worker ?"
             execute_commande "$titre" "$message"
-            if [ $? eq 1 ]; then
+            if [ $? -eq 1 ]; then
                 . ./76-set-all-slaves-worker.bash
             fi
         else
-            echo "commande inconnue"
+            whiptail --message "commande inconnue"
         fi
     else
-        echo "saisie incorrecte !"
+        whiptail --message "saisie incorrecte !"
     fi
 done
