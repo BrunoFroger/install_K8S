@@ -15,7 +15,7 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
 fi
 
 execute_commande () {
-    return $(whiptail --yesno --title "$1" "$2" 10 50)
+    return $(whiptail --yesno --title "$1" "$2" 10 50 3>&1 1>&2 2>&3)
 }
 
 while :
@@ -38,7 +38,7 @@ do
             message="Voulez vous installer Kubernetes ?"
             if ($(execute_commande $titre $message) == 1); then
                 . ./00-install-kubernetes.bash
-            
+            fi
         elif [[ "$commande" == "Worker" ]]; then
             titre="set Worker"
             message="Voulez vous configurer les noeuds slave en worker ?"
