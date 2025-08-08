@@ -15,8 +15,8 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
 fi
 
 commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 6 \
-    "Install" "installer Kubernetes" "" \
-    "Applications" "installer applications" "" \
+    "Install" "installer Kubernetes" \
+    "Applications" "installer applications" \
     "Reset" "reset kubadm" \
     "Join" "get join commande pour node" \
     "Worker" "set node worker" \
