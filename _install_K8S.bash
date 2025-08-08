@@ -14,7 +14,7 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
     sudo apt install -y whiptail
 fi
 
-commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 2 \
+commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 60 6 \
     "installer Kubernetes" "" \
     "installer applications" "" \
     "reset kubadm" "" \
@@ -29,7 +29,8 @@ do
     if [[ "X-$commande" != "X-" ]]; then
         if [[ "$commande" == "quitter" ]]; then
             break;
-        else if [[ "$commande" == "quitter" ]]; then
+        else if [[ "$commande" == "worker" ]]; then
+            . ./76-set-all-slaves-worker.bash
         fi
     else
         echo "saisie incorrecte !"
