@@ -48,6 +48,14 @@ do
                 . ./76-set-all-slaves-worker.bash
                 whiptail --msgbox --title "info" "Tous les esclaves sont workers" 10 50
             fi
+        elif [[ "$commande" == "Join" ]]; then
+            titre="set Worker"
+            message="Voulez vous configurer les noeuds slave en worker ?"
+            execute_commande "$titre" "$message"
+            if [ $? -eq 0 ]; then
+                commande=$(. ./75-get-join-commande)
+                whiptail --msgbox --title "commande join" "$commande" 10 50
+            fi
         else
             whiptail --msgbox --title "erreur" "commande <$commande> pas implementée" 10 50
         fi
