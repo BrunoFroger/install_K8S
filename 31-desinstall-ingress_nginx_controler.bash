@@ -17,5 +17,5 @@ if (whiptail --title "Confirmation Oui / Non" --yesno "voulez vous réellement d
     change-namespace.bash default
     echo "Suppression du namespace en cours (peut prendre plusieurs minutes) ....."
     kubectl delete namespace ingress-nginx > /dev/null
-    source set-bash-variable.bash K8S_INGRESS_NGINX_CPNTROLER=""
+    source set-bash-variable.bash K8S_INGRESS_NGINX_CONTROLER_INSTALLED=""
 fi
