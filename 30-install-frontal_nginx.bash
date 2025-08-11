@@ -12,9 +12,9 @@ if [[ "X-$K8S_FRONTAL_NGINX_INSTALLED" == "X-OK" ]]; then
 else 
   cd k8sbfr-nginx
   ls
-  kubectl apply -f nginx-configmap.yaml
-  kubectl apply -f nginx-deployment.yaml
-  kubectl apply -f nginx-service.yaml
+  kubectl apply -f k8sbfr-configmap-nginx.yaml
+  kubectl apply -f k8sbfr-deployment-nginx.yaml
+  kubectl apply -f k8sbfr-service-nginx.yaml
 
   echo "-------------------------------------------------"
   source set-bash-variable.bash K8S_FRONTAL_NGINX_INSTALLED="OK"
