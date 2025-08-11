@@ -7,7 +7,7 @@ echo "*       desinstallation de nginx ...."
 echo "*"
 echo "*************************************************"
 
-if [[ "X-$K8S_FRONTAL_NGINX" == "X-OK" ]]; then
+if [[ "X-$K8S_FRONTAL_NGINX" == "X-INSTALED" ]]; then
 else 
   echo "docker n'est pas installé"
 
