@@ -9,6 +9,7 @@ echo "*************************************************"
 
 #liste_applications="hello popote etherpad"
 liste_applications="hello popote kubeWebView"
+nbApp=3
 
 echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
 testWhiptail=$(whiptail -v | cut -d " " -f 2)
@@ -16,11 +17,8 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
     sudo apt install -y whiptail
 fi
 
-# TODO
-return
 while :
 do
-    nbApp=1
     whiptailContenu=""
     for application in $liste_applications 
     do

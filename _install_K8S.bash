@@ -20,7 +20,7 @@ execute_commande () {
 
 while :
 do
-    commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 80 6 \
+    commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 80 7 \
         "Install" "installer Kubernetes" \
         "Tools" "installer les add-on" \
         "Applications" "installer applications" \
