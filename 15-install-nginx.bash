@@ -36,7 +36,7 @@ else
         <h1>Bienvenue surle cluster Kubernetes k8sbfr </h1>
         </body>
         </html>
-        " > /var/www/k8sbfr.zapto.org/index.html'
+        " > /var/www/k8sbfr.zapto.org/html/index.html'
   sudo chown -R www-data:www-data /var/www/k8sbfr.zapto.org
 
   sudo -- sh -c 'echo "server {
