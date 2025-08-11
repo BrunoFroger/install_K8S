@@ -66,7 +66,7 @@ do
             fi
         elif [[ "$commande" == "Reset" ]]; then
             titre="Reset kubadm"
-            message="A T T E N T I O N \nCeci va desactiver kubeadm, si vous etes sur master, cela rendra indisponible le cluster, sur un esclavec, cela dle desolidarisera du cluster (utile pour joinde un noiuveau cluster)"
+            message="A T T E N T I O N \nCeci va desactiver kubeadm, si vous etes sur master, cela rendra indisponible le cluster, sur un esclave, cela le desolidarisera du cluster (utile pour joinde un nouveau cluster)"
             execute_commande "$titre" "$message"
             if [ $? -eq 0 ]; then
                 # TODO verifier si pas sur master 
