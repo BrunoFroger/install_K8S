@@ -69,6 +69,7 @@ do
             message="A T T E N T I O N \nCeci va desactiver kubeadm, si vous etes sur master, cela rendra indisponible le cluster, sur un esclave, cela le desolidarisera du cluster (utile pour joinde un nouveau cluster)"
             execute_commande "$titre" "$message"
             if [ $? -eq 0 ]; then
+                echo "TODO lancer kubeadm reset"
                 # TODO verifier si pas sur master 
                 # commande=$(. ./98-reset-kubeadm.bash)
                 # whiptail --msgbox --title "info" "kubeadm est desactivé sur le noeud $noeud " 10 50
