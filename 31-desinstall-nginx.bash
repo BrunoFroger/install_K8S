@@ -7,7 +7,7 @@ echo "*       desinstallation de nginx ...."
 echo "*"
 echo "*************************************************"
 
-if [[ "X-$K8S_FRONTAL_NGINX" == "X-INSTALED" ]]; then
+if [[ "X-$K8S_FRONTAL_NGINX_INSTALLED" == "X-OK" ]]; then
 else 
   echo "docker n'est pas installé"
 
@@ -24,6 +24,6 @@ else
   sudo ufw disable
 
   echo "-------------------------------------------------"
-  source set-bash-variable.bash K8S_FRONTAL_NGINX=""
+  source set-bash-variable.bash K8S_FRONTAL_NGINX_INSTALLED=""
   echo "deinstallation de nginx => fin"
 fi

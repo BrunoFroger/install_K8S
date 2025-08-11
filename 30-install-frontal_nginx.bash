@@ -7,7 +7,7 @@ echo "*       installation de nginx ...."
 echo "*"
 echo "*************************************************"
 
-if [[ "X-$K8S_FRONTAL_NGINX" == "X-INSTALED" ]]; then
+if [[ "X-$K8S_FRONTAL_NGINX_INSTALLED" == "X-OK" ]]; then
   echo "installation nginx déjà réalisée"
 else 
 
@@ -62,6 +62,6 @@ else
   sudo systemctl restart nginx
   
   echo "-------------------------------------------------"
-  source set-bash-variable.bash K8S_FRONTAL_NGINX="INSTALED"
+  source set-bash-variable.bash K8S_FRONTAL_NGINX_INSTALLED="OK"
   echo "installation de nginx => fin"
 fi
