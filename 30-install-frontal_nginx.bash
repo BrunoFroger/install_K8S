@@ -11,6 +11,7 @@ if [[ "X-$K8S_FRONTAL_NGINX_INSTALLED" == "X-OK" ]]; then
   echo "installation nginx déjà réalisée"
 else 
   cd k8sbfr-nginx
+  ls
   kubectl apply -f nginx-configmap.yaml
   kubectl apply -f nginx-deployment.yaml
   kubectl apply -f nginx-service.yaml
