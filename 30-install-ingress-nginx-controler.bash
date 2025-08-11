@@ -47,7 +47,7 @@ metadata:
 spec:
   controller: service/ingress-nginx-controller ' | kubectl apply -f -
     echo "installation de ingress-nginx-controleur ok"
-    source set-bash-variable.bash K8S_INGRESS_NGINX="OK"
+    source set-bash-variable.bash K8S_INGRESS_NGINX_CPNTROLER="OK"
 else
     echo "l'ingress-nginx-controleur est deja deployé"
 fi

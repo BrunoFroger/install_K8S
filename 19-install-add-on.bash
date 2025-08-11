@@ -7,7 +7,7 @@ echo "*"
 echo "*************************************************"
 
 
-liste_add_on="ingress-nginx-controler"
+liste_add_on="ingress_nginx_controler"
 nbApp=1
 
 echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
