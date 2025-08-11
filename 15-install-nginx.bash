@@ -15,6 +15,9 @@ else
   echo "installation de nginx ...."
   sudo apt install -y nginx
 
+  echo "-------------------------------------------------"
+  echo "activation firewall ...."
+  sudo ufw --force enable
 
   echo "-------------------------------------------------"
   echo "activation de nginx ...."

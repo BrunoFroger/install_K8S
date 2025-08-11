@@ -4,6 +4,7 @@ kind: Ingress
 metadata:
   name: k8sbfr-ingress-kubewebview
 spec:
+  # ingressClassName: nginx
   ingressClassName: nginx
   rules:
     # - host: k8sbfr.zapto.org
