@@ -20,7 +20,7 @@ fi
 while :
 do
     whiptailContenu=""
-    for application in $liste_applications 
+    for application in $liste_add_on 
     do
         applicationInstallee=$(env | grep INSTALLED | grep -i ${application} | cut -d "=" -f2)
         if [[ "X-$applicationInstallee" == "X-OK" ]]; then
