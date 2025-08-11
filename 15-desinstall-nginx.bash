@@ -19,6 +19,9 @@ else
   sudo apt autoremove nginx -y
   echo " A FINALISER"
 
+  echo "-------------------------------------------------"
+  echo "desactivation firewall ...."
+  sudo ufw disable
 
   echo "-------------------------------------------------"
   source set-bash-variable.bash K8S_SCRIPT_INSTALL_NGINX=""
