@@ -2,13 +2,13 @@
 
 echo "*************************************************"
 echo "*"
-echo "*       installation des applications"
+echo "*       installation des add-on"
 echo "*"
 echo "*************************************************"
 
 
-#liste_applications="hello popote etherpad"
-liste_applications="hello popote kubeWebView"
+liste_add_on="ingress-controleur"
+nbApp=1
 
 echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
 testWhiptail=$(whiptail -v | cut -d " " -f 2)
@@ -16,11 +16,9 @@ if [[ "X-$testWhiptail" != "X-(newt):" ]]; then
     sudo apt install -y whiptail
 fi
 
-# TODO
-return
+
 while :
 do
-    nbApp=1
     whiptailContenu=""
     for application in $liste_applications 
     do
@@ -34,7 +32,7 @@ do
         whiptailContenu=${whiptailContenu}'"'${application}'" "'${applicationInstallee}'" '
     done
     whiptailContenu=${whiptailContenu}'"Quitter" ""'
-    texte1="choisissez quelle application vous"
+    texte1="choisissez quel add-on vous"
     texte2="voulez installer/desinstaller :" 
     # COLUMNS=$(tput cols) 
     COLUMNS=80
@@ -69,10 +67,10 @@ do
             source $cde
         fi
     else
-        echo "aucune application selectionnée : $nomApplication"
+        echo "aucun add-on selectionnée : $nomApplication"
     fi
     # read
 done
 
-echo "installation des applications => fin"
+echo "installation des add-on => fin"
 

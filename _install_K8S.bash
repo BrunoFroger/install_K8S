@@ -22,6 +22,7 @@ while :
 do
     commande=$(whiptail --menu "choissez l'action que vous voulez réaliser : " 15 80 6 \
         "Install" "installer Kubernetes" \
+        "Tools" "installer les add-on" \
         "Applications" "installer applications" \
         "Reset" "reset kubadm (avant de faire un join si deja associé)" \
         "Join" "get join commande pour node" \
@@ -34,11 +35,18 @@ do
         if [[ "$commande" == "Quitter" ]]; then
             break;
         elif [[ "$commande" == "Applications" ]]; then
-            titre="install applications"
+            titre="installation d'applications"
             message="Voulez vous installer/desinstaller des applications dans le cluster Kubernetes ?"
             execute_commande "$titre" "$message"
             if [ $? -eq 0 ]; then
                 . ./19-install-applications.bash
+            fi
+        elif [[ "$commande" == "Tools" ]]; then
+            titre="installation des Add-on"
+            message="Voulez vous installer/desinstaller des add-on dans le cluster Kubernetes ?"
+            execute_commande "$titre" "$message"
+            if [ $? -eq 0 ]; then
+                . ./19-install-add-on.bash
             fi
         elif [[ "$commande" == "Worker" ]]; then
             titre="set Worker"
