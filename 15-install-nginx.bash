@@ -8,7 +8,7 @@ echo "*"
 echo "*************************************************"
 
 if [[ "X-$K8S_SCRIPT_INSTALL_NGINX" == "X-OK" ]]; then
-  echo "installation docker déjà réalisées"
+  echo "installation nginx déjà réalisées"
 else 
 
   echo "-------------------------------------------------"

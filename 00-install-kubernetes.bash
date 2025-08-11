@@ -38,6 +38,13 @@ source ./03-post-install-linux.bash -e
 echo -n "appuyer sur une touche pour continuer "; read
 
 #-------------------------------------------------
+#echo "kubernetes => install nginx"
+source ./15-install-nginx.bash -e
+#-------------------------------------------------
+
+echo -n "appuyer sur une touche pour continuer "; read
+
+#-------------------------------------------------
 #echo "kubernetes => installation de docker"
 source ./10-install-docker.bash
 #-------------------------------------------------
