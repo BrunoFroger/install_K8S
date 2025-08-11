@@ -23,6 +23,7 @@ else
   echo "activation de nginx ...."
   sudo sudo systemctl enable nginx
   sudo ufw allow 'Nginx HTTP'
+  sudo ufw allow 'OpenSSH'
 
 
   echo "-------------------------------------------------"
