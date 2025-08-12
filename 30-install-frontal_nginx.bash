@@ -26,6 +26,7 @@ else
   sudo ufw allow 'OpenSSH'
 
 
+
   echo "-------------------------------------------------"
   echo "creation page par defaut nginx ...."
   sudo mkdir /var/www/k8sbfr.zapto.org
