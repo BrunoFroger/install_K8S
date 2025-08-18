@@ -25,15 +25,15 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
     # attendre fin d'install (running)
     #  TODO
     # commande de modification du fichier yaml de service pour ajouter externalIP: $externalIP
-    kubectl -n ingress-nginx patch svc ingress-nginx-controller --type=json \
-        -p='[{"op": "add", "path": "/spec/-", "value": "externalIPs: 192.168.1.10"}]'
+    # kubectl -n ingress-nginx patch svc ingress-nginx-controller --type=json \
+    #     -p='[{"op": "add", "path": "/spec/-", "value": "externalIPs: 192.168.1.10"}]'
     kubectl get svc ingress-nginx-controller -o yaml | sed -s 
     kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=120s
     # externalIp=$(ifconfig eno1 | grep "inet "| awk '{ print $2 }')
-    echo "l'adresse IP externe utilisée est : $externalIp"
-    # kubectl get services ingress-nginx-controller -o yaml > k8sbfr-service-ingress-nginx-controller.yaml
-    # awk '/type: LoadBalancer/ { print ""; next} {print}' k8sbfr-service-ingress-nginx-controller.yaml > k8sbfr-service-ingress-nginx-controller1.yaml
-    # awk -v extIp=$externalIp '/spec:/ { print; print "  externalIPs:"; print  "    - " extIp; next }1' k8sbfr-service-ingress-nginx-controller1.yaml | \
+    # echo "l'adresse IP externe utilisée est : $externalIp"
+    kubectl get services ingress-nginx-controller -o yaml > k8sbfr-service-ingress-nginx-controller.yaml
+    awk '/type: LoadBalancer/ { print ""; next} {print}' k8sbfr-service-ingress-nginx-controller.yaml > k8sbfr-service-ingress-nginx-controller1.yaml
+    awk -v extIp=$externalIp '/spec:/ { print; print "  externalIPs:"; print  "    - " extIp; next }1' k8sbfr-service-ingress-nginx-controller1.yaml | \
     # awk '/ports:/ { print; print "  - appProtocol: http"; print "    name: http"; print "    port: 8080"; print "    protocol: TCP"; print "targetPort: http"; next}1' | \
     kubectl apply -f -
     rm k8sbfr-service-ingress-nginx-controller*.yaml
