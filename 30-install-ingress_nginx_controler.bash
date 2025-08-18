@@ -27,7 +27,7 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
     # commande de modification du fichier yaml de service pour ajouter externalIP: $externalIP
     # kubectl -n ingress-nginx patch svc ingress-nginx-controller --type=json \
     #     -p='[{"op": "add", "path": "/spec/-", "value": "externalIPs: 192.168.1.10"}]'
-    kubectl get svc ingress-nginx-controller -o yaml | sed -s 
+    # kubectl get svc ingress-nginx-controller -o yaml | sed -s 
     kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=120s
     # externalIp=$(ifconfig eno1 | grep "inet "| awk '{ print $2 }')
     # echo "l'adresse IP externe utilisée est : $externalIp"
