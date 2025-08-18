@@ -10,7 +10,7 @@ echo "*************************************************"
 liste_add_on="ingress_nginx_controler frontal_nginx"
 nbApp=1
 
-echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
+# echo "Test installation de Wiptail necessaire (interface graphique pour bash)"
 testWhiptail=$(whiptail -v | cut -d " " -f 2)
 if [[ "X-$testWhiptail" != "X-(newt):" ]]; then 
     sudo apt install -y whiptail
@@ -63,7 +63,7 @@ do
                 # echo "installation de l'application ${nomApplication}"
                 cde="./30-install-${nomApplication}.bash"
             fi
-            echo "execution de la commande : <$cde>"
+            # echo "execution de la commande : <$cde>"
             source $cde
         fi
     else

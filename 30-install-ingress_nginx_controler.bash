@@ -31,9 +31,9 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
     kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=120s
     # externalIp=$(ifconfig eno1 | grep "inet "| awk '{ print $2 }')
     echo "l'adresse IP externe utilisée est : $externalIp"
-    kubectl get services ingress-nginx-controller -o yaml > k8sbfr-service-ingress-nginx-controller.yaml
-    awk '/type: LoadBalancer/ { print ""; next} {print}' k8sbfr-service-ingress-nginx-controller.yaml > k8sbfr-service-ingress-nginx-controller1.yaml
-    awk -v extIp=$externalIp '/spec:/ { print; print "  externalIPs:"; print  "    - " extIp; next }1' k8sbfr-service-ingress-nginx-controller1.yaml | \
+    # kubectl get services ingress-nginx-controller -o yaml > k8sbfr-service-ingress-nginx-controller.yaml
+    # awk '/type: LoadBalancer/ { print ""; next} {print}' k8sbfr-service-ingress-nginx-controller.yaml > k8sbfr-service-ingress-nginx-controller1.yaml
+    # awk -v extIp=$externalIp '/spec:/ { print; print "  externalIPs:"; print  "    - " extIp; next }1' k8sbfr-service-ingress-nginx-controller1.yaml | \
     # awk '/ports:/ { print; print "  - appProtocol: http"; print "    name: http"; print "    port: 8080"; print "    protocol: TCP"; print "targetPort: http"; next}1' | \
     kubectl apply -f -
     rm k8sbfr-service-ingress-nginx-controller*.yaml
