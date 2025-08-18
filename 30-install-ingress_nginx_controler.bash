@@ -30,6 +30,7 @@ if [[ $(kubectl get deployements.app 2> /dev/null | grep -v NAME | grep ingress-
     # kubectl get svc ingress-nginx-controller -o yaml | sed -s 
     kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=120s
     # externalIp=$(ifconfig eno1 | grep "inet "| awk '{ print $2 }')
+    externalIp="192.168.1.10"
     # echo "l'adresse IP externe utilisée est : $externalIp"
     kubectl get services ingress-nginx-controller -o yaml > k8sbfr-service-ingress-nginx-controller.yaml
     awk '/type: LoadBalancer/ { print ""; next} {print}' k8sbfr-service-ingress-nginx-controller.yaml > k8sbfr-service-ingress-nginx-controller1.yaml
