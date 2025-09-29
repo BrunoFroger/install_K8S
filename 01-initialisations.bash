@@ -42,6 +42,13 @@ else
             else
                 echo "saisie incorrecte !"
             fi
+            # read domaine
+            domaine=$(whiptail --inputbox "domaine permettant accès au cluster depuis internet (ex:monk8s.zapto.org) :" 10 50 "$K8S_MASTER_KUBERNETES" 3>&1 1>&2 2>&3)
+            if [[ "X-$domaine" != "X-" ]]; then
+                source set-bash-variable.bash K8S_DOMAINE=$domaine
+            else
+                echo "saisie incorrecte !"
+            fi
         fi
         # echo -n "nom du namespace a utiliser <$K8S_NAMESPACE> : "
         # read namespace
@@ -57,6 +64,7 @@ else
         # echo -n "est-ce que ces donnees sont exactes : (o/N) : "
         # read valid
         valid_install=$(whiptail --yesno "type install      : $K8S_TYPE_NOEUD\n\
+domaine           : $K8S_DOMAINE\n\
 master Kubernetes : $K8S_MASTER_KUBERNETES\n\n\n\
 est-ce que ces donnees sont exactes :" 12 50 3>&1 1>&2 2>&3 ; echo $?)
         if [[  "X-$valid_install" == "X-0" ]]; then
