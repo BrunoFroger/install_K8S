@@ -50,18 +50,6 @@ else
                 echo "saisie incorrecte !"
             fi
         fi
-        # echo -n "nom du namespace a utiliser <$K8S_NAMESPACE> : "
-        # read namespace
-        # namespace=$(whiptail --inputbox "nom du namespace a utiliser : " 10 50 "$K8S_NAMESPACE" 3>&1 1>&2 2>&3)
-        # if [[ "X-$namespace" != "X-" ]]; then
-        #     source set-bash-variable.bash K8S_NAMESPACE=$namespace
-        # fi
-
-        # echo "type install      : $K8S_TYPE_NOEUD"
-        # echo "master Kubernetes : $K8S_MASTER_KUBERNETES"
-        # echo "master namespace  : $K8S_NAMESPACE"
-
-        # echo -n "est-ce que ces donnees sont exactes : (o/N) : "
         # read valid
         valid_install=$(whiptail --yesno "type install      : $K8S_TYPE_NOEUD\n\
 domaine           : $K8S_DOMAINE\n\

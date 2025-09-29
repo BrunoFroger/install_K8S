@@ -9,4 +9,4 @@ echo "*************************************************"
 echo "-------------------------------------------------"
 echo "docker => Configuration mode sécurisé https"
 sudo apt-get install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d k8sbfr.zapto.org
+sudo certbot --nginx -d ${K8S_DOMAINE}

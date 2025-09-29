@@ -29,37 +29,37 @@ else
 
   echo "-------------------------------------------------"
   echo "creation page par defaut nginx ...."
-  sudo mkdir /var/www/k8sbfr.zapto.org
-  sudo chmod 755 /var/www/k8sbfr.zapto.org
-  sudo mkdir /var/www/k8sbfr.zapto.org/html
-  sudo chmod 755 /var/www/k8sbfr.zapto.org/html
+  sudo mkdir /var/www/${K8S_DOMAINE}
+  sudo chmod 755 /var/www/${K8S_DOMAINE}
+  sudo mkdir /var/www/${K8S_DOMAINE}/html
+  sudo chmod 755 /var/www/${K8S_DOMAINE}/html
 
-  sudo -- sh -c 'echo "<html>
+  sudo -- sh -c "echo '<html>
         <head></head>
         <body>
-        <h1>Bienvenue sur le cluster Kubernetes k8sbfr </h1>
+        <h1>Bienvenue sur le cluster Kubernetes ${K8S_DOMAINE} </h1>
         </body>
         </html>
-        " > /var/www/k8sbfr.zapto.org/html/index.html'
-  sudo chown -R www-data:www-data /var/www/k8sbfr.zapto.org
+      ' > /var/www/${K8S_DOMAINE}/html/index.html"
+  sudo chown -R www-data:www-data /var/www/${K8S_DOMAINE}
 
-  sudo -- sh -c 'echo "server {
+  sudo -- sh -c "echo 'server {
 
         listen 80;
         listen [::]:80;
 
-        root /var/www/k8sbfr.zapto.org/html;
+        root /var/www/${K8S_DOMAINE}/html;
 
         index index.html;
-        server_name k8sbfr.zapto.org localhost;
+        server_name ${K8S_DOMAINE} localhost;
 
         location / {
             try_files $uri $uri/ =404;
     }
-    }" \
-    > /etc/nginx/sites-available/k8sbfr.zapto.org'
-  sudo chown -R www-data:www-data /etc/nginx/sites-available/k8sbfr.zapto.org
-  sudo ln -s /etc/nginx/sites-available/k8sbfr.zapto.org /etc/nginx/sites-enabled/
+    }' \
+    > /etc/nginx/sites-available/${K8S_DOMAINE}"
+  sudo chown -R www-data:www-data /etc/nginx/sites-available/${K8S_DOMAINE}
+  sudo ln -s /etc/nginx/sites-available/${K8S_DOMAINE} /etc/nginx/sites-enabled/
 
   echo "-------------------------------------------------"
   echo "redemmarage nginx post config"
